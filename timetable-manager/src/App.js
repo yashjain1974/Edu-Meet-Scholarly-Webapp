@@ -3,10 +3,15 @@ import { useContext } from "react";
 
 import Layout from "./components/Layout/Layout";
 import UserProfile from "./components/Profile/UserProfile";
-import StudentPage from "./pages/StudentPage";
+import StudentPage from "./pages/StudentLogin";
 import HomePage from "./pages/HomePage";
 import AuthContext from "./store/auth-context";
-import StaffPage from "./pages/StaffPage";
+import StaffPage from "./pages/StaffLogin";
+import AdminPage from "./pages/AdminLogin";
+import AdminHome from "./pages/Admin/AdminPage";
+import StaffHome from "./pages/Staff/StaffPage";
+import StudentHome from "./pages/Student/StudentPage";
+
 
 function App() {
   const authctx = useContext(AuthContext);
@@ -14,7 +19,7 @@ function App() {
     <Layout>
       <Switch>
         <Route path="/" exact>
-          <HomePage />
+        {!authctx.isLoggedIn && <HomePage />}
         </Route>
 
         {!authctx.isLoggedIn && (
@@ -27,6 +32,22 @@ function App() {
             < StaffPage />
           </Route>
         )}
+        {!authctx.isLoggedIn && (
+          <Route path="/admin">
+            < AdminPage />
+            
+          </Route>
+        )}
+
+        <Route path="/admin/AdminHome">
+          <AdminHome></AdminHome>
+        </Route>
+        <Route path="/student/StudentHome">
+        {authctx.isLoggedIn &&  <StudentHome></StudentHome>}
+        </Route>
+        <Route path="/staff/StaffHome">
+          {authctx.isLoggedIn && <StaffHome></StaffHome>}
+        </Route>
 
         <Route path="/profile">
           {authctx.isLoggedIn && <UserProfile />}

@@ -13,13 +13,13 @@ const MainNavigation = () => {
   return (
     <header className={classes.header}>
       <Link to="/">
-        <div className={classes.logo}>Auth-You</div>
+        <div className={classes.logo}>SlotMeUp</div>
       </Link>
       <nav>
         <ul>
           {!isLoggedIn && (
             <li>
-              <Link to="/auth">Login</Link>
+              <Link to="/admin">Admin Login</Link>
             </li>
           )}
           {isLoggedIn && (

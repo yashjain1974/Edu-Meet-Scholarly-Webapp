@@ -47,7 +47,7 @@ const AuthForm = (props) => {
           new Date().getTime() + +data.expiresIn * 1000
         );
         Authctx.login(data.idToken, expirationTime.toISOString());
-        history.replace("/");
+        history.replace(`${props.navigate}`);
       })
       .catch((err) => {
         setisWeekPassword(true);
@@ -78,7 +78,7 @@ const AuthForm = (props) => {
   return (
     <section className={classes.auth}>
       
-      <h1>{props.mode} {isLogin ? "Login" : "Sign Up"}</h1>
+      <h1>{props.mode} Login </h1>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor="email">Your Email</label>
@@ -98,7 +98,7 @@ const AuthForm = (props) => {
         </div>
         <div className={classes.actions}>
           {!isLoading && (
-            <button>{isLogin ? "Login" : "Create Account"}</button>
+            <button>Login</button>
           )}
           {isLoading && <p>Loading...</p>}
 
@@ -107,7 +107,7 @@ const AuthForm = (props) => {
             className={classes.toggle}
             onClick={switchAuthModeHandler}
           >
-            {isLogin ? "Create new account" : "Login with existing account"}
+           
           </button>
         </div>
       </form>

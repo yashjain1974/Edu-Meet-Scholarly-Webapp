@@ -11,7 +11,7 @@ const StartingPageContent = () => {
         <Link to="/student" ><FcGraduationCap size="80px"></FcGraduationCap><br></br>Student Login</Link>
       </button>
       <button className={classes.btn} >
-        <Link to="/staff" ><FcManager size="80px"></FcManager><br></br>Admin Login</Link>
+        <Link to="/staff" ><FcManager size="80px"></FcManager><br></br>Staff Login</Link>
       </button>
     </div>
 
