@@ -2,17 +2,17 @@ import Section from '../UI/Section';
 import AddUser from '../UI/AddUserForm';
 import useHttp from '../../Hooks/Http-use';
 
-const NewTask = (props) => {
+const NewUser = (props) => {
   const { isLoading, error, sendRequest: sendTaskRequest } = useHttp();
 
-  const createTask = (taskText, taskData) => {
+  const createTask = (userText,userEmail,userPassword ,taskData) => {
     const generatedId = taskData.name; // firebase-specific => "name" contains generated id
-    const createdTask = { id: generatedId, text: taskText };
+    const createdTask = { id: generatedId, user: userText, email:userEmail,password:userPassword };
 
     props.onAddTask(createdTask);
   };
 
-  const enterTaskHandler = async (taskText) => {
+  const enterTaskHandler = async (userName,userEmail,userPassword) => {
     sendTaskRequest(
       {
         url: 'https://to-do-task-7340d-default-rtdb.firebaseio.com/tasks.json',
@@ -20,9 +20,11 @@ const NewTask = (props) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: { text: taskText },
+        body: { user: userName,
+        email:userEmail,
+      password:userPassword },
       },
-      createTask.bind(null, taskText)
+      createTask.bind(null, userName,userEmail,userPassword)
     );
   };
 
@@ -34,4 +36,4 @@ const NewTask = (props) => {
   );
 };
 
-export default NewTask;
+export default NewUser;

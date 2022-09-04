@@ -1,11 +1,12 @@
 import React from "react";
 
-import NewTask from "../../components/AdminComp/NewUser";
+
+import UserData from "../../components/AdminComp/UserData";
 const AdminHome=()=>{
     return(
         
         <React.Fragment>
-            <NewTask></NewTask>
+           <UserData></UserData>
         </React.Fragment>
         
         
