@@ -4,14 +4,14 @@ import useHttp from '../../Hooks/Http-use';
 
 const NewUser = (props) => {
   const { isLoading, error, sendRequest: sendTaskRequest } = useHttp();
-
+  
   const createTask = (userText,userEmail,userPassword ,taskData) => {
     const generatedId = taskData.name; // firebase-specific => "name" contains generated id
     const createdTask = { id: generatedId, user: userText, email:userEmail,password:userPassword };
 
     props.onAddTask(createdTask);
   };
-
+ 
   const enterTaskHandler = async (userName,userEmail,userPassword) => {
     sendTaskRequest(
       {
@@ -27,6 +27,8 @@ const NewUser = (props) => {
       createTask.bind(null, userName,userEmail,userPassword)
     );
   };
+  
+
 
   return (
     <Section>

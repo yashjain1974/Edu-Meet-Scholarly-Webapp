@@ -7,7 +7,7 @@
 body {
   font-family: 'Open Sans', 'Lato', sans-serif;
   margin: 0;
-  background-color: #ffe4c4;
+  background-color: bisque;
 }
 
 h1,
@@ -17,4 +17,11 @@ h4,
 h5,
 h6 {
   font-family: 'Lato', sans-serif;
+}
+
+.cont{
+    display: flex;
+    flex-wrap: inherit;
+    
+    align-items:center;
 }

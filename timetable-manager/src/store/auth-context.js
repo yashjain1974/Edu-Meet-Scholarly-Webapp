@@ -6,7 +6,12 @@ const AuthContext = React.createContext({
   isLoggedIn: false,
   login: (token) => {},
   logout: () => {},
+  id:"",
+  
 });
+function generateRandomInteger(max) {
+  return Math.floor(Math.random() * max) + 1;
+}
 
 const calculateTime = (expirationTime) => {
   const currentTime = new Date().getTime();
@@ -38,6 +43,9 @@ export const AuthContextProvider = (props) => {
   }
 
   const [token, setToken] = useState(initializeToken);
+  
+  const LoginId="q"+ generateRandomInteger(100);
+  
   const userIsLoggedIn = !!token;
   const logOutHandler = useCallback(() => {
     setToken(null);
@@ -53,6 +61,7 @@ export const AuthContextProvider = (props) => {
     localStorage.setItem("expirationTime", expirationTime);
     const remainingDuration = calculateTime(expirationTime);
     logoutTimer = setTimeout(logOutHandler, remainingDuration);
+    
   };
   useEffect(() => {
     if(tokenData){
@@ -65,6 +74,7 @@ export const AuthContextProvider = (props) => {
     isLoggedIn: userIsLoggedIn,
     login: logInHandler,
     logout: logOutHandler,
+    id:LoginId
   };
   return (
     <AuthContext.Provider value={contextValue}>

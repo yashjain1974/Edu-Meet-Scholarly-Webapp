@@ -11,7 +11,10 @@ import AdminPage from "./pages/AdminLogin";
 import AdminHome from "./pages/Admin/AdminPage";
 import StaffHome from "./pages/Staff/StaffPage";
 import StudentHome from "./pages/Student/StudentPage";
+import Sidebar from "./components/UI/Sidebar";
+import AdminSidebar from "./pages/Admin/AdminSideBar";
 
+import './App.css'
 
 function App() {
   const authctx = useContext(AuthContext);
@@ -19,12 +22,14 @@ function App() {
     <Layout>
       <Switch>
         <Route path="/" exact>
-        {!authctx.isLoggedIn && <HomePage />}
+          {!authctx.isLoggedIn && <HomePage />}
         </Route>
 
         {!authctx.isLoggedIn && (
           <Route path="/student">
+
             <StudentPage />
+
           </Route>
         )}
         {!authctx.isLoggedIn && (
@@ -35,22 +40,43 @@ function App() {
         {!authctx.isLoggedIn && (
           <Route path="/admin">
             < AdminPage />
-            
+
           </Route>
         )}
 
         <Route path="/admin/AdminHome">
-          <AdminHome></AdminHome>
+          <div className="cont">
+
+            <AdminSidebar></AdminSidebar>
+
+            <AdminHome></AdminHome>
+          </div>
         </Route>
-        <Route path="/student/StudentHome">
-        {authctx.isLoggedIn &&  <StudentHome></StudentHome>}
+        <Route path="/student/:qid">
+          {authctx.isLoggedIn &&
+            <div className="cont">
+
+              <Sidebar></Sidebar>
+
+              <StudentHome></StudentHome>
+            </div>}
         </Route>
         <Route path="/staff/StaffHome">
-          {authctx.isLoggedIn && <StaffHome></StaffHome>}
+          {authctx.isLoggedIn &&
+            <div className="cont">
+
+              <Sidebar></Sidebar>
+              <StaffHome></StaffHome>
+            </div>}
         </Route>
 
         <Route path="/profile">
-          {authctx.isLoggedIn && <UserProfile />}
+          {authctx.isLoggedIn &&
+            <div className="cont">
+
+              <Sidebar></Sidebar>
+              <UserProfile />
+            </div>}
           {!authctx.isLoggedIn && <Redirect to="/auth"></Redirect>}
         </Route>
         <Route path="*">
