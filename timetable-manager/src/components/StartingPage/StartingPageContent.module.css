@@ -20,7 +20,7 @@
   margin: 40px;
   padding: 20px;
   padding: 20px 100px 18px 100px;
-  color: white;
+  color: rgb(246, 239, 239);
   font-family: arial;
   font-size: 18px;
   letter-spacing: 1px;
@@ -35,6 +35,7 @@
 
 .btn:hover{
  background: #c06c6c;
+ 
 }
 
 

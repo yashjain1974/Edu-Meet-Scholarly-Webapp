@@ -1,20 +1,23 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,useContext} from "react";
 import Section from "../UI/Section";
 import UserItem from "./UserItem";
 import classes from "./UserView.module.css"
+import AuthContext from "../../store/auth-context"
+
 const UserView = (props) => {
     const [user, setUser] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isHttpError, setIsHttpError] = useState();
     const [isEmpty,setIsEmpty]=useState(false);
+    const ctx=useContext(AuthContext);
     useEffect(() => {
       const fetchUser = async () => {
         const response = await fetch(
-          "https://to-do-task-7340d-default-rtdb.firebaseio.com/tasks.json"
+          props.Urll
         );
   
         if (!response.ok) {
-          throw new Error("Unable to fetch Meals");
+          throw new Error("Unable to fetch Users");
         }
         const data = await response.json();
 
@@ -32,20 +35,26 @@ const UserView = (props) => {
         if(loadData.length===0){
           setIsEmpty(true);
         }
+        console.log(loadData[0].email);
 
         setUser(loadData);
         setIsLoading(false);
-      };
-  
+        
+      }
       fetchUser().catch((error) => {
         setIsLoading(false);
         setIsHttpError(error.message);
       });
+  
+      
+      
     }, []);
+      
   
     const mealList = user.map((ids) => {
       return (
         <React.Fragment>
+
           <UserItem id={ids.id}
             name={ids.name}
             email={ids.email}

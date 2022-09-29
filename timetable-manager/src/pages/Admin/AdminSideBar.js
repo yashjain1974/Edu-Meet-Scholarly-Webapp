@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import {
   CDBSidebar,
   CDBSidebarContent,
@@ -11,6 +12,9 @@ import {
 import { NavLink } from 'react-router-dom';
 
 const AdminSidebar = () => {
+  const p = useParams();
+
+
   return (
     <div style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}>
       <CDBSidebar textColor="#fff" backgroundColor="#5c2d01">
@@ -22,20 +26,20 @@ const AdminSidebar = () => {
 
         <CDBSidebarContent className="sidebar-content" iconShape="square">
           <CDBSidebarMenu>
-            <NavLink exact to="/" activeClassName="activeClicked">
+            <NavLink exact to={`/admin/AdminHome/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/tables" activeClassName="activeClicked">
+            <NavLink exact to={`/admin/staff/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Add Staff</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/tables" activeClassName="activeClicked">
+            <NavLink exact to={`/admin/student/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Add Student</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/profile" activeClassName="activeClicked">
+            <NavLink exact to={`/admin/profile/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Your Profile</CDBSidebarMenuItem>
             </NavLink>
 
-            
+
           </CDBSidebarMenu>
         </CDBSidebarContent>
 

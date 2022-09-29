@@ -1,12 +1,15 @@
 
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect,useContext} from "react";
 import useHttp from "../../Hooks/Http-use";
 import NewUser from "./NewUser";
 import UserView from "./UsersView";
+import classes from './UserData.module.css'
+import AuthContext from "../../store/auth-context";
 
 
-const UserData=()=>{
+const UserData=(props)=>{
     const [tasks, setTasks] = useState({});
+    console.log(props.fireUrl)
 
   const { isLoading, error, sendRequest: fetchTasks } = useHttp();
 
@@ -22,10 +25,10 @@ const UserData=()=>{
     };
 
     fetchTasks(
-      { url: 'https://to-do-task-7340d-default-rtdb.firebaseio.com/tasks.json' },
+      { url:props.fireUrl },
       transformTasks
     );
-  }, [fetchTasks]);
+  }, [fetchTasks,props.fireUrl]);
 
   const taskAddHandler = (task,email,password) => {
     setTasks((prevTasks) => prevTasks.concat(task));
@@ -33,12 +36,17 @@ const UserData=()=>{
 
   return (
     <React.Fragment>
-      < NewUser onAddTask={taskAddHandler} />
+      <section className={classes.profile}>
+        <h1>{props.userCategory}</h1>
+        <h1>{props.userName}</h1></section>
+
+      < NewUser onAddTask={taskAddHandler} Urll={props.fireUrl} signUrll={props.logUrl} />
       <UserView
         items={tasks}
         loading={isLoading}
         error={error}
         onFetch={fetchTasks}
+        Urll={props.fireUrl}
       />
     </React.Fragment>
   );

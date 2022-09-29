@@ -29,7 +29,7 @@ const AuthForm = (props) => {
     })
       .then((res) => {
         setIsLoading(false);
-       
+
         if (res.ok) {
           return res.json();
         } else {
@@ -46,8 +46,9 @@ const AuthForm = (props) => {
         const expirationTime = new Date(
           new Date().getTime() + +data.expiresIn * 1000
         );
+        console.log(data.email);
         Authctx.login(data.idToken, expirationTime.toISOString());
-        history.replace(`${props.navigate}`);
+        history.replace(`${props.navigate + data.email}`);
       })
       .catch((err) => {
         setisWeekPassword(true);
@@ -69,15 +70,15 @@ const AuthForm = (props) => {
       url = props.LogsignInUrl;
       fetchUserDetail(data, url);
     } else {
-      url =props.LogsignUpUrl;
-        
+      url = props.LogsignUpUrl;
+
       fetchUserDetail(data, url);
     }
   };
 
   return (
     <section className={classes.auth}>
-      
+
       <h1>{props.mode} Login </h1>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
@@ -107,7 +108,7 @@ const AuthForm = (props) => {
             className={classes.toggle}
             onClick={switchAuthModeHandler}
           >
-           
+
           </button>
         </div>
       </form>

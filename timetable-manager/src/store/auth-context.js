@@ -1,17 +1,20 @@
 import React, { useEffect, useState, useCallback } from "react";
+import { useHistory } from "react-router-dom";
 
 let logoutTimer;
 const AuthContext = React.createContext({
   token: "",
   isLoggedIn: false,
-  login: (token) => {},
-  logout: () => {},
-  id:"",
-  
+  login: (token) => { },
+  logout: () => { },
+  studentData: () => { }
+
+
+
 });
-function generateRandomInteger(max) {
-  return Math.floor(Math.random() * max) + 1;
-}
+// function generateRandomInteger(max) {
+//   return Math.floor(Math.random() * max) + 1;
+// }
 
 const calculateTime = (expirationTime) => {
   const currentTime = new Date().getTime();
@@ -36,21 +39,24 @@ const retreiveToken = () => {
   };
 };
 export const AuthContextProvider = (props) => {
+const his=useHistory();
   const tokenData = retreiveToken();
   let initializeToken;
+
   if (tokenData) {
     initializeToken = tokenData.token;
   }
 
   const [token, setToken] = useState(initializeToken);
-  
-  const LoginId="q"+ generateRandomInteger(100);
-  
+
+
+
   const userIsLoggedIn = !!token;
   const logOutHandler = useCallback(() => {
     setToken(null);
     localStorage.removeItem("token");
     localStorage.removeItem("expirationTime");
+    his.rep("/");
     if (logoutTimer) {
       clearTimeout(logoutTimer);
     }
@@ -61,11 +67,12 @@ export const AuthContextProvider = (props) => {
     localStorage.setItem("expirationTime", expirationTime);
     const remainingDuration = calculateTime(expirationTime);
     logoutTimer = setTimeout(logOutHandler, remainingDuration);
-    
+
   };
+
   useEffect(() => {
-    if(tokenData){
-    logoutTimer = setTimeout(logOutHandler, tokenData.duration);
+    if (tokenData) {
+      logoutTimer = setTimeout(logOutHandler, tokenData.duration);
     }
   }, [tokenData, logOutHandler]);
 
@@ -74,7 +81,9 @@ export const AuthContextProvider = (props) => {
     isLoggedIn: userIsLoggedIn,
     login: logInHandler,
     logout: logOutHandler,
-    id:LoginId
+
+
+
   };
   return (
     <AuthContext.Provider value={contextValue}>

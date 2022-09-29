@@ -15,7 +15,7 @@ const NewUser = (props) => {
   const enterTaskHandler = async (userName,userEmail,userPassword) => {
     sendTaskRequest(
       {
-        url: 'https://to-do-task-7340d-default-rtdb.firebaseio.com/tasks.json',
+        url: props.Urll,
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -24,15 +24,16 @@ const NewUser = (props) => {
         email:userEmail,
       password:userPassword },
       },
-      createTask.bind(null, userName,userEmail,userPassword)
+      createTask.bind(userEmail, userName,userEmail,userPassword)
     );
+    console.log(props.Urll);
   };
   
 
 
   return (
     <Section>
-      <AddUser onEnterTask={enterTaskHandler} loading={isLoading} />
+      <AddUser onEnterTask={enterTaskHandler} loading={isLoading}  SignUpUrl={props.signUrll}/>
       {error && <p>{error}</p>}
     </Section>
   );

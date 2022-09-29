@@ -13,8 +13,12 @@ import StaffHome from "./pages/Staff/StaffPage";
 import StudentHome from "./pages/Student/StudentPage";
 import Sidebar from "./components/UI/Sidebar";
 import AdminSidebar from "./pages/Admin/AdminSideBar";
+import DashBoard from "./pages/Admin/DashBoard";
+import AddStaff from "./pages/Admin/AddStaff";
+import AddStudent from "./pages/Admin/AddStudent";
 
 import './App.css'
+import DashBoardDes from "./components/AdminComp/DashBoardDes";
 
 function App() {
   const authctx = useContext(AuthContext);
@@ -44,12 +48,40 @@ function App() {
           </Route>
         )}
 
-        <Route path="/admin/AdminHome">
+        <Route path="/admin/AdminHome/:qid">
           <div className="cont">
 
             <AdminSidebar></AdminSidebar>
 
-            <AdminHome></AdminHome>
+            <DashBoardDes></DashBoardDes>
+          </div>
+        </Route>
+        <Route path="/admin/staff/:qid" exact>
+          <div className="cont">
+
+
+            <AdminSidebar></AdminSidebar>
+
+
+            <AddStaff></AddStaff>
+
+          </div>
+        </Route>
+        <Route path="/admin/student/:qid" exact>
+          <div className="cont">
+
+
+            <AdminSidebar></AdminSidebar>
+
+            <AddStudent></AddStudent>
+          </div>
+        </Route>
+        <Route path="/admin/profile/:qid" exact>
+          <div className="cont">
+
+            <AdminSidebar></AdminSidebar>
+
+            <UserProfile />
           </div>
         </Route>
         <Route path="/student/:qid">

@@ -2,7 +2,7 @@ import React from 'react';
 import AuthForm from '../components/Auth/AuthForm';
 
 const StaffPage = () => {
-  var url1="https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDL9-razGo1HMXZYtLVAISUgIb--XsB4YQ";
+  var url1="https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDmHdcNB-dQsfYWrJ3ItPyaTR125byfhjQ";
   return (
     <React.Fragment>
    <AuthForm LogsignInUrl={url1} mode="Staff" navigate="staff/StaffHome" />;

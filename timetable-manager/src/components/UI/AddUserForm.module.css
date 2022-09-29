@@ -35,4 +35,7 @@
     background-color: #9c095a;
     border-color: #9c095a;
   }
+  .invalid{
+    color: red;
+  }
   
