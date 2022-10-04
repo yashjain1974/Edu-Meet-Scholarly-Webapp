@@ -10,7 +10,7 @@ import {
 } from 'cdbreact';
 import { NavLink } from 'react-router-dom';
 
-const AdminSidebar = () => {
+const StudentSidebar = () => {
   const p = useParams();
   console.log(p);
 
@@ -20,22 +20,22 @@ const AdminSidebar = () => {
       <CDBSidebar textColor="#fff" backgroundColor="#5c2d01">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
           <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
-            Admin Portal
+            Student Portal
           </a>
         </CDBSidebarHeader>
 
         <CDBSidebarContent className="sidebar-content" iconShape="square">
           <CDBSidebarMenu>
-            <NavLink exact to={`/admin/AdminHome/${p.qid}`} activeClassName="activeClicked">
+            <NavLink exact to={`/student/studentHome/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/admin/staff/${p.qid}`} activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Add Staff</CDBSidebarMenuItem>
+            <NavLink exact to={`/student/timeTable/${p.qid}`} activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Teacher's Timetable</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/admin/student/${p.qid}`} activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Add Student</CDBSidebarMenuItem>
+            <NavLink exact to={`/student/slotBook/${p.qid}`} activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Book a Slot</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/admin/profile/${p.qid}`} activeClassName="activeClicked">
+            <NavLink exact to={`/student/profile/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Your Profile</CDBSidebarMenuItem>
             </NavLink>
 
@@ -57,4 +57,4 @@ const AdminSidebar = () => {
   );
 };
 
-export default AdminSidebar;
+export default StudentSidebar;

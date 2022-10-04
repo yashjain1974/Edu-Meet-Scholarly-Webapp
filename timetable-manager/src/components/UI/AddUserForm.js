@@ -1,18 +1,18 @@
-import { useRef,useState,useContext, useEffect } from 'react';
+import { useRef, useState, useContext, useEffect } from 'react';
 import AuthContext from "../../store/auth-context";
 
 import classes from './AddUserForm.module.css';
 
 const AddUser = (props) => {
   const UserInputRef = useRef();
- 
+
   const EmailInputRef = useRef();
   const PasswordInputRef = useRef();
   const Authctx = useContext(AuthContext);
   const [isweekPassword, setisWeekPassword] = useState(false);
   const [isweekPasswordMes, setisWeekPasswordMes] = useState("");
-  const [iserror,setIserror]=useState(false);
-  
+  const [iserror, setIserror] = useState(false);
+
   async function fetchUserDetail(data) {
     await fetch(props.SignUpUrl, {
       method: "POST",
@@ -22,7 +22,7 @@ const AddUser = (props) => {
       },
     })
       .then((res) => {
-       
+
         if (res.ok) {
           return res.json();
         } else {
@@ -30,7 +30,7 @@ const AddUser = (props) => {
             let errorMessage = "Authentication failed";
             if (data && data.error && data.error.message) {
               errorMessage = data.error.message;
-              
+
               throw new Error(errorMessage);
 
             }
@@ -49,12 +49,12 @@ const AddUser = (props) => {
         setIserror(true);
         setisWeekPasswordMes(err.message);
         console.log("nhi jii");
-        return ;
-        
+        return;
+
       });
-      console.log("Ohk jii");
-      
-      
+    console.log("Ohk jii");
+
+
   }
 
   const submitHandler = (event) => {
@@ -63,26 +63,26 @@ const AddUser = (props) => {
     const enteredUserValue = UserInputRef.current.value;
     const enteredEmailValue = EmailInputRef.current.value;
     const enteredPasswordValue = PasswordInputRef.current.value;
-    const d={
+    const d = {
       email: enteredEmailValue,
       password: enteredPasswordValue,
       returnSecureToken: true,
     }
-    
-   
-    if ( enteredUserValue.trim().length > 0 && enteredPasswordValue.trim().length>=8) {
-      
+
+
+    if (enteredUserValue.trim().length > 0 && enteredPasswordValue.trim().length >= 8) {
+
       fetchUserDetail(d);
-      props.onEnterTask(enteredUserValue,enteredEmailValue,enteredPasswordValue);
-     
-     
+      props.onEnterTask(enteredUserValue, enteredEmailValue, enteredPasswordValue);
+
+
     }
-    else{
+    else {
       setisWeekPassword(true);
       setisWeekPasswordMes("Password should be greater than 8 character ")
 
     }
-   
+
   };
 
   return (
@@ -90,10 +90,10 @@ const AddUser = (props) => {
       User Name:<input type='text' ref={UserInputRef} />
       User Email Id:<input type='email' ref={EmailInputRef} />
       User Password:<input type='text' ref={PasswordInputRef} />
-      
+
       {isweekPassword && (
-            <p className={classes.invalid}>{isweekPasswordMes} : please Enter again</p>
-          )}
+        <p className={classes.invalid}>{isweekPasswordMes} : please Enter again</p>
+      )}
       <button className={classes.btn}>{props.loading ? 'Adding...' : 'Add User'}</button>
     </form>
   );

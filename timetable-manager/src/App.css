@@ -23,6 +23,7 @@ h6 {
   display:flex;
   flex-grow: inherit;
   flex-direction: row;
+  justify-content: space-between;
  
  
  

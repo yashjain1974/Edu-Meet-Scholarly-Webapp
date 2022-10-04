@@ -8,14 +8,16 @@ import HomePage from "./pages/HomePage";
 import AuthContext from "./store/auth-context";
 import StaffPage from "./pages/StaffLogin";
 import AdminPage from "./pages/AdminLogin";
-import AdminHome from "./pages/Admin/AdminPage";
+import StudentSidebar from "./pages/Student/StudentSideBar";
+// import AdminHome from "./pages/Admin/AdminPage";
 import StaffHome from "./pages/Staff/StaffPage";
 import StudentHome from "./pages/Student/StudentPage";
 import Sidebar from "./components/UI/Sidebar";
 import AdminSidebar from "./pages/Admin/AdminSideBar";
-import DashBoard from "./pages/Admin/DashBoard";
+// import DashBoard from "./pages/Admin/DashBoard";
 import AddStaff from "./pages/Admin/AddStaff";
 import AddStudent from "./pages/Admin/AddStudent";
+import StaffSidebar from "./pages/Staff/StaffSidebar";
 
 import './App.css'
 import DashBoardDes from "./components/AdminComp/DashBoardDes";
@@ -84,22 +86,38 @@ function App() {
             <UserProfile />
           </div>
         </Route>
-        <Route path="/student/:qid">
+        <Route path="/student/studentHome/:qid">
           {authctx.isLoggedIn &&
             <div className="cont">
 
-              <Sidebar></Sidebar>
+              <StudentSidebar></StudentSidebar>
 
               <StudentHome></StudentHome>
             </div>}
         </Route>
-        <Route path="/staff/StaffHome">
+        <Route path="/student/profile/:qid" exact>
+          <div className="cont">
+
+            <StudentSidebar></StudentSidebar>
+
+            <UserProfile />
+          </div>
+        </Route>
+        <Route path="/staff/staffHome/:qid">
           {authctx.isLoggedIn &&
             <div className="cont">
 
-              <Sidebar></Sidebar>
+              <StaffSidebar></StaffSidebar>
               <StaffHome></StaffHome>
             </div>}
+        </Route>
+        <Route path="/staff/profile/:qid" exact>
+          <div className="cont">
+
+            <StaffSidebar></StaffSidebar>
+
+            <UserProfile />
+          </div>
         </Route>
 
         <Route path="/profile">

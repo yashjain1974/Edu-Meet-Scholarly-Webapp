@@ -56,7 +56,7 @@ const his=useHistory();
     setToken(null);
     localStorage.removeItem("token");
     localStorage.removeItem("expirationTime");
-    his.rep("/");
+    his.replace("/");
     if (logoutTimer) {
       clearTimeout(logoutTimer);
     }

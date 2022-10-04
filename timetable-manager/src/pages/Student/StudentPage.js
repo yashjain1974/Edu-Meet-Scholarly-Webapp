@@ -1,16 +1,20 @@
 import React, { useEffect, useState, useCallback } from "react"
-import { useId } from "react";
 import { useParams } from 'react-router-dom';
 import { getSingleStudent } from "../../lib/api";
-import { getAllStudent } from "../../lib/api";
+import Card from "../../components/UI/card";
 import useHttp from "../../lib/use-http";
+import DetailCard from "../../components/UI/DetailCard";
+import StUserForm from "./StUserForm";
+import StudentDetail from "./StudentDetail";
 const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
+
 
 const StudentHome = () => {
   const param = useParams();
   const [id, setId] = useState("");
+  
   const userId = param.qid;
-  const [data, setData] = useState({});
+
   // console.log(userId);
   const fetchData = useCallback(
     async function () {
@@ -18,7 +22,7 @@ const StudentHome = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Could not fetch staff.");
+        throw new Error(data.message || "Could not fetch student.");
       }
 
       const transformedQuotes = [];
@@ -36,10 +40,11 @@ const StudentHome = () => {
         if (transformedQuotes[key]["email"] === userId) {
           const sId = transformedQuotes[key]["id"];
           setId(sId);
+        
           return;
         };
       }
-    }, [useId]
+    }, [userId]
   )
   fetchData();
   const {
@@ -55,7 +60,7 @@ const StudentHome = () => {
 
   }, [sendRequest, id]);
   const myTimeout = setTimeout(loadedQuote, 10000);
-
+  console.log(loadedQuote);
   function myStopFunction() {
     clearTimeout(myTimeout);
   }
@@ -63,16 +68,16 @@ const StudentHome = () => {
   if (status === "pending") {
     return (
       <div className="centered">
-        Waiting...
+        <Card title="waiting"></Card>
       </div>
     );
   }
   if (error) {
-    return <p className="centered focused">{error}</p>;
+    return <p className="centered focused"> <Card title={error}></Card></p>;
   }
 
   if (!loadedQuote.email) {
-    return <p>No Quote found</p>;
+    return <p> <Card title="Fetching"></Card></p>;
   }
   // useEffect(()=>{
   //   const user=loadedQuote["user"];
@@ -85,6 +90,7 @@ const StudentHome = () => {
   // },[])
 
   myStopFunction();
+  console.log(id);
 
   const k = loadedQuote.user;
   const l = loadedQuote.email
@@ -94,11 +100,20 @@ const StudentHome = () => {
 
   return (
     <React.Fragment>
-      <div>
-        Welcome {k}
-        <hr></hr>
-        Email:{<p>{l}</p>}
-      </div>
+      <Card
+        title={k}
+        images="https://pngimg.com/uploads/student/student_PNG62543.png"
+
+        alt="batman"
+        name={l}
+      />
+      <DetailCard>
+
+        <StUserForm id={id}></StUserForm>
+        <StudentDetail id={id}></StudentDetail>
+      </DetailCard>
+
+
     </React.Fragment>
   )
 

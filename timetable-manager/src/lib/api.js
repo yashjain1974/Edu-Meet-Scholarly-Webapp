@@ -111,6 +111,23 @@ export async function addstudent(studentData) {
   return null;
 }
 
+
+export async function getDetailsStudent(studentId) {
+  const response = await fetch(`${FIREBASE_DOMAIN}/student/${studentId}.json`);
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Could not fetch quote.");
+  }
+
+  const loadedQuote = {
+    id: studentId,
+    ...data,
+  };
+
+  return loadedQuote;
+}
+
 // export async function addComment(requestData) {
 //   const response = await fetch(
 //     `${FIREBASE_DOMAIN}/staff/${requestData.quoteId}.json`,
