@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react"
-import { useParams } from 'react-router-dom';
+import { useParams,useHistory } from 'react-router-dom';
 import { getSingleStudent } from "../../lib/api";
 import Card from "../../components/UI/card";
 import useHttp from "../../lib/use-http";
@@ -10,6 +10,7 @@ const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
 
 
 const StudentHome = () => {
+  const hist=useHistory()
   const param = useParams();
   const [id, setId] = useState("");
   
@@ -32,6 +33,7 @@ const StudentHome = () => {
           id: key,
           ...data[key],
         };
+        
 
         transformedQuotes.push(quoteObj);
       }
@@ -96,7 +98,9 @@ const StudentHome = () => {
   const l = loadedQuote.email
 
 
-
+const navigateTo=()=>{
+hist.push(`/student/profile/${userId}`)
+}
 
   return (
     <React.Fragment>
@@ -107,11 +111,13 @@ const StudentHome = () => {
         alt="batman"
         name={l}
       />
-      <DetailCard>
+      <DetailCard id={id}>
 
-        <StUserForm id={id}></StUserForm>
+       
         <StudentDetail id={id}></StudentDetail>
+        <button onClick={navigateTo}>Update Details</button>
       </DetailCard>
+
 
 
     </React.Fragment>

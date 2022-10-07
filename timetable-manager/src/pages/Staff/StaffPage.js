@@ -1,13 +1,16 @@
 
 import React, { useEffect, useState, useCallback } from "react"
-import { useParams } from 'react-router-dom';
+import { useParams,useHistory } from 'react-router-dom';
 import { getSingleStaff } from "../../lib/api";
 import useHttp from "../../lib/use-http";
 import Card from "../../components/UI/card";
 import DetailCard from "../../components/UI/DetailCard";
+import StaffDetail from "./StaffDetail";
+
 const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
 
 const StaffHome = () => {
+  const hist=useHistory();
   const param = useParams();
   const [id, setId] = useState("");
   const userId = param.qid;
@@ -85,7 +88,9 @@ const StaffHome = () => {
   // },[])
 
   myStopFunction();
-
+  const navigateTo=()=>{
+    hist.push(`/staff/profile/${userId}`)
+    }
   const k = loadedQuote.user;
   const l = loadedQuote.email
   return (
@@ -99,14 +104,8 @@ const StaffHome = () => {
       />
       <DetailCard>
 
-        <div>
-          Batch:-B12<hr></hr>
-          Course:-<hr></hr>
-          Mobile Number:-<hr></hr>
-          Father's name:-<hr></hr>
-          Mother's name:-<hr></hr>
-          Current Semester:-<hr></hr>
-        </div>
+       <StaffDetail id={id}></StaffDetail>
+       <button onClick={navigateTo}>Update Details</button>
       </DetailCard>
 
 

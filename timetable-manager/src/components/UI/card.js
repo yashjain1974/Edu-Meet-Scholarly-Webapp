@@ -4,7 +4,7 @@ import classes from './Card.module.css'
 export default function Card(props) {
     let newClassName = `color_bg ${props.alt}`
     let bg_img = `url(${props.images})`
-    let { title, name } = props
+    let { title, name, year } = props
     return (
 
         <div className={classes.card}>
@@ -18,7 +18,7 @@ export default function Card(props) {
                     <h1>{title}</h1>
                     <p className={classes._name}>{name}</p>
                     <div className={classes.action}>
-                        <p>3rd Year Btech student
+                        <p>{year}
                         </p>
                        
                     </div>

@@ -9,6 +9,7 @@ import AuthContext from "./store/auth-context";
 import StaffPage from "./pages/StaffLogin";
 import AdminPage from "./pages/AdminLogin";
 import StudentSidebar from "./pages/Student/StudentSideBar";
+import StaffProfile from "./pages/Staff/SatffProfile";
 // import AdminHome from "./pages/Admin/AdminPage";
 import StaffHome from "./pages/Staff/StaffPage";
 import StudentHome from "./pages/Student/StudentPage";
@@ -18,6 +19,7 @@ import AdminSidebar from "./pages/Admin/AdminSideBar";
 import AddStaff from "./pages/Admin/AddStaff";
 import AddStudent from "./pages/Admin/AddStudent";
 import StaffSidebar from "./pages/Staff/StaffSidebar";
+import PersonalProfile from "./pages/Student/PersonalProfile";
 
 import './App.css'
 import DashBoardDes from "./components/AdminComp/DashBoardDes";
@@ -100,7 +102,7 @@ function App() {
 
             <StudentSidebar></StudentSidebar>
 
-            <UserProfile />
+            <PersonalProfile></PersonalProfile>
           </div>
         </Route>
         <Route path="/staff/staffHome/:qid">
@@ -116,7 +118,7 @@ function App() {
 
             <StaffSidebar></StaffSidebar>
 
-            <UserProfile />
+           <StaffProfile></StaffProfile>
           </div>
         </Route>
 

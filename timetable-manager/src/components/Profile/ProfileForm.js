@@ -2,7 +2,7 @@ import { useRef, useContext, useState } from "react";
 import classes from "./ProfileForm.module.css";
 import AuthContext from "../../store/auth-context";
 
-const ProfileForm = () => {
+const ProfileForm = (props) => {
   const refPassword = useRef();
   const authctx = useContext(AuthContext);
   const [errorMessage, seterrorMessage] = useState("");
@@ -11,7 +11,7 @@ const ProfileForm = () => {
 
   async function passwordChange(data) {
     await fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDL9-razGo1HMXZYtLVAISUgIb--XsB4YQ",
+      props.url,
       {
         method: "POST",
         body: JSON.stringify(data),

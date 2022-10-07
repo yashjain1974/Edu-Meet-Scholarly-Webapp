@@ -5,7 +5,7 @@ const UserProfile = () => {
   return (
     <section className={classes.profile}>
       <h1>Your User Profile</h1>
-      <ProfileForm />
+      <ProfileForm url="https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDL9-razGo1HMXZYtLVAISUgIb--XsB4YQ"/>
     </section>
   );
 };

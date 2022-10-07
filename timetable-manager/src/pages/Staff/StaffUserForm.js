@@ -1,8 +1,8 @@
 import React, { useState, useRef, useCallback } from "react"
-import classes from './StUserForm.module.css'
-import StudentDetail from "./StudentDetail";
+import classes from './StaffUserForm.module.css'
 
-const StUserForm = (props) => {
+
+const StaffUserForm = (props) => {
   const [isformValidity, setIsformValidity] = useState({
     contact: true,
     academic: true,
@@ -36,40 +36,39 @@ const StUserForm = (props) => {
     const enteredProgram = refProgram.current.value;
     const enteredBranch = refBranch.current.value;
     const enteredBatch = refBatch.current.value;
-    const enteredCurrentSem = refCurrentSem.current.value;
+    
 
     const isValidEnteredContact = !(enteredContactNumber.trim().length === 11);
     const isValidEnteredProgram = !(enteredProgram.trim() === "");
     const isValidEnteredAcademic = !(enteredAcademic.trim() === "");
     const isValidEnteredBranch = !(enteredBranch.trim() === "");
     const isValidEnteredBatch = !(enteredBatch.trim() === "");
-    const isValidEnteredCurrentSem = !(enteredCurrentSem.trim() === "");
+    
     setIsformValidity({
       contact: isValidEnteredContact,
       academic: isValidEnteredAcademic,
       program: isValidEnteredProgram,
       branch: isValidEnteredBranch,
       batch: isValidEnteredBatch,
-      semester: isValidEnteredCurrentSem,
+      
     });
     const formIsValid =
       isValidEnteredContact &&
       isValidEnteredAcademic &&
       isValidEnteredProgram &&
       isValidEnteredBranch &&
-      isValidEnteredBatch &&
-      isValidEnteredCurrentSem;
+      isValidEnteredBatch;
 
     if (!formIsValid) {
       return;
     }
     submitOrderHandler({
       contact: enteredContactNumber,
-      academics: enteredAcademic,
-      program: enteredProgram,
-      branch: enteredBranch,
-      batch: enteredBatch,
-      semester: enteredCurrentSem
+      Dept: enteredAcademic,
+      grade: enteredProgram,
+      office: enteredBranch,
+      room: enteredBatch,
+      
     })
 
   }
@@ -77,7 +76,7 @@ const StUserForm = (props) => {
     try {
       setIsSubmitting(true);
       const response = await fetch(
-        `https://userdetails-d84c5-default-rtdb.firebaseio.com/student/${props.id}.json`,
+        `https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/${props.id}.json`,
         {
           method: "PATCH",
           body: JSON.stringify(userData),
@@ -96,7 +95,7 @@ const StUserForm = (props) => {
   };
   const fetchData = useCallback(
     async function () {
-      const response = await fetch(`https://userdetails-d84c5-default-rtdb.firebaseio.com/student/${props.id}.json`);
+      const response = await fetch(`https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/${props.id}.json`);
       const data = await response.json();
       console.log(data);
 
@@ -151,22 +150,20 @@ const StUserForm = (props) => {
             </fieldset>
 
             <fieldset>
-              <input placeholder="Academic Year" ref={refAcademic} type="text" required />
+              <input placeholder="Department Name" ref={refAcademic} type="text" required />
             </fieldset>
 
             <fieldset>
-              <input placeholder="Program " ref={refProgram} type="text" required />
+              <input placeholder="Grade" ref={refProgram} type="text" required />
             </fieldset>
 
             <fieldset>
-              <input placeholder="Branch" ref={refBranch} type="text" required />
+              <input placeholder="Office Building " ref={refBranch} type="text" required />
             </fieldset>
             <fieldset>
-              <input placeholder="Batch" type="text" ref={refBatch} required />
+              <input placeholder="Room no " type="text" ref={refBatch} required />
             </fieldset>
-            <fieldset>
-              <input placeholder="Current Semester" type="text" ref={refCurrentSem} required />
-            </fieldset>
+            
 
 
 
@@ -190,4 +187,4 @@ const StUserForm = (props) => {
   )
 
 }
-export default StUserForm;
+export default StaffUserForm;
