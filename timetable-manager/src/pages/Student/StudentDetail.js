@@ -1,13 +1,15 @@
 import React, { useEffect } from "react"
-
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import classes from './StudentDetail.module.css'
 import { getDetailsStudent } from "../../lib/api";
 import useHttp from "../../lib/use-http";
 import Card from "../../components/UI/card";
-import Section from "../../components/UI/Section";
+
 
 
 
 const StudentDetail = (props) => {
+  const hist = useHistory();
   const {
     sendRequest,
     status,
@@ -80,24 +82,28 @@ const StudentDetail = (props) => {
   // })
   //   .then((response) => response.json())
   //   .then((json) => console.log(json));
+
+  const navigateTo = () => {
+    hist.push(`/student/profile/${props.kid}`)
+  }
   return (
     <React.Fragment>
-      <Section>
-        <h1>Details:</h1>
-        <p>  Contact:{contact};</p><hr></hr>
 
-        <p> Academics:{academic}</p><hr></hr>
-        <p> Program:{program}</p><hr></hr>
-        <p> Branch:{branch}</p><hr></hr>
-        <p> Batch:{batch}</p><hr></hr>
-        <p> Semester:{semester}</p><hr></hr>
+      <div className={classes.section}>
+        <div>
+          <marquee > <h1>STUDENT DETAIL</h1></marquee>
+          <p>CONTACT NUMBER : {contact} </p> <hr></hr>
+          <p>ACADEMICS : {academic} </p><hr></hr>
+          <p>PROGRAM : {program}</p><hr></hr>
+          <p>BRANCH : {branch} </p><hr></hr>
+          <p>BATCH : {batch} </p><hr></hr>
+          <p>SEMESTER : {semester} </p><hr></hr>
 
+          <button className={classes.glowonhover} type="button" onClick={navigateTo}>UPDATE ME!</button>
+        </div>
+  </div>
 
-      </Section>
-
-
-
-    </React.Fragment>
+ </React.Fragment>
 
   )
 }

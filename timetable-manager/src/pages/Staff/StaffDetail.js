@@ -1,13 +1,14 @@
 import React,{useEffect} from "react"
-
-import { getDetailsStudent, getSingleStaff } from "../../lib/api";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import {  getSingleStaff } from "../../lib/api";
 import useHttp from "../../lib/use-http";
 import Card from "../../components/UI/card";
 import Section from "../../components/UI/Section";
 
-
+import classes from './StaffDetail.module.css'
 
 const StaffDetail=(props)=>{
+  const hist=useHistory();
     const {
         sendRequest,
         status,
@@ -25,10 +26,10 @@ const StaffDetail=(props)=>{
     //     batch:batch,
     //     semester:semester}=loadedQuote;
     let contact;
-    let academic;
-    let program;
-    let branch;
-    let batch;
+    let dept;
+    let grade;
+    let office;
+    let room_no;
     
     console.log(loadedQuote);
 
@@ -37,20 +38,20 @@ const StaffDetail=(props)=>{
         contact=loadedQuote[key];
       }
       else if(key==="Dept"){
-        academic=loadedQuote[key];
+        dept=loadedQuote[key];
       }
       else if(key==="grade"){
-        program=loadedQuote[key];
+        grade=loadedQuote[key];
       }
       else if(key==="office"){
-        branch=loadedQuote[key];
+        office=loadedQuote[key];
       }
       else if(key==="room"){
-        batch=loadedQuote[key];
+        room_no=loadedQuote[key];
       }
      
 
-       console.log(batch)
+       
       }
       if (status === "pending") {
         return (
@@ -79,20 +80,24 @@ const StaffDetail=(props)=>{
 // })
 //   .then((response) => response.json())
 //   .then((json) => console.log(json));
+const navigateTo = () => {
+  hist.push(`/staff/profile/${props.kid}`)
+}
     return(
         <React.Fragment>
-          <Section>
-            <h1>Details:</h1>
-            <p>  Contact:{contact};</p><hr></hr>
-                
-            <p> Academics:{academic}</p><hr></hr>
-            <p> Program:{program}</p><hr></hr>
-            <p> Branch:{branch}</p><hr></hr>
-            <p> Batch:{batch}</p><hr></hr>
+           <div className={classes.section}>
+        <div>
+          <marquee > <h1>STAFF DETAIL</h1></marquee>
+          <p>CONTACT NUMBER : {contact} </p> <hr></hr>
+          <p>DEPARTMENT : {dept} </p><hr></hr>
+          <p>GRADE : {grade}</p><hr></hr>
+          <p>OFFICE : {office} </p><hr></hr>
+          <p>ROOM : {room_no} </p><hr></hr>
           
-           
 
-            </Section>
+          <button className={classes.glowonhover} type="button" onClick={navigateTo}>UPDATE ME!</button>
+        </div>
+  </div>
 
           
 

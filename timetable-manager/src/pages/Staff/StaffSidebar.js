@@ -16,11 +16,11 @@ const StaffSidebar = () => {
 
 
   return (
-    <div style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}>
+    <div style={{ display: 'flex', minHeight: '100vh', overflow: 'scroll initial' }}>
       <CDBSidebar textColor="#fff" backgroundColor="#5c2d01">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
           <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
-            Student Portal
+            Staff Portal
           </a>
         </CDBSidebarHeader>
 

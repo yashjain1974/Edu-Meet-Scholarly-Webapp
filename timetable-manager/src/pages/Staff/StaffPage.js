@@ -1,16 +1,15 @@
 
 import React, { useEffect, useState, useCallback } from "react"
-import { useParams,useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getSingleStaff } from "../../lib/api";
 import useHttp from "../../lib/use-http";
 import Card from "../../components/UI/card";
-import DetailCard from "../../components/UI/DetailCard";
 import StaffDetail from "./StaffDetail";
 
 const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
 
 const StaffHome = () => {
-  const hist=useHistory();
+  
   const param = useParams();
   const [id, setId] = useState("");
   const userId = param.qid;
@@ -88,9 +87,7 @@ const StaffHome = () => {
   // },[])
 
   myStopFunction();
-  const navigateTo=()=>{
-    hist.push(`/staff/profile/${userId}`)
-    }
+  
   const k = loadedQuote.user;
   const l = loadedQuote.email
   return (
@@ -102,11 +99,11 @@ const StaffHome = () => {
         alt="batman"
         name={l}
       />
-      <DetailCard>
+      
 
-       <StaffDetail id={id}></StaffDetail>
-       <button onClick={navigateTo}>Update Details</button>
-      </DetailCard>
+       <StaffDetail id={id} kid={userId}></StaffDetail>
+       
+     
 
 
     </React.Fragment>

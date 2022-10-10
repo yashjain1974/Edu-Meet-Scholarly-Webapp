@@ -1,6 +1,7 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 import { useContext } from "react";
 
+import StaffTimeTable from "./pages/Staff/StaffTimeTable";
 import Layout from "./components/Layout/Layout";
 import UserProfile from "./components/Profile/UserProfile";
 import StudentPage from "./pages/StudentLogin";
@@ -23,6 +24,7 @@ import PersonalProfile from "./pages/Student/PersonalProfile";
 
 import './App.css'
 import DashBoardDes from "./components/AdminComp/DashBoardDes";
+
 
 function App() {
   const authctx = useContext(AuthContext);
@@ -112,6 +114,14 @@ function App() {
               <StaffSidebar></StaffSidebar>
               <StaffHome></StaffHome>
             </div>}
+        </Route>
+        <Route path="/staff/timeTable/:qid" exact>
+          <div className="cont">
+
+            <StaffSidebar></StaffSidebar>
+
+          <StaffTimeTable></StaffTimeTable>
+          </div>
         </Route>
         <Route path="/staff/profile/:qid" exact>
           <div className="cont">
