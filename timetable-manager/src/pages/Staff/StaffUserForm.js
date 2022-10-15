@@ -73,7 +73,9 @@ const StaffUserForm = (props) => {
 
   }
   const submitOrderHandler = async (userData) => {
+
     try {
+      console.log(userData);
       setIsSubmitting(true);
       const response = await fetch(
         `https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/${props.id}.json`,

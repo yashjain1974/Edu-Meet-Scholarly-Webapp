@@ -2,6 +2,7 @@ import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import { ViewState, EditingState, IntegratedEditing } from '@devexpress/dx-react-scheduler';
 import { red,amber } from '@mui/material/colors';
+import Appointment from './Resources/appointments';
 import {
   Scheduler,
   Resources,
@@ -15,13 +16,77 @@ import {
 
 
 
-import { appointments } from './Resources/appointments';
 
-const submitOrderHandler = async (day,time,userData) => {
-  try {
+import { appoint } from './Resources/appointments';
+
+console.log(appoint);
+const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
+let timetable=[]
+async function getAllStaff() {
+  const response = await fetch(`${FIREBASE_DOMAIN}/staff/-ND-W7QSbcPJme6zVAqn/timeTable.json`);
+  const data = await response.json();
+  for (const key in data) {
+    const quoteObj = {
+      id: key,
+      ...data[key],
+    };
+   timetable.push(quoteObj);
     
+
+
+}
+}
+const appointments=timetable;
+getAllStaff();
+console.log(appointments[0])
+
+
+
+const submitOrderHandler = async (day,userData) => {
+  try {
+    //`
     const response = await fetch(
-      `https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/-ND-W7QSbcPJme6zVAqn/timeTable/${day}/${time}.json`,
+      `https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/-ND-W7QSbcPJme6zVAqn/timeTable/${day}.json`,
+      {
+        method: "PATCH",
+        body: JSON.stringify(userData),
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Unable to Order...");
+    }
+    
+
+  } catch (error) {
+    
+  }
+};
+
+
+const submitDelete = async (day) => {
+  try {
+    //`
+    const response = await fetch(
+      `https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/-ND-W7QSbcPJme6zVAqn/timeTable/${day}.json`,
+      {
+        method: "DELETE",
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Unable to Order...");
+    }
+    
+
+  } catch (error) {
+    
+  }
+};
+
+const submitChanged = async (day,userData) => {
+  try {
+    //`
+    const response = await fetch(
+      `https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/-ND-W7QSbcPJme6zVAqn/timeTable/${day}.json`,
       {
         method: "PATCH",
         body: JSON.stringify(userData),
@@ -69,10 +134,13 @@ const BasicLayout = ({ onFieldChange, appointmentData, ...restProps }) => {
 
 
 export default class Rough extends React.PureComponent {
+  
+
   constructor(props) {
     super(props);
     this.state = {
       data: appointments,
+      currentDate:new Date(),
       resources: [
         {
           fieldName: 'roomId',
@@ -108,28 +176,51 @@ export default class Rough extends React.PureComponent {
         const entime=added.endDate.getHours();
         const stime=added.startDate.getHours();
         const timee=`${stime}-${entime}`
-        submitOrderHandler(day,timee,added)
+        submitOrderHandler(startingAddedId,added);
         
         data = [...data, { id: startingAddedId, ...added }];
         
         
       }
       if (changed) {
+        console.log(changed);
         data = data.map(appointment => (
           changed[appointment.id] ? { ...appointment, ...changed[appointment.id] } : appointment));
+          
+        
+        const k = data.map(appointment => (
+          changed[appointment.id]!==undefined ));
+          let id;
+          for(const key in k){
+            if(k[key]===true){
+              id=key;
+
+            }
+            console.log(k[key])
+          }
+          console.log(data[id])
+          submitChanged(id,data[id]);
+          
+          
+
       }
       if (deleted !== undefined) {
         data = data.filter(appointment => appointment.id !== deleted);
+        console.log(deleted)
+        submitDelete(deleted);
       }
       return { data };
     });
   }
+ 
   
   render() {
+    
     const { currentDate, data,resources } = this.state;
 console.log(data)
     return (
       <Paper>
+        <Appointment></Appointment>
         
         <Scheduler
           data={data}
@@ -137,6 +228,7 @@ console.log(data)
         >
           <ViewState
             currentDate={currentDate}
+            defaultCurrentDate={currentDate}
           />
           <EditingState
             onCommitChanges={this.commitChanges}

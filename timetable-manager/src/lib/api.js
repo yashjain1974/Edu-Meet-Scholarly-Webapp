@@ -127,6 +127,28 @@ export async function getDetailsStudent(studentId) {
 
   return loadedQuote;
 }
+//-ND-W7QSbcPJme6zVAqn
+export async function getTimetable(idd) {
+  const response = await fetch(`${FIREBASE_DOMAIN}/staff/${idd}/timeTable.json`);
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Could not fetch staff.");
+  }
+
+  const transformedQuotes = [];
+
+  for (const key in data) {
+    const quoteObj = {
+      id: key,
+      ...data[key],
+    };
+
+    transformedQuotes.push(quoteObj);
+  }
+
+  return transformedQuotes;
+}
 
 // export async function addComment(requestData) {
 //   const response = await fetch(
