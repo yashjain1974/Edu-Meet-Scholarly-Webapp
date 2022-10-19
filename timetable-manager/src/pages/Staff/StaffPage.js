@@ -1,14 +1,15 @@
 
-import React, { useEffect, useState, useCallback } from "react"
+import React, { useEffect, useState, useCallback,useContext } from "react"
 import { useParams } from 'react-router-dom';
 import { getSingleStaff } from "../../lib/api";
 import useHttp from "../../lib/use-http";
 import Card from "../../components/UI/card";
 import StaffDetail from "./StaffDetail";
-
+import AuthContext from "../../store/auth-context";
 const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
 
 const StaffHome = () => {
+  const ctx=useContext(AuthContext);
   
   const param = useParams();
   const [id, setId] = useState("");
@@ -38,6 +39,7 @@ const StaffHome = () => {
         if (transformedQuotes[key]["email"] === userId) {
           const sId = transformedQuotes[key]["id"];
           setId(sId);
+          ctx.setidd(sId);
           return;
         };
       }

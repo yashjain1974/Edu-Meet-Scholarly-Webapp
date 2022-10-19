@@ -48,6 +48,7 @@ const AuthForm = (props) => {
         );
         console.log(data.email);
         Authctx.login(data.idToken, expirationTime.toISOString());
+     
         history.replace(`${props.navigate + data.email}`);
       })
       .catch((err) => {

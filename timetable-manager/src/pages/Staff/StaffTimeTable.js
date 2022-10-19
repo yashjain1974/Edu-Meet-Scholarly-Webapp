@@ -18,35 +18,20 @@ import {
 
 
 import { appoint } from './Resources/appointments';
+import AuthContext from '../../store/auth-context';
 
 console.log(appoint);
-const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
-let timetable=[]
-async function getAllStaff() {
-  const response = await fetch(`${FIREBASE_DOMAIN}/staff/-ND-W7QSbcPJme6zVAqn/timeTable.json`);
-  const data = await response.json();
-  for (const key in data) {
-    const quoteObj = {
-      id: key,
-      ...data[key],
-    };
-   timetable.push(quoteObj);
-    
 
-
-}
-}
-const appointments=timetable;
-getAllStaff();
-console.log(appointments[0])
+const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com/staff";
 
 
 
-const submitOrderHandler = async (day,userData) => {
+
+const submitOrderHandler = async (day,userData,id) => {
   try {
     //`
     const response = await fetch(
-      `https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/-ND-W7QSbcPJme6zVAqn/timeTable/${day}.json`,
+      `${FIREBASE_DOMAIN}/${id}/timeTable/${day}.json`,
       {
         method: "PATCH",
         body: JSON.stringify(userData),
@@ -63,11 +48,11 @@ const submitOrderHandler = async (day,userData) => {
 };
 
 
-const submitDelete = async (day) => {
+const submitDelete = async (day,id) => {
   try {
     //`
     const response = await fetch(
-      `https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/-ND-W7QSbcPJme6zVAqn/timeTable/${day}.json`,
+      `${FIREBASE_DOMAIN}/${id}/timeTable/${day}.json`,
       {
         method: "DELETE",
       }
@@ -82,11 +67,11 @@ const submitDelete = async (day) => {
   }
 };
 
-const submitChanged = async (day,userData) => {
+const submitChanged = async (day,userData,id) => {
   try {
     //`
     const response = await fetch(
-      `https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/-ND-W7QSbcPJme6zVAqn/timeTable/${day}.json`,
+      `${FIREBASE_DOMAIN}/${id}/timeTable/${day}.json`,
       {
         method: "PATCH",
         body: JSON.stringify(userData),
@@ -134,12 +119,15 @@ const BasicLayout = ({ onFieldChange, appointmentData, ...restProps }) => {
 
 
 export default class Rough extends React.PureComponent {
+  static contextType=AuthContext;
+  
   
 
   constructor(props) {
     super(props);
     this.state = {
-      data: appointments,
+      idd:"",
+      data: [],
       currentDate:new Date(),
       resources: [
         {
@@ -165,18 +153,24 @@ export default class Rough extends React.PureComponent {
 
     this.commitChanges = this.commitChanges.bind(this);
   }
+  
 
   commitChanges({ added, changed, deleted }) {
     this.setState((state) => {
-      let { data } = state;
+      let { id,data } = state;
+      
       if (added) {
-        const startingAddedId = data.length > 0 ? data[data.length - 1].id + 1 : 0;
+        
+        const startingAddedId = data.length > 0 ? parseInt(data[data.length - 1].id) + 1 : 0;
         console.log(added)
         const day=added.endDate.getDay();
         const entime=added.endDate.getHours();
         const stime=added.startDate.getHours();
         const timee=`${stime}-${entime}`
-        submitOrderHandler(startingAddedId,added);
+        let k=localStorage.getItem("id");
+        
+        submitOrderHandler(startingAddedId,added,k);
+      
         
         data = [...data, { id: startingAddedId, ...added }];
         
@@ -199,31 +193,59 @@ export default class Rough extends React.PureComponent {
             console.log(k[key])
           }
           console.log(data[id])
-          submitChanged(id,data[id]);
+          let UserId=localStorage.getItem("id");
+          submitChanged(id,data[id],UserId);
           
           
 
       }
       if (deleted !== undefined) {
         data = data.filter(appointment => appointment.id !== deleted);
-        console.log(deleted)
-        submitDelete(deleted);
+        let k=localStorage.getItem("id");
+        console.log(deleted,k)
+        submitDelete(deleted,k);
       }
       return { data };
     });
   }
- 
   
-  render() {
+ 
+  async componentDidMount() {
+    const timetable=[]
+    console.log(this.context.id);
+    let k=localStorage.getItem("id");
+    //It will get the data from context, and put it into the state.
+ const response = await fetch(`${FIREBASE_DOMAIN}/${k}/timeTable.json`);
+    const data = await response.json();
+    for (const key in data) {
+      const quoteObj = {
+        id: key,
+        ...data[key],
+      };
+     timetable.push(quoteObj);
     
-    const { currentDate, data,resources } = this.state;
-console.log(data)
+      
+     console.log(timetable)
+  
+  }
+  this.setState({data:timetable})
+  
+  
+  
+  
+  }
+  render() {
+   
+    
+    const { currentDate, data,resources,idd } = this.state;
+    console.log(this.state.data)
+console.log(idd);
     return (
       <Paper>
         <Appointment></Appointment>
         
         <Scheduler
-          data={data}
+          data={this.state.data}
           height={660}
         >
           <ViewState

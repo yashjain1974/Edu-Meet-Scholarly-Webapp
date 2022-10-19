@@ -7,7 +7,10 @@ const AuthContext = React.createContext({
   isLoggedIn: false,
   login: (token) => { },
   logout: () => { },
-  studentData: () => { }
+  id:"",
+  setidd:(id)=>{ },
+
+
 
 
 
@@ -48,14 +51,17 @@ const his=useHistory();
   }
 
   const [token, setToken] = useState(initializeToken);
+  const[id,setid]=useState("");
 
 
 
   const userIsLoggedIn = !!token;
   const logOutHandler = useCallback(() => {
     setToken(null);
+    setid("");
     localStorage.removeItem("token");
     localStorage.removeItem("expirationTime");
+    localStorage.removeItem("id");
     his.replace("/");
     if (logoutTimer) {
       clearTimeout(logoutTimer);
@@ -69,6 +75,12 @@ const his=useHistory();
     logoutTimer = setTimeout(logOutHandler, remainingDuration);
 
   };
+  const setIdHandler = (idd) => {
+    setid(idd);
+    localStorage.setItem("id", idd);
+
+  };
+
 
   useEffect(() => {
     if (tokenData) {
@@ -81,6 +93,9 @@ const his=useHistory();
     isLoggedIn: userIsLoggedIn,
     login: logInHandler,
     logout: logOutHandler,
+    id:id,
+    setidd:setIdHandler
+    
 
 
 
