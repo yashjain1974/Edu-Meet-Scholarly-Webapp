@@ -9,6 +9,7 @@ const AuthContext = React.createContext({
   logout: () => { },
   id:"",
   setidd:(id)=>{ },
+  users: [],
 
 
 

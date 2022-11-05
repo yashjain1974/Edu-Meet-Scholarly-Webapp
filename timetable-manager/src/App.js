@@ -1,6 +1,5 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 import { useContext } from "react";
-
 import StaffTimeTable from "./pages/Staff/StaffTimeTable";
 import Layout from "./components/Layout/Layout";
 import UserProfile from "./components/Profile/UserProfile";
@@ -24,6 +23,7 @@ import PersonalProfile from "./pages/Student/PersonalProfile";
 
 import './App.css'
 import DashBoardDes from "./components/AdminComp/DashBoardDes";
+import SearchStudent from "./pages/Staff/SearchStudent";
 
 
 function App() {
@@ -120,7 +120,15 @@ function App() {
 
             <StaffSidebar></StaffSidebar>
 
-          <StaffTimeTable></StaffTimeTable>
+            <StaffTimeTable></StaffTimeTable>
+          </div>
+        </Route>
+        <Route path="/staff/slotBook/:qid" exact>
+          <div className="cont">
+
+            <StaffSidebar></StaffSidebar>
+
+           <SearchStudent></SearchStudent>
           </div>
         </Route>
         <Route path="/staff/profile/:qid" exact>
@@ -128,7 +136,7 @@ function App() {
 
             <StaffSidebar></StaffSidebar>
 
-           <StaffProfile></StaffProfile>
+            <StaffProfile></StaffProfile>
           </div>
         </Route>
 

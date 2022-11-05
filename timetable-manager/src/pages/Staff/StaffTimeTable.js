@@ -163,10 +163,7 @@ export default class Rough extends React.PureComponent {
         
         const startingAddedId = data.length > 0 ? parseInt(data[data.length - 1].id) + 1 : 0;
         console.log(added)
-        const day=added.endDate.getDay();
-        const entime=added.endDate.getHours();
-        const stime=added.startDate.getHours();
-        const timee=`${stime}-${entime}`
+       
         let k=localStorage.getItem("id");
         
         submitOrderHandler(startingAddedId,added,k);
