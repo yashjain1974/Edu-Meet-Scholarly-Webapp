@@ -10,6 +10,9 @@ const AuthContext = React.createContext({
   id:"",
   setidd:(id)=>{ },
   users: [],
+  setTeacherId:(id)=>{},
+  teacherId:"",
+
 
 
 
@@ -53,6 +56,7 @@ const his=useHistory();
 
   const [token, setToken] = useState(initializeToken);
   const[id,setid]=useState("");
+  const[teacherid,setTeacher]=useState("");
 
 
 
@@ -67,7 +71,7 @@ const his=useHistory();
     if (logoutTimer) {
       clearTimeout(logoutTimer);
     }
-  }, []);
+  }, [his]);
   const logInHandler = (token, expirationTime) => {
     setToken(token);
     localStorage.setItem("token", token);
@@ -81,6 +85,13 @@ const his=useHistory();
     localStorage.setItem("id", idd);
 
   };
+  const setTeacherIdHandler = (idd) => {
+    setTeacher(idd);
+    localStorage.setItem("teacherId", idd);
+
+  };
+
+
 
 
   useEffect(() => {
@@ -95,7 +106,10 @@ const his=useHistory();
     login: logInHandler,
     logout: logOutHandler,
     id:id,
-    setidd:setIdHandler
+    setidd:setIdHandler,
+    setTeacherId:setTeacherIdHandler,
+    teacherId:teacherid,
+
     
 
 

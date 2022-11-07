@@ -12,6 +12,7 @@ import StudentSidebar from "./pages/Student/StudentSideBar";
 import StaffProfile from "./pages/Staff/SatffProfile";
 // import AdminHome from "./pages/Admin/AdminPage";
 import StaffHome from "./pages/Staff/StaffPage";
+import TeacherList from "./pages/Student/TeacherList";
 import StudentHome from "./pages/Student/StudentPage";
 import Sidebar from "./components/UI/Sidebar";
 import AdminSidebar from "./pages/Admin/AdminSideBar";
@@ -24,6 +25,7 @@ import PersonalProfile from "./pages/Student/PersonalProfile";
 import './App.css'
 import DashBoardDes from "./components/AdminComp/DashBoardDes";
 import SearchStudent from "./pages/Staff/SearchStudent";
+import TeacherTimeTable from "./pages/Student/TeacherTimetable";
 
 
 function App() {
@@ -99,6 +101,18 @@ function App() {
               <StudentHome></StudentHome>
             </div>}
         </Route>
+
+        <Route path="/student/timeTable/:qid">
+          {authctx.isLoggedIn &&
+            <div className="cont">
+
+              <StudentSidebar></StudentSidebar>
+
+              <TeacherList></TeacherList>
+            </div>}
+        </Route>
+        
+
         <Route path="/student/profile/:qid" exact>
           <div className="cont">
 
@@ -128,7 +142,7 @@ function App() {
 
             <StaffSidebar></StaffSidebar>
 
-           <SearchStudent></SearchStudent>
+            <SearchStudent></SearchStudent>
           </div>
         </Route>
         <Route path="/staff/profile/:qid" exact>

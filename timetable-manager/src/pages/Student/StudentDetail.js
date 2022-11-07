@@ -26,6 +26,9 @@ const StudentDetail = (props) => {
   //     branch:branch,
   //     batch:batch,
   //     semester:semester}=loadedQuote;
+  const navigateTo = () => {
+    hist.push(`/student/profile/${props.kid}`)
+  }
   let contact;
   let academic;
   let program;
@@ -67,7 +70,9 @@ const StudentDetail = (props) => {
   }
 
   if (!loadedQuote.academics) {
-    return <p> <Card title="Details is not filled "></Card></p>;
+    return <p> <Card title="Details are not filled ">
+      <button className={classes.glowonhover} type="button" onClick={navigateTo}>Fill Details!</button>
+      </Card></p>;
   }
 
 
@@ -83,9 +88,7 @@ const StudentDetail = (props) => {
   //   .then((response) => response.json())
   //   .then((json) => console.log(json));
 
-  const navigateTo = () => {
-    hist.push(`/student/profile/${props.kid}`)
-  }
+  
   return (
     <React.Fragment>
 

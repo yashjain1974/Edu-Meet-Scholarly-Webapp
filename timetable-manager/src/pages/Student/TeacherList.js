@@ -1,12 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
-import classes from "./SearchStudent.module.css"
+
+import classes from "./TeacherList.module.css"
+import { Link, useRouteMatch,Route } from "react-router-dom";
 import { FcGraduationCap } from 'react-icons/fc';
+import AuthContext from "../../store/auth-context";
+import TeacherTimeTable from "./TeacherTimetable";
 import React from "react";
-const SearchStudent = () => {
+const TeacherList = () => {
     const [error, setError] = useState(null);
+    const ctx = useContext(AuthContext)
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
+
 
     //     set search query to empty string
     const [q, setQ] = useState("");
@@ -16,10 +22,11 @@ const SearchStudent = () => {
     //     you can search countries even by their population
     // just add it to this array
     const [searchParam] = useState(["capital", "name"]);
+    const match = useRouteMatch();
 
     useEffect(() => {
         // our fetch codes
-        fetch("https://userdetails-d84c5-default-rtdb.firebaseio.com/student.json")
+        fetch("https://userdetails-d84c5-default-rtdb.firebaseio.com/staff.json")
             .then((res) => res.json())
             .then(
                 (data) => {
@@ -30,8 +37,9 @@ const SearchStudent = () => {
                             id: key,
                             name: data[key].user,
                             email: data[key].email,
-                            batch: data[key].batch,
-                            semester: data[key].semester
+                            dept: data[key].Dept,
+                            room: data[key].room,
+
                         });
                     }
                     setItems(loadData);
@@ -56,31 +64,41 @@ const SearchStudent = () => {
             return searchParam.some((newItem) => {
                 return (
 
-                    item["email"].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
+                    item["name"].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
                 );
             });
         });
+    }
+    const seeTimeTable = (event) => {
+        const k = event.target.value;
+        ctx.setTeacherId(k);
+        localStorage.getItem("teacherId");
+
+
+
+
+
+
     }
     if (error) {
 
         <>{error.message}</>;
 
     } else if (!isLoaded) {
-        return <>loading...</>;
+        return <div className={classes.loading}>loading...</div>;
     } else {
 
 
         return (
-
             <div className={classes.wrapper}>
-                <div class="container">
+                <div className={classes.cont}>
                     <h3>
-                        <span>Search Student By Enrollment</span><br></br>
+                        <span>Search Teacher By Name</span><br></br>
                         <label htmlFor="search-form">
                             <input type="search" class="form-control search-input" data-table="customers-list"
                                 name="search-form"
                                 id="search-form"
-                                placeholder="Search Student..."
+                                placeholder="Search..."
                                 value={q}
                                 /* 
                                 // set the value of our useState e
@@ -97,25 +115,37 @@ const SearchStudent = () => {
                                 <th>Name</th>
                                 <th>Email</th>
 
-                                <th>Batch</th>
+                                <th>Department</th>
                                 <th>Select</th>
                             </tr>
                         </thead>
                         { search(items).map((item) => (
+                           
                         <tbody>
                             <tr>
 
                                 <td>{item.name}</td>
                                 <td>{item.email}</td>
-                                <td>{item.batch}</td>
-                                <td><div class="checkbox">
-                                    <input type="checkbox" name="round-checkbox" id="round-checkbox"></input>
-                                    <label for="round-checkbox">checked</label>
-                                </div></td>
+                                <td>{item.dept}</td>
+                                <td> <Link to={`${match.url}/${item.id}`}><button className={classes.btn} onClick={seeTimeTable} value={item.id}>See Time table</button></Link></td>
                             </tr>
-
+                            
+                         <Route path={`${match.path}/${item.id}`}>
+                            <div className={classes.timeTable}>
+                             <TeacherTimeTable></TeacherTimeTable>
+                             </div>
+                         </Route>
+                           
+                            
                         </tbody>
-                          )  )
+                       
+                         
+                       
+
+
+                          )  
+                          
+                          )
                     }
                     
     
@@ -124,16 +154,17 @@ const SearchStudent = () => {
 
                     </table>
                 </div>
+               
             </div>
 
+                              
+                            
                        
-        
-                   )     }               
+        );
 
 
-
-    
+    }
 
 }
 
-export default SearchStudent;
+export default TeacherList;

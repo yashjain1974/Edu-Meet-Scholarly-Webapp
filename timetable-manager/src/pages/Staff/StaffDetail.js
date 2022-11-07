@@ -25,6 +25,9 @@ const StaffDetail=(props)=>{
     //     branch:branch,
     //     batch:batch,
     //     semester:semester}=loadedQuote;
+    const navigateTo = () => {
+      hist.push(`/staff/profile/${props.kid}`)
+    }
     let contact;
     let dept;
     let grade;
@@ -65,7 +68,9 @@ const StaffDetail=(props)=>{
       }
     
       if (!loadedQuote.contact) {
-        return <p> <Card title="Details is not filled "></Card></p>;
+        return <p> <Card title="Details is not filled ">
+          <button className={classes.glowonhover} type="button" onClick={navigateTo}>Fill Details!</button>
+          </Card></p>;
       }
 
 
@@ -80,9 +85,7 @@ const StaffDetail=(props)=>{
 // })
 //   .then((response) => response.json())
 //   .then((json) => console.log(json));
-const navigateTo = () => {
-  hist.push(`/staff/profile/${props.kid}`)
-}
+
     return(
         <React.Fragment>
            <div className={classes.section}>
