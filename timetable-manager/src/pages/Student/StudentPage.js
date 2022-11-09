@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useCallback } from "react"
+import React, { useEffect, useState, useCallback,useContext } from "react"
+
 import { useParams } from 'react-router-dom';
 import { getSingleStudent } from "../../lib/api";
 import Card from "../../components/UI/card";
 import useHttp from "../../lib/use-http";
+import AuthContext from "../../store/auth-context";
 
 import StudentDetail from "./StudentDetail";
 
@@ -10,11 +12,14 @@ const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
 
 
 const StudentHome = () => {
+  const ctx=useContext(AuthContext);
   
   const param = useParams();
   const [id, setId] = useState("");
   
   const userId = param.qid;
+  ctx.setTeacherLoginId(userId);
+
 
   // console.log(userId);
   const fetchData = useCallback(

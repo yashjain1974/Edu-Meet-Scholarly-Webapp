@@ -26,6 +26,7 @@ import './App.css'
 import DashBoardDes from "./components/AdminComp/DashBoardDes";
 import SearchStudent from "./pages/Staff/SearchStudent";
 import TeacherTimeTable from "./pages/Student/TeacherTimetable";
+import SlotBook from "./pages/Student/SlotBook";
 
 
 function App() {
@@ -111,7 +112,17 @@ function App() {
               <TeacherList></TeacherList>
             </div>}
         </Route>
-        
+        <Route path="/student/slotBook/:qid">
+          {authctx.isLoggedIn &&
+            <div className="cont">
+
+              <StudentSidebar></StudentSidebar>
+              <SlotBook></SlotBook>
+
+
+            </div>}
+        </Route>
+
 
         <Route path="/student/profile/:qid" exact>
           <div className="cont">

@@ -3,6 +3,7 @@ import classes from './PersonalProfile.module.css';
 import StUserForm from './StUserForm';
 import DetailCard from '../../components/UI/DetailCard';
 import { useState,useCallback } from 'react';
+
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
 
@@ -15,6 +16,7 @@ const PersonalProfile = (props) => {
   const [id, setId] = useState("");
   
   const userId = param.qid;
+  
 
   // console.log(userId);
   const fetchData = useCallback(

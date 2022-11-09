@@ -1,17 +1,18 @@
 import { useState, useEffect, useContext } from "react";
-
+import Modal from "../../components/UI/Modal";
 
 import classes from "./TeacherList.module.css"
-import { Link, useRouteMatch,Route } from "react-router-dom";
+import { Link, useRouteMatch, Route } from "react-router-dom";
 import { FcGraduationCap } from 'react-icons/fc';
 import AuthContext from "../../store/auth-context";
 import TeacherTimeTable from "./TeacherTimetable";
 import React from "react";
-const TeacherList = () => {
+const TeacherList = (props) => {
     const [error, setError] = useState(null);
     const ctx = useContext(AuthContext)
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
+    const [timeTableisVisible, setTimetableisVisible] = useState(false);
 
 
     //     set search query to empty string
@@ -80,6 +81,18 @@ const TeacherList = () => {
 
 
     }
+    const isClickHandler = (event) => {
+        setTimetableisVisible(true);
+        const k = event.target.value;
+        ctx.setTeacherId(k);
+        localStorage.getItem("teacherId");
+
+    };
+
+    const HideCartHandler = () => {
+        setTimetableisVisible(false);
+    };
+
     if (error) {
 
         <>{error.message}</>;
@@ -119,47 +132,54 @@ const TeacherList = () => {
                                 <th>Select</th>
                             </tr>
                         </thead>
-                        { search(items).map((item) => (
-                           
-                        <tbody>
-                            <tr>
+                        {search(items).map((item) => (
 
-                                <td>{item.name}</td>
-                                <td>{item.email}</td>
-                                <td>{item.dept}</td>
-                                <td> <Link to={`${match.url}/${item.id}`}><button className={classes.btn} onClick={seeTimeTable} value={item.id}>See Time table</button></Link></td>
-                            </tr>
-                            
-                         <Route path={`${match.path}/${item.id}`}>
-                            <div className={classes.timeTable}>
-                             <TeacherTimeTable></TeacherTimeTable>
-                             </div>
-                         </Route>
-                           
-                            
-                        </tbody>
-                       
-                         
-                       
+                            <tbody>
+                                <tr>
+
+                                    <td>{item.name}</td>
+                                    <td>{item.email}</td>
+                                    <td>{item.dept}</td>
+
+                                    <td>
+                                        <Link to={`${match.url}/${item.id}`}><button className={classes.btn} onClick={isClickHandler} value={item.id}>See Time table</button></Link>
+                                    </td>
+                                </tr>
+                                {timeTableisVisible && <Modal onClose={HideCartHandler}>
+
+                                    <Route path={`${match.path}/${item.id}`}>
+                                        <div className={classes.timeTable}>
+                                            <TeacherTimeTable onClose={HideCartHandler}></TeacherTimeTable>
+                                        </div>
+                                    </Route>
+
+                                </Modal>
+                                }
 
 
-                          )  
-                          
-                          )
-                    }
-                    
-    
-    
+                            </tbody>
+
+
+
+
+
+                        )
+
+                        )
+                        }
+
+
+
 
 
                     </table>
                 </div>
-               
+
             </div>
 
-                              
-                            
-                       
+
+
+
         );
 
 
