@@ -2,7 +2,7 @@ import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import { red, amber } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Scheduler,
   WeekView,

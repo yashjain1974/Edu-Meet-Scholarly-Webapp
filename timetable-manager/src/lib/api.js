@@ -25,6 +25,7 @@ export async function getAllStaff() {
 export async function getSingleStaff(staffId) {
   const response = await fetch(`${FIREBASE_DOMAIN}/staff/${staffId}.json`);
   const data = await response.json();
+ 
 
   if (!response.ok) {
     throw new Error(data.message || "Could not fetch quote.");
@@ -192,3 +193,27 @@ export async function getTimetable(idd) {
 
 //   return transformedComments;
 // }
+
+export async function getAllNotification(teacherId) {
+  const response = await fetch(`${FIREBASE_DOMAIN}/staff/${teacherId}/notification.json/`);
+ 
+  const data = await response.json();
+  console.log(data);
+
+  if (!response.ok) {
+    throw new Error(data.message || "Could not fetch staff.");
+  }
+
+  const transformedQuotes = [];
+
+  for (const key in data) {
+    const quoteObj = {
+      id: key,
+      ...data[key],
+    };
+
+    transformedQuotes.push(quoteObj);
+  }
+
+  return transformedQuotes;
+}
