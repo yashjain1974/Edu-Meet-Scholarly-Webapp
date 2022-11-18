@@ -1,10 +1,14 @@
-import React,{useRef} from "react";
+import React,{useRef,useState} from "react";
+import { useHistory } from "react-router-dom";
 import classes from "./SlotBook.module.css"
 import TeacherTimeTable from "./TeacherTimetable";
 import emailjs from "emailjs-com"
 
 const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com/staff";
 const SlotBook = (props) => {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+  const [didSubmitted, setDidSubmitted] = useState(false);
+  const hist=useHistory();
     const date = new Date();
     const emailInputRef=useRef();
     const nameInputRef=useRef();
@@ -25,6 +29,7 @@ const SlotBook = (props) => {
     console.log(currentDate);
 
     const submitOrderHandler = async (day,userData,id) => {
+       
         try {
           //`
           const response = await fetch(
@@ -37,14 +42,19 @@ const SlotBook = (props) => {
           if (!response.ok) {
             throw new Error("Unable to Order...");
           }
+         
           
       
         } catch (error) {
+            setDidSubmitted(false);
           
         }
       };
+      const loginId=localStorage.getItem("teacherLoginId");
+        
     const sendEmail = (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
        
         const enteredMail=emailInputRef.current.value;
         const enteredName=nameInputRef.current.value;
@@ -65,18 +75,17 @@ const SlotBook = (props) => {
 
         }
         
-        console.log(enteredMail);
 
 
 
-
+   
     
-        // emailjs.sendForm('service_xbooorp', 'template_uok12o3', e.target, '07iS9ofaueIYYc1r8')
-        //   .then((result) => {
-        //       console.log(result.text);
-        //   }, (error) => {
-        //       console.log(error.text);
-        //   });
+        emailjs.sendForm('service_r1hizja', 'template_odxz9eq', e.target, 'Py0QKxjxpCst7v9HX')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
           let teacherId=localStorage.getItem("teacherId");
        
         
@@ -84,6 +93,8 @@ const SlotBook = (props) => {
           let newId=startingAddedId.replaceAll(".","_");
           console.log(newId);
           submitOrderHandler(newId,data,teacherId);
+          setIsSubmitting(false);
+          setDidSubmitted(true);
 
           emailInputRef.current.value="";
           nameInputRef.current.value="";
@@ -93,18 +104,23 @@ const SlotBook = (props) => {
           enrollmentInputRef.current.value="";
           messageInputRef.current.value="";
       };
+      const navigateTo=()=>{
+        hist.replace(`/student/studentHome/${loginId}`)
 
-      
+      }
+
+
 
     return (
         <React.Fragment>
             
 
-            <div className={classes.body}>
+           <div className={classes.body}>
                 <TeacherTimeTable></TeacherTimeTable>
-                <h1>Book your Slot here </h1>
+                <hr></hr>
+                <center><h1>Book your Slot here </h1></center>
 
-                <form onSubmit={sendEmail} >
+                {!didSubmitted &&  <form onSubmit={sendEmail} >
 
                 <div class="row">
                     <div class="col-xs">
@@ -162,6 +178,8 @@ const SlotBook = (props) => {
                     </div>
                 </div>
                 </form>
+            }
+                {didSubmitted && <div><p>Slot booking request sent successfully</p> <button onClick={navigateTo}>Back to main page </button></div>}
 
 
 

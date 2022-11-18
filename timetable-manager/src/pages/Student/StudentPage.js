@@ -6,6 +6,7 @@ import Card from "../../components/UI/card";
 import useHttp from "../../lib/use-http";
 import AuthContext from "../../store/auth-context";
 
+
 import StudentDetail from "./StudentDetail";
 
 const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
@@ -98,6 +99,8 @@ const StudentHome = () => {
 
   myStopFunction();
   console.log(id);
+  ctx.setStudentLoginId(id);
+  
 
   const k = loadedQuote.user;
   const l = loadedQuote.email

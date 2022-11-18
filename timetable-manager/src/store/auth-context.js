@@ -14,6 +14,8 @@ const AuthContext = React.createContext({
   teacherId: "",
   setTeacherLoginId: (id) => { },
   loginId: "",
+  StudentId: "",
+  setStudentLoginId: (id) => { },
 
 
 
@@ -59,6 +61,7 @@ export const AuthContextProvider = (props) => {
   const [token, setToken] = useState(initializeToken);
   const [id, setid] = useState("");
   const [teacherid, setTeacher] = useState("");
+  const [studentid, setStudent] = useState("");
   const [teacherLoginid, setloginId] = useState("");
 
 
@@ -72,6 +75,8 @@ export const AuthContextProvider = (props) => {
     localStorage.removeItem("id");
     localStorage.removeItem("teacherId");
     localStorage.removeItem("teacherLoginId");
+    localStorage.removeItem("studentId");
+    localStorage.removeItem("loginEmail");
 
     his.replace("/");
     if (logoutTimer) {
@@ -94,6 +99,11 @@ export const AuthContextProvider = (props) => {
   const setTeacherIdHandler = (idd) => {
     setTeacher(idd);
     localStorage.setItem("teacherId", idd);
+
+  };
+  const setStudentIdHandler = (idd) => {
+    setStudent(idd);
+    localStorage.setItem("studentId", idd);
 
   };
   const setTeacherLoginIdHandler = (idd) => {
@@ -120,7 +130,10 @@ export const AuthContextProvider = (props) => {
     setidd: setIdHandler,
     setTeacherId: setTeacherIdHandler,
     teacherId: teacherid,
+    setStudentLoginId: setStudentIdHandler,
+    StudentId: studentid,
     setTeacherLoginId: setTeacherLoginIdHandler,
+
     loginId: teacherLoginid
 
 

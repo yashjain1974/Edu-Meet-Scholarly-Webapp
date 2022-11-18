@@ -1,65 +1,17 @@
 import React,{useEffect,useState,useCallback} from "react";
 import { useRouteMatch } from "react-router-dom/cjs/react-router-dom";
 import Notifications from "react-notifications-menu";
-import Modal from "../UI/Modal";
-import emailjs from "emailjs-com"
-import { Prompt } from "react-router-dom";
-// import classes from './Notify.module.css';
-const Notify = () => {
+const NotifyStudent = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [isVisible,setIsVisible]=useState(false);
     const [items, setItems] = useState([]);
-    const teacherId=localStorage.getItem("id");
+    const studentId=localStorage.getItem("studentId");
     const match = useRouteMatch();
-    console.log(match.url);
-    let loginEmail=localStorage.getItem("loginEmail");
-    
-    const sendEmail = (e) => {
-        e.preventDefault();
-        
-
-
-
-        emailjs.sendForm('service_r1hizja', 'template_rh6ia25', e.target, 'Py0QKxjxpCst7v9HX')
-            .then((result) => {
-                console.log(result.text);
-                
-            }, (error) => {
-                console.log(error.text);
-               
-            });
-
-    };
-    const [isSet,setisSet]=useState(false);
-const l=<div className="centered">
-<form onSubmit={sendEmail}>
-
-    <input type="text" name="book_status" value="slot is booked"></input>
-    <input type="text" name="email" value="20803014@mail.jiit.ac.in"></input>
-    
-</form>
-</div>
-const isClicked=()=>{
-    console.log("hello");
-    <Prompt message="Are you??"></Prompt>
-    const agree = prompt('Confirm(y/n)')
-    console.log(agree);
-    console.log("hello");
-    if(agree.toLocaleLowerCase() === 'y') {
-        console.log("oj");
-        setisSet(true);
-        
-        
-    }
-    
-
-
-}
-
+console.log("hhi");
     useCallback(useEffect(() => {
         // our fetch codes
-        fetch(`https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/${teacherId}/notification.json/`)
+        fetch(`https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/${studentId}/notification.json/`)
             .then((res) => res.json())
             .then(
                 (data) => {
@@ -76,12 +28,10 @@ const isClicked=()=>{
                             Email:{data[key].email}<br/>
                             date:{data[key].date}&nbsp;&nbsp;
                             Time:{data[key].time}<br/>
-                            Message:{data[key].message}<hr></hr>
-                            <button style={{backgroundColor: 'grey'}}  onClick={isClicked}>Accept</button>
+                            Message:{data[key].message}<br/>
 
                             </p>),
                               receivedTime:'12h ago',
-                            //   detailPage:`/staff/timeTable/${loginEmail}`,
                               
                               
                             // name: data[key].name,
@@ -142,7 +92,7 @@ const isClicked=()=>{
                 ))
 } */}
 
-{isSet && {l}}
+
            
         </React.Fragment>
     )
@@ -150,4 +100,4 @@ const isClicked=()=>{
 
 }
 
-export default Notify;
+export default NotifyStudent;

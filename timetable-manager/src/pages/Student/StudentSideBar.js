@@ -32,13 +32,16 @@ const StudentSidebar = () => {
             <NavLink exact to={`/student/timeTable/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Teacher's Timetable</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/student/slotBook/${p.qid}`} activeClassName="activeClicked">
+            {/* <NavLink exact to={`/student/slotBook/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Book a Slot</CDBSidebarMenuItem>
-            </NavLink>
+            </NavLink> */}
             <NavLink exact to={`/student/profile/${p.qid}`} activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="user">Your Profile</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="user">Change profile</CDBSidebarMenuItem>
             </NavLink>
-
+            <NavLink exact to={`/student/changepassword/${p.qid}`} activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="user">Change password</CDBSidebarMenuItem>
+            </NavLink>
+           
 
           </CDBSidebarMenu>
         </CDBSidebarContent>

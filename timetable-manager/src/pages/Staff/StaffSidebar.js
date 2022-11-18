@@ -36,7 +36,10 @@ const StaffSidebar = () => {
               <CDBSidebarMenuItem icon="table">Arrange a Meeting</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to={`/staff/profile/${p.qid}`} activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="user">Your Profile</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="user">Change profile</CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink exact to={`/staff/changepassword/${p.qid}`} activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="user">Change Password</CDBSidebarMenuItem>
             </NavLink>
 
 

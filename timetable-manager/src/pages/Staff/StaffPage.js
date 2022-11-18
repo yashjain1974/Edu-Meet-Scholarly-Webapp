@@ -14,6 +14,7 @@ const StaffHome = () => {
   const param = useParams();
   const [id, setId] = useState("");
   const userId = param.qid;
+  localStorage.setItem("loginEmail",userId);
   console.log(userId);
   const fetchData = useCallback(
     async function () {

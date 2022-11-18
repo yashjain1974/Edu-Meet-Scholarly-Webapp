@@ -1,0 +1,50 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  .body {
+    background:#777;
+    padding:0;
+    margin:0;
+    font-family:sans-serif;
+    color:#fff
+  }
+  .form {
+   width:90%;
+    max-width:500px;
+    margin:15px auto;
+  }
+  .form input{
+    width:100%;
+    margin-bottom:10px;
+    border-radius:3px;
+    border:solid 1px #ccc;
+    padding:4px 7px;
+  }
+  .form textarea{
+    width:100%;
+    margin-bottom:10px;
+    border-radius:3px;
+    border:solid 1px #ccc;
+    padding:4px 7px;
+
+  }
+  .eml, #tel {
+    width:49%;
+  }
+  .tel {
+    float:right;
+  }
+  .button {
+    width: 120px;
+    float:right;
+    margin-left:15px;
+    border-radius:3px;
+    border:solid 1px #ccc;
+    padding:4px 7px;
+  }
+  .button:hover {
+    background-color:rgb(79, 186, 238);
+  }

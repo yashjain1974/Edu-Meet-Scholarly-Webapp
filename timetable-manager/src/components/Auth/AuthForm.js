@@ -102,7 +102,7 @@ const AuthForm = (props) => {
           {!isLoading && (
             <button>Login</button>
           )}
-          {isLoading && <p>Loading...</p>}
+          {isLoading && <button>Login</button> && <p>Loading...</p>}
 
           <button
             type="button"

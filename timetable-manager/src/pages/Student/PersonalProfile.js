@@ -54,8 +54,8 @@ const PersonalProfile = (props) => {
   return (
 
     <section className={classes.profile}>
-      <h1>Your User Profile</h1>
-      <ProfileForm url="https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCw40p_iCCdcwHAlySc7PR6FSX9xShGWn8" />
+    
+   
      
       <h1>Update Details</h1>
      <StUserForm id={id}></StUserForm>

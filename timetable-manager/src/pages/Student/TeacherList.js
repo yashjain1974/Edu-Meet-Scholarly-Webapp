@@ -2,17 +2,20 @@ import { useState, useEffect, useContext } from "react";
 import Modal from "../../components/UI/Modal";
 
 import classes from "./TeacherList.module.css"
-import { Link, useRouteMatch, Route } from "react-router-dom";
+import { Link, useRouteMatch, Route, useHistory } from "react-router-dom";
 import { FcGraduationCap } from 'react-icons/fc';
 import AuthContext from "../../store/auth-context";
 import TeacherTimeTable from "./TeacherTimetable";
+import TeacherDetail from "./TeacherDetail";
 import React from "react";
 const TeacherList = (props) => {
     const [error, setError] = useState(null);
     const ctx = useContext(AuthContext)
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
+
     const [timeTableisVisible, setTimetableisVisible] = useState(false);
+    const hist = useHistory();
 
 
     //     set search query to empty string
@@ -25,6 +28,7 @@ const TeacherList = (props) => {
     const [searchParam] = useState(["capital", "name"]);
     const match = useRouteMatch();
 
+
     useEffect(() => {
         // our fetch codes
         fetch("https://userdetails-d84c5-default-rtdb.firebaseio.com/staff.json")
@@ -33,6 +37,7 @@ const TeacherList = (props) => {
                 (data) => {
                     setIsLoaded(true);
                     const loadData = [];
+
                     for (let key in data) {
                         loadData.push({
                             id: key,
@@ -45,6 +50,7 @@ const TeacherList = (props) => {
                     }
                     setItems(loadData);
                     console.log(data);
+                    console.log(loadData["id"]);
 
                 },
                 // Note: it's important to handle errors here
@@ -65,7 +71,7 @@ const TeacherList = (props) => {
             return searchParam.some((newItem) => {
                 return (
 
-                    item["name"].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
+                    item["email"].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
                 );
             });
         });
@@ -91,6 +97,8 @@ const TeacherList = (props) => {
 
     const HideCartHandler = () => {
         setTimetableisVisible(false);
+        hist.replace(`${match.url}`)
+
     };
 
     if (error) {
@@ -129,7 +137,8 @@ const TeacherList = (props) => {
                                 <th>Email</th>
 
                                 <th>Department</th>
-                                <th>Select</th>
+                                <th>Timetable</th>
+                                <th>Details</th>
                             </tr>
                         </thead>
                         {search(items).map((item) => (
@@ -142,18 +151,36 @@ const TeacherList = (props) => {
                                     <td>{item.dept}</td>
 
                                     <td>
-                                        <Link to={`${match.url}/${item.id}`}><button className={classes.btn} onClick={isClickHandler} value={item.id}>See Time table</button></Link>
+                                        <Link to={`${match.url}/timetable/${item.id}`}><button className={classes.btn} onClick={isClickHandler} value={item.id}>See Time table</button></Link>
+                                    </td>
+                                    <td>
+                                        <Link to={`${match.url}/detail/${item.id}`}><button className={classes.btn} onClick={isClickHandler} value={item.id}>See Details</button></Link>
                                     </td>
                                 </tr>
+
+
                                 {timeTableisVisible && <Modal onClose={HideCartHandler}>
 
-                                    <Route path={`${match.path}/${item.id}`}>
+                                    <Route path={`${match.path}/timetable/${item.id}`}>
                                         <div className={classes.timeTable}>
                                             <TeacherTimeTable onClose={HideCartHandler}></TeacherTimeTable>
                                         </div>
                                     </Route>
 
                                 </Modal>
+
+                                }
+                                {timeTableisVisible && <Modal onClose={HideCartHandler}>
+
+                                    <Route path={`${match.path}/detail/${item.id}`}>
+                                        <div className={classes.timeTable}>
+                                            <TeacherDetail onClose={HideCartHandler} id={item.id}></TeacherDetail>
+                                        </div>
+                                    </Route>
+
+
+                                </Modal>
+
                                 }
 
 

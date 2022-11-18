@@ -8,7 +8,7 @@ import AuthContext from '../../store/auth-context';
 
 const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
 
-const StaffProfile = (props) => {
+const ChangePassword = (props) => {
  const ctx=useContext(AuthContext);
     const [isSet,setIsset]=useState(false);
     const setDetail=()=>{
@@ -25,11 +25,10 @@ const StaffProfile = (props) => {
       <h1>Your User Profile</h1>
       <ProfileForm url="https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDmHdcNB-dQsfYWrJ3ItPyaTR125byfhjQ"/>
      
-      <h1>Update Details</h1>
-     <StaffUserForm id={ctx.id}></StaffUserForm>
+    
      
     </section>
   );
 };
 
-export default StaffProfile;
+export default ChangePassword;

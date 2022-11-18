@@ -199,3 +199,7 @@
   .sec:hover{
     background-color: #BFBFBF;
   }
+  .btn{
+    color:red;
+    background-color: #472b2b;
+  }

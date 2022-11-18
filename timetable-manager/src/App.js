@@ -9,7 +9,7 @@ import AuthContext from "./store/auth-context";
 import StaffPage from "./pages/StaffLogin";
 import AdminPage from "./pages/AdminLogin";
 import StudentSidebar from "./pages/Student/StudentSideBar";
-import StaffProfile from "./pages/Staff/SatffProfile";
+import ChangePassword from "./pages/Staff/ChangePassword";
 // import AdminHome from "./pages/Admin/AdminPage";
 import StaffHome from "./pages/Staff/StaffPage";
 import TeacherList from "./pages/Student/TeacherList";
@@ -27,7 +27,8 @@ import DashBoardDes from "./components/AdminComp/DashBoardDes";
 import SearchStudent from "./pages/Staff/SearchStudent";
 import TeacherTimeTable from "./pages/Student/TeacherTimetable";
 import SlotBook from "./pages/Student/SlotBook";
-
+import StaffDetailForm from "./pages/Staff/StaffDetailForm";
+import ChangePasswordSt from "./pages/Student/ChangePasswordSt";
 
 function App() {
   const authctx = useContext(AuthContext);
@@ -132,6 +133,14 @@ function App() {
             <PersonalProfile></PersonalProfile>
           </div>
         </Route>
+        <Route path="/student/changepassword/:qid" exact>
+          <div className="cont">
+
+            <StudentSidebar></StudentSidebar>
+
+            <ChangePasswordSt></ChangePasswordSt>
+          </div>
+        </Route>
         <Route path="/staff/staffHome/:qid">
           {authctx.isLoggedIn &&
             <div className="cont">
@@ -161,7 +170,15 @@ function App() {
 
             <StaffSidebar></StaffSidebar>
 
-            <StaffProfile></StaffProfile>
+           <StaffDetailForm></StaffDetailForm>
+          </div>
+        </Route>
+        <Route path="/staff/changepassword/:qid" exact>
+          <div className="cont">
+
+            <StaffSidebar></StaffSidebar>
+
+            <ChangePassword></ChangePassword>
           </div>
         </Route>
 

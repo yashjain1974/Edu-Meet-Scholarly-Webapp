@@ -33,7 +33,7 @@ const StaffDetail=(props)=>{
     let grade;
     let office;
     let room_no;
-    
+   
     console.log(loadedQuote);
 
       for(const key in loadedQuote){

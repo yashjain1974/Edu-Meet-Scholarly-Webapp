@@ -7,12 +7,15 @@ import Notification from "../../pages/Staff/Notification";
 import Modal from "../UI/Modal";
 import Notifications from "react-notifications-menu";
 import Notify from "./Notify";
+import NotifyStudent from "./NotifyStudent";
 
 const MainNavigation = (props) => {
   const history=useHistory();
   const match=useRouteMatch();
   const [isHighlighted, setIsHighlighted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  let isAvalSt=localStorage.getItem("studentId")!==null;
+  let isAvalTe=localStorage.getItem("id")!==null;
 
   
   const authCtx = useContext(AuthContext);
@@ -66,7 +69,8 @@ const MainNavigation = (props) => {
               
               <button className={classes.button} onClick={logoutHandler} >Logout</button>
               <button className={classes.button}>
-               <Notify></Notify>
+               {isAvalTe && <Notify></Notify>}
+               {isAvalSt && <NotifyStudent></NotifyStudent>}
              
               </button>
               </div>
