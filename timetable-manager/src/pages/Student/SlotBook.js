@@ -55,19 +55,22 @@ const SlotBook = (props) => {
     const sendEmail = (e) => {
         e.preventDefault();
         setIsSubmitting(true);
+        const studentid=localStorage.getItem("studentId");
+        
        
         const enteredMail=emailInputRef.current.value;
         const enteredName=nameInputRef.current.value;
        // const enteredDestination=destinationInputRef.current.value;
         const enteredDate=dateInputRef.current.value;
         const enteredTime=timeInputRef.current.value;
-        const enteredEnrollment=enrollmentInputRef.current.value;
+       
         const enteredMessage=messageInputRef.current.value;
+        
 
         const data={
+            id:studentid,
             email:enteredMail,
             name:enteredName,
-            enrollment:enteredEnrollment,
             date:enteredDate,
             time:enteredTime,
             message:enteredMessage
@@ -109,7 +112,9 @@ const SlotBook = (props) => {
 
       }
 
-
+const teacherEmailId=localStorage.getItem("teacherEmail");
+const name=localStorage.getItem("name");
+const teacherloginId=localStorage.getItem("teacherLoginId");
 
     return (
         <React.Fragment>
@@ -125,24 +130,19 @@ const SlotBook = (props) => {
                 <div class="row">
                     <div class="col-xs">
                         <div className={classes.styledInput}>
-                            <input type="text" name="name" ref={nameInputRef} required  />
-                            <label>Enter Your Name</label>
+                            <input type="text" name="name" value={name} ref={nameInputRef} required hidden  />
+                           
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-6">
-                        <div className={classes.styledInput}>
-                            <input type="text"name="email" ref={emailInputRef} required />
-                            <label>Enter Your Email ID</label>
-                        </div>
+                    
+                        
+                            <input type="text" name="email" value={teacherEmailId} ref={emailInputRef} required hidden/>
+                            <input type="text" name="from_email" value={teacherloginId} ref={emailInputRef} required hidden/>
+                           
+                        
                        
-                    </div>
-                    <div class="col-md-6 col-sm-6">
-                        <div className={classes.styledInput}>
-                            <input type="text" name="enrNo" ref={enrollmentInputRef} required  />
-                            <label>Enter Your Enrollment Number</label>
-                        </div>
-                    </div>
-
+                 
+                   
                     <div class="col-md-6 col-sm-12">
                         <div className={classes.styledInput}>
                             <div>Select Date:</div>
@@ -179,7 +179,7 @@ const SlotBook = (props) => {
                 </div>
                 </form>
             }
-                {didSubmitted && <div><p>Slot booking request sent successfully</p> <button onClick={navigateTo}>Back to main page </button></div>}
+                {didSubmitted && <div><p>Slot booking request sent successfully</p> <button className={classes.submitBtn} onClick={navigateTo}>Back to main page </button></div>}
 
 
 

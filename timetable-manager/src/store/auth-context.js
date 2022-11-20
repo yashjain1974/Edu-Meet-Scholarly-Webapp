@@ -77,6 +77,10 @@ export const AuthContextProvider = (props) => {
     localStorage.removeItem("teacherLoginId");
     localStorage.removeItem("studentId");
     localStorage.removeItem("loginEmail");
+    localStorage.removeItem("name");
+  localStorage.removeItem("email");
+  localStorage.removeItem("teacherEmail");
+ 
 
     his.replace("/");
     if (logoutTimer) {

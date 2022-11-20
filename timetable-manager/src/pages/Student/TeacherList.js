@@ -90,6 +90,8 @@ const TeacherList = (props) => {
     const isClickHandler = (event) => {
         setTimetableisVisible(true);
         const k = event.target.value;
+        const l=event.currentTarget.id
+        localStorage.setItem("teacherEmail",l);
         ctx.setTeacherId(k);
         localStorage.getItem("teacherId");
 
@@ -151,7 +153,7 @@ const TeacherList = (props) => {
                                     <td>{item.dept}</td>
 
                                     <td>
-                                        <Link to={`${match.url}/timetable/${item.id}`}><button className={classes.btn} onClick={isClickHandler} value={item.id}>See Time table</button></Link>
+                                        <Link to={`${match.url}/timetable/${item.id}`}><button className={classes.btn} onClick={isClickHandler} value={item.id} id={item.email}>See Time table</button></Link>
                                     </td>
                                     <td>
                                         <Link to={`${match.url}/detail/${item.id}`}><button className={classes.btn} onClick={isClickHandler} value={item.id}>See Details</button></Link>

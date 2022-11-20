@@ -1,0 +1,64 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  .body {
+    background:#5c2d01;
+    padding:0;
+    margin:0;
+    font-family:sans-serif;
+    color:#fff
+  }
+  .form {
+   width:90%;
+    max-width:500px;
+    margin:15px auto;
+  }
+  .form input{
+    width:100%;
+    margin-bottom:10px;
+    border-radius:3px;
+    border:solid 1px #ccc;
+    padding:4px 7px;
+  }
+  .form textarea{
+    width:100%;
+    margin-bottom:10px;
+    border-radius:3px;
+    border:solid 1px #ccc;
+    padding:4px 7px;
+
+  }
+  .eml, #tel {
+    width:49%;
+  }
+  .tel {
+    float:right;
+  }
+  .button {
+    width: 220px;
+    float:right;
+    margin-left:15px;
+    border-radius:3px;
+    border:solid 1px #ccc;
+    padding:4px 7px;
+  }
+  .button:hover {
+    background-color:rgb(79, 186, 238);
+  }
+  .check{
+    display: flex;
+    color: rgb(255, 255, 255);
+margin: 20px;
+  }
+
+  .detail{
+    text-align: center;
+    background-color: antiquewhite;
+    color: black;
+    border: solid black 2px;
+    padding: 10px;
+    margin-top: 10px;
+  }

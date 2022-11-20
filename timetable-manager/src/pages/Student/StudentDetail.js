@@ -35,6 +35,9 @@ const StudentDetail = (props) => {
   let branch;
   let batch;
   let semester;
+  let user;
+  let email;
+  
 
   for (const key in loadedQuote) {
     if (key === "contact") {
@@ -42,6 +45,12 @@ const StudentDetail = (props) => {
     }
     else if (key === "academics") {
       academic = loadedQuote[key];
+    }
+    else if (key === "email") {
+      email = loadedQuote[key];
+    }
+    else if (key === "user") {
+      user = loadedQuote[key];
     }
     else if (key === "program") {
       program = loadedQuote[key];
@@ -55,6 +64,7 @@ const StudentDetail = (props) => {
     else if (key === "semester") {
       semester = loadedQuote[key];
     }
+   
 
 
   }
@@ -74,6 +84,15 @@ const StudentDetail = (props) => {
       <button className={classes.glowonhover} type="button" onClick={navigateTo}>Fill Details!</button>
       </Card></p>;
   }
+  const k={
+    name:user,
+    email:email,
+    
+
+  }
+
+  localStorage.setItem("name",k["name"]);
+  localStorage.setItem("email",k["email"]);
 
 
   //     fetch('https://userdetails-d84c5-default-rtdb.firebaseio.com/student/-ND-XSmAIC9yxYRWabk3.json', {

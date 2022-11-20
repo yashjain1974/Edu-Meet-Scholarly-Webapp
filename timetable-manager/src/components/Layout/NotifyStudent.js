@@ -11,7 +11,7 @@ const NotifyStudent = () => {
 console.log("hhi");
     useCallback(useEffect(() => {
         // our fetch codes
-        fetch(`https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/${studentId}/notification.json/`)
+        fetch(`https://userdetails-d84c5-default-rtdb.firebaseio.com/student/${studentId}/notification.json/`)
             .then((res) => res.json())
             .then(
                 (data) => {
@@ -23,11 +23,13 @@ console.log("hhi");
                             id: key,
                             image:'https://cdn-icons-png.flaticon.com/512/2645/2645883.png',
                             message:(<p>
-                            Name:{data[key].name}&nbsp;&nbsp;
                             
-                            Email:{data[key].email}<br/>
+                            
+                            Email:{data[key].from_mail}<br/>
+                            Response:{data[key].response}<br/>
                             date:{data[key].date}&nbsp;&nbsp;
                             Time:{data[key].time}<br/>
+
                             Message:{data[key].message}<br/>
 
                             </p>),

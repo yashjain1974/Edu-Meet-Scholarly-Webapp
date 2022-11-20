@@ -16,6 +16,8 @@ const MainNavigation = (props) => {
   const [isVisible, setIsVisible] = useState(false);
   let isAvalSt=localStorage.getItem("studentId")!==null;
   let isAvalTe=localStorage.getItem("id")!==null;
+  console.log(isAvalSt);
+ 
 
   
   const authCtx = useContext(AuthContext);
@@ -70,7 +72,7 @@ const MainNavigation = (props) => {
               <button className={classes.button} onClick={logoutHandler} >Logout</button>
               <button className={classes.button}>
                {isAvalTe && <Notify></Notify>}
-               {isAvalSt && <NotifyStudent></NotifyStudent>}
+               {!isAvalTe && <NotifyStudent></NotifyStudent>}
              
               </button>
               </div>
