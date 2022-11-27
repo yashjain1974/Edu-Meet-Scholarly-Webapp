@@ -23,7 +23,7 @@ const StaffSidebar = () => {
             Staff Portal
           </a>
         </CDBSidebarHeader>
-
+        <CDBSidebarMenuItem icon="user" >{p.qid}</CDBSidebarMenuItem>
         <CDBSidebarContent className="sidebar-content" iconShape="square">
           <CDBSidebarMenu>
             <NavLink exact to={`/staff/staffHome/${p.qid}`} activeClassName="activeClicked">

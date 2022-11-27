@@ -10,6 +10,7 @@ import StaffPage from "./pages/StaffLogin";
 import AdminPage from "./pages/AdminLogin";
 import StudentSidebar from "./pages/Student/StudentSideBar";
 import ChangePassword from "./pages/Staff/ChangePassword";
+import DashBoard from "./pages/Admin/DashBoard";
 // import AdminHome from "./pages/Admin/AdminPage";
 import StaffHome from "./pages/Staff/StaffPage";
 import TeacherList from "./pages/Student/TeacherList";
@@ -63,7 +64,7 @@ function App() {
 
             <AdminSidebar></AdminSidebar>
 
-            <DashBoardDes></DashBoardDes>
+            <DashBoard></DashBoard>
           </div>
         </Route>
         <Route path="/admin/staff/:qid" exact>

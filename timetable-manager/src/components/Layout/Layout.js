@@ -1,6 +1,6 @@
 
 import { Fragment,useState } from 'react';
-
+import Footer from './Footer';
 
 import MainNavigation from './MainNavigation';
 
@@ -18,6 +18,8 @@ const Layout = (props) => {
       <MainNavigation  />
      
       <main>{props.children}</main>
+      
+
     </Fragment>
   );
 };

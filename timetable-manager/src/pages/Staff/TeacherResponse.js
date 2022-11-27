@@ -49,18 +49,18 @@ const TeacherResponse = (props) => {
     
         e.preventDefault();
         console.log("clicked");
-        // emailjs.sendForm('service_r1hizja', 'template_rh6ia25', e.target, 'Py0QKxjxpCst7v9HX')
-        //     .then((result) => {
-        //         console.log(result.text);
-        //         setIsSubmitting(false);
-        //         setDidSubmitted(true);
+        emailjs.sendForm('service_r1hizja', 'template_rh6ia25', e.target, 'Py0QKxjxpCst7v9HX')
+            .then((result) => {
+                console.log(result.text);
+                setIsSubmitting(false);
+                setDidSubmitted(true);
 
-        //     }, (error) => {
-        //         console.log(error.text);
-        //         setDidSubmitted(false)
+            }, (error) => {
+                console.log(error.text);
+                setDidSubmitted(false)
 
 
-        //     });
+            });
             const data={
             from_mail:enteredEmail,
             response:enteredResponse,

@@ -1,5 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { FcGraduationCap } from 'react-icons/fc';
+import { FaUserCircle } from "react-icons/fa"
 import {
   CDBSidebar,
   CDBSidebarContent,
@@ -22,7 +24,9 @@ const StudentSidebar = () => {
           <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
             Student Portal
           </a>
+          
         </CDBSidebarHeader>
+        <CDBSidebarMenuItem icon="user" >{p.qid}</CDBSidebarMenuItem>
 
         <CDBSidebarContent className="sidebar-content" iconShape="square">
           <CDBSidebarMenu>
@@ -42,10 +46,13 @@ const StudentSidebar = () => {
               <CDBSidebarMenuItem icon="user">Change password</CDBSidebarMenuItem>
             </NavLink>
            
+           
 
           </CDBSidebarMenu>
+         
         </CDBSidebarContent>
-
+        
+         
         {/* <CDBSidebarFooter style={{ textAlign: 'center' }}>
           <div
             style={{
@@ -55,6 +62,7 @@ const StudentSidebar = () => {
           <CDBSidebarMenuItem icon="GrLogout">Log-out</CDBSidebarMenuItem>
           </div>
         </CDBSidebarFooter> */}
+         
       </CDBSidebar>
     </div>
   );

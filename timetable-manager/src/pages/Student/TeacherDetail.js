@@ -2,6 +2,7 @@ import React,{useEffect} from "react";
 import useHttp from "../../lib/use-http";
 import { getSingleStaff } from "../../lib/api";
 import Card from "../../components/UI/card";
+import classes from './TeacherDetail.module.css';
 const TeacherDetail=(props)=>{
     const {
         sendRequest,
@@ -66,6 +67,7 @@ const TeacherDetail=(props)=>{
         )
 
 } */}
+<div className={classes.bd}>
 <marquee > <h1>{name}'s Detail</h1></marquee>
             <p>NAME : {name} </p> <hr></hr>
           <p>CONTACT NUMBER : {contact} </p> <hr></hr>
@@ -74,7 +76,7 @@ const TeacherDetail=(props)=>{
           <p>GRADE : {grade}</p><hr></hr>
           <p>OFFICE : {office} </p><hr></hr>
           <p>ROOM : {room_no} </p><hr></hr>
-
+          </div>
     </React.Fragment>
         )
 
