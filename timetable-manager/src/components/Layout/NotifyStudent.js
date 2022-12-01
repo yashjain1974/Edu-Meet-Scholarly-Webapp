@@ -33,7 +33,8 @@ console.log("hhi");
                             Message:{data[key].message}<br/>
 
                             </p>),
-                              receivedTime:'12h ago',
+                            receivedTime:"minutes ago",
+                              
                               
                               
                             // name: data[key].name,

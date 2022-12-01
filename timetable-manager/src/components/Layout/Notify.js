@@ -59,7 +59,7 @@ const isClicked=(event)=>{
                            <button id={`${key}`} style={{backgroundColor: 'grey'}}  onClick={isClicked}>Respond</button>
 
                             </p>),
-                              receivedTime:'12h ago',
+                              receivedTime:"minutes ago",
                               
                               
                               
