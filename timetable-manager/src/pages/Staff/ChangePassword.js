@@ -4,6 +4,7 @@ import StaffUserForm from './StaffUserForm';
 import DetailCard from '../../components/UI/DetailCard';
 import { useState,useCallback,useContext } from 'react';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+
 import AuthContext from '../../store/auth-context';
 
 const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";

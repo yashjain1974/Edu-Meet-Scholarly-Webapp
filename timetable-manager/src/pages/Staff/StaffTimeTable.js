@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Paper from '@mui/material/Paper';
 import { ViewState, EditingState, IntegratedEditing } from '@devexpress/dx-react-scheduler';
-import { red,amber } from '@mui/material/colors';
+import { red,amber,green } from '@mui/material/colors';
 import Appointment from './Resources/appointments';
 import {
   Scheduler,
@@ -38,7 +38,7 @@ const submitOrderHandler = async (day,userData,id) => {
       }
     );
     if (!response.ok) {
-      throw new Error("Unable to Order...");
+      throw new Error("Unable to Add...");
     }
     
 
@@ -136,12 +136,19 @@ export default class Rough extends React.PureComponent {
           instances:[{
             text: 'Book the slot',
             id: 1,
-            color:red,
+            color:green,
             
           },
         {
-            text: 'For meet',
+            text: 'Class Scheduled',
             id: 2,
+            color:red,
+            
+            
+          },
+          {
+            text: 'For meet',
+            id: 3,
             color:amber,
             
             

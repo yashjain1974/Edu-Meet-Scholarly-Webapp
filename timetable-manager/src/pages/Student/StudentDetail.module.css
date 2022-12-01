@@ -39,7 +39,7 @@
     background: #764AF1;
 }
 .section div:hover{
-    transform: translateY(-16px) rotate(3deg);
+    /* transform: translateY(-16px) rotate(3deg); */
 }
 .section div:hover ~ div{
     transform: translateX(130px);

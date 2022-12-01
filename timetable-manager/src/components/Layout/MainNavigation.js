@@ -73,6 +73,7 @@ const MainNavigation = (props) => {
               <button className={classes.button}>
                {isAvalTe && <Notify></Notify>}
                {!isAvalTe && <NotifyStudent></NotifyStudent>}
+              {!isAvalSt && !isAvalTe && <></>}
              
               </button>
               </div>

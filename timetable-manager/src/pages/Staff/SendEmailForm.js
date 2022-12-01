@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import emailjs from "emailjs-com"
 import classes from './SendEmail.module.css'
 const SendEmailForm = (props) => {
-    const multipleEmailref = useRef();
-    const messageInputRef = useRef();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [didSubmitted, setDidSubmitted] = useState(false);
     const param=useParams();

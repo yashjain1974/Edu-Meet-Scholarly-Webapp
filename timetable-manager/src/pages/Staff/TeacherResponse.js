@@ -118,8 +118,10 @@ const TeacherResponse = (props) => {
                         ref={messageRef}
                     ></textarea>
                      <button className={classes.button} type="submit">Submit Response</button>
+                     {isSubmitting && <p>Submitting...</p>}
                     </form>
 }
+
                 {didSubmitted && <div><p>Message sent successfully</p> <button className={classes.button}  onClick={navigateTo}>Go to TimeTable</button></div>}
             </body>
  </React.Fragment>
