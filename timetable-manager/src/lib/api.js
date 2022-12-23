@@ -1,4 +1,5 @@
-const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
+import { UserdetailUrl } from "../store/APIs";
+const FIREBASE_DOMAIN = UserdetailUrl;
 
 export async function getAllStaff() {
   const response = await fetch(`${FIREBASE_DOMAIN}/staff.json`);

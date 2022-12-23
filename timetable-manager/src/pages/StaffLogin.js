@@ -1,10 +1,10 @@
 import React from 'react';
 import AuthForm from '../components/Auth/AuthForm';
 import { useRouteMatch } from 'react-router-dom/cjs/react-router-dom.min';
-
+import {StaffAuthSignIn } from '../store/APIs';
 const StaffPage = () => {
 
-  var url1="https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDmHdcNB-dQsfYWrJ3ItPyaTR125byfhjQ";
+  var url1=StaffAuthSignIn;
   const routee=useRouteMatch();
   return (
     <React.Fragment>

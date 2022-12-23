@@ -3,7 +3,7 @@ import { Route, useRouteMatch } from "react-router-dom/cjs/react-router-dom";
 import Notifications from "react-notifications-menu";
 import Modal from "../UI/Modal";
 import { Link } from "react-router-dom";
-
+import { UserdetailUrl } from "../../store/APIs";
 import { Prompt } from "react-router-dom";
 import TeacherResponse from "../../pages/Staff/TeacherResponse";
 // import classes from './Notify.module.css';
@@ -37,7 +37,7 @@ const isClicked=(event)=>{
 
     useCallback(useEffect(() => {
         // our fetch codes
-        fetch(`https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/${teacherId}/notification.json/`)
+        fetch(`${UserdetailUrl}/staff/${teacherId}/notification.json/`)
             .then((res) => res.json())
             .then(
                 (data) => {

@@ -3,8 +3,9 @@ import { useHistory } from "react-router-dom";
 import classes from "./SlotBook.module.css"
 import TeacherTimeTable from "./TeacherTimetable";
 import emailjs from "emailjs-com"
+import { UserdetailUrl } from '../../store/APIs';
 
-const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com/staff";
+const FIREBASE_DOMAIN = `${UserdetailUrl}/staff`;
 const SlotBook = (props) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmitted, setDidSubmitted] = useState(false);

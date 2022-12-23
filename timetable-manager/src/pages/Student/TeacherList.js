@@ -7,6 +7,7 @@ import { FcGraduationCap } from 'react-icons/fc';
 import AuthContext from "../../store/auth-context";
 import TeacherTimeTable from "./TeacherTimetable";
 import TeacherDetail from "./TeacherDetail";
+import { UserdetailUrl } from "../../store/APIs";
 import React from "react";
 const TeacherList = (props) => {
     const [error, setError] = useState(null);
@@ -31,7 +32,7 @@ const TeacherList = (props) => {
 
     useEffect(() => {
         // our fetch codes
-        fetch("https://userdetails-d84c5-default-rtdb.firebaseio.com/staff.json")
+        fetch(`${UserdetailUrl}/staff.json`)
             .then((res) => res.json())
             .then(
                 (data) => {
@@ -90,8 +91,8 @@ const TeacherList = (props) => {
     const isClickHandler = (event) => {
         setTimetableisVisible(true);
         const k = event.target.value;
-        const l=event.currentTarget.id
-        localStorage.setItem("teacherEmail",l);
+        const l = event.currentTarget.id
+        localStorage.setItem("teacherEmail", l);
         ctx.setTeacherId(k);
         localStorage.getItem("teacherId");
 

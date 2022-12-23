@@ -1,6 +1,7 @@
 import React,{useEffect,useState,useCallback} from "react";
 import { useRouteMatch } from "react-router-dom/cjs/react-router-dom";
 import Notifications from "react-notifications-menu";
+import { UserdetailUrl } from "../../store/APIs";
 const NotifyStudent = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -11,7 +12,7 @@ const NotifyStudent = () => {
 console.log("hhi");
     useCallback(useEffect(() => {
         // our fetch codes
-        fetch(`https://userdetails-d84c5-default-rtdb.firebaseio.com/student/${studentId}/notification.json/`)
+        fetch(`${UserdetailUrl}/student/${studentId}/notification.json/`)
             .then((res) => res.json())
             .then(
                 (data) => {

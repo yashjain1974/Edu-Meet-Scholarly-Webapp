@@ -8,6 +8,7 @@ import emailjs from "emailjs-com"
 import React from "react";
 import { Link, useRouteMatch, Route,useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { UserdetailUrl } from "../../store/APIs";
 
 const SearchStudent = () => {
     const [error, setError] = useState(null);
@@ -30,7 +31,7 @@ const SearchStudent = () => {
     console.log(match.path);
     useEffect(() => {
         // our fetch codes
-        fetch("https://userdetails-d84c5-default-rtdb.firebaseio.com/student.json")
+        fetch(`${UserdetailUrl}/student.json`)
             .then((res) => res.json())
             .then(
                 (data) => {

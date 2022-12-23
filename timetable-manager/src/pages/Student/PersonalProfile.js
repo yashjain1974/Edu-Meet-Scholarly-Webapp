@@ -5,7 +5,8 @@ import DetailCard from '../../components/UI/DetailCard';
 import { useState,useCallback } from 'react';
 
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
+import { UserdetailUrl } from '../../store/APIs';
+const FIREBASE_DOMAIN = UserdetailUrl;
 
 const PersonalProfile = (props) => {
     const [isSet,setIsset]=useState(false);

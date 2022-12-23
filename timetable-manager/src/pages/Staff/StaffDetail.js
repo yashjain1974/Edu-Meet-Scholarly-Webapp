@@ -74,17 +74,7 @@ const StaffDetail=(props)=>{
       }
 
 
-//     fetch('https://userdetails-d84c5-default-rtdb.firebaseio.com/student/-ND-XSmAIC9yxYRWabk3.json', {
-//   method: 'PATCH',
-//   body: JSON.stringify({
-//     title: 'f',
-//   }),
-//   headers: {
-//     'Content-type': 'application/json; charset=UTF-8',
-//   },
-// })
-//   .then((response) => response.json())
-//   .then((json) => console.log(json));
+
 
     return(
         <React.Fragment>

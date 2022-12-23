@@ -9,7 +9,8 @@ import AuthContext from "../../store/auth-context";
 
 import StudentDetail from "./StudentDetail";
 
-const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
+import { UserdetailUrl } from '../../store/APIs';
+const FIREBASE_DOMAIN = UserdetailUrl;
 
 
 const StudentHome = () => {

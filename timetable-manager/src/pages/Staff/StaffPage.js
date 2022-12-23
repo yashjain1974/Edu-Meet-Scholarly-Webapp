@@ -6,7 +6,8 @@ import useHttp from "../../lib/use-http";
 import Card from "../../components/UI/card";
 import StaffDetail from "./StaffDetail";
 import AuthContext from "../../store/auth-context";
-const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
+import { UserdetailUrl } from "../../store/APIs";
+const FIREBASE_DOMAIN = UserdetailUrl;
 
 const StaffHome = () => {
   const ctx=useContext(AuthContext);

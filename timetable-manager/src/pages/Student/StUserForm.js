@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback } from "react"
 import classes from './StUserForm.module.css'
 import StudentDetail from "./StudentDetail";
-
+import { UserdetailUrl } from "../../store/APIs";
 const StUserForm = (props) => {
   const [isformValidity, setIsformValidity] = useState({
     contact: true,
@@ -77,7 +77,7 @@ const StUserForm = (props) => {
     try {
       setIsSubmitting(true);
       const response = await fetch(
-        `https://userdetails-d84c5-default-rtdb.firebaseio.com/student/${props.id}.json`,
+        `${UserdetailUrl}/student/${props.id}.json`,
         {
           method: "PATCH",
           body: JSON.stringify(userData),
@@ -96,7 +96,7 @@ const StUserForm = (props) => {
   };
   const fetchData = useCallback(
     async function () {
-      const response = await fetch(`https://userdetails-d84c5-default-rtdb.firebaseio.com/student/${props.id}.json`);
+      const response = await fetch(`${UserdetailUrl}/student/${props.id}.json`);
       const data = await response.json();
       console.log(data);
 

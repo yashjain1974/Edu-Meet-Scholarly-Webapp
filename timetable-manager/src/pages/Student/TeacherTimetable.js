@@ -18,8 +18,9 @@ import styless from './TeacherTimeTable.module.css'
 
 
 import AuthContext from '../../store/auth-context';
+import { UserdetailUrl } from '../../store/APIs';
 
-const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com/staff";
+const FIREBASE_DOMAIN = `${UserdetailUrl}/staff`;
 
 
 const PREFIX = 'Demo';

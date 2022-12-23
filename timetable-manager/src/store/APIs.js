@@ -1,0 +1,9 @@
+export const UserdetailUrl="https://userdetails-d84c5-default-rtdb.firebaseio.com";
+export const StaffAuthAPI="https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDmHdcNB-dQsfYWrJ3ItPyaTR125byfhjQ";
+export const StudentAuthAPI="https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyCw40p_iCCdcwHAlySc7PR6FSX9xShGWn8";
+export const AdminAuthAPI="https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDL9-razGo1HMXZYtLVAISUgIb--XsB4YQ";
+export const AdminAuthSignIn="https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDL9-razGo1HMXZYtLVAISUgIb--XsB4YQ"
+export const AdminAuthSignUp="https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDL9-razGo1HMXZYtLVAISUgIb--XsB4YQ"
+export const StaffAuthSignIn="https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDmHdcNB-dQsfYWrJ3ItPyaTR125byfhjQ"
+export const StudentAuthSignIn="https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCw40p_iCCdcwHAlySc7PR6FSX9xShGWn8"
+export const StudentAuthSignUp="https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCw40p_iCCdcwHAlySc7PR6FSX9xShGWn8"

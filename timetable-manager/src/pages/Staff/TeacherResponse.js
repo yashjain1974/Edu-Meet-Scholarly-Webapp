@@ -4,8 +4,9 @@ import classes from './TeacherResponse.module.css'
 import { Route } from "react-router-dom/cjs/react-router-dom";
 
 import emailjs from "emailjs-com"
+import { UserdetailUrl } from "../../store/APIs";
 
-const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com/student";
+const FIREBASE_DOMAIN = UserdetailUrl;
 const TeacherResponse = (props) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const hist=useHistory();

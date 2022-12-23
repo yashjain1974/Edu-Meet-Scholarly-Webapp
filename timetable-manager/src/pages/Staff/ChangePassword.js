@@ -4,10 +4,12 @@ import StaffUserForm from './StaffUserForm';
 import DetailCard from '../../components/UI/DetailCard';
 import { useState,useCallback,useContext } from 'react';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { UserdetailUrl } from '../../store/APIs';
+import { StaffAuthAPI } from '../../store/APIs';
 
 import AuthContext from '../../store/auth-context';
 
-const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com";
+const FIREBASE_DOMAIN = UserdetailUrl;
 
 const ChangePassword = (props) => {
  const ctx=useContext(AuthContext);
@@ -24,7 +26,7 @@ const ChangePassword = (props) => {
 
     <section className={classes.profile}>
       <h1>Your User Profile</h1>
-      <ProfileForm url="https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDmHdcNB-dQsfYWrJ3ItPyaTR125byfhjQ"/>
+      <ProfileForm url={StaffAuthAPI}/>
      
     
      

@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from "react";
 import Modal from '../../components/UI/Modal';
+import { UserdetailUrl } from "../../store/APIs";
 
 const Notification=(props)=>{
     const [error, setError] = useState(null);
@@ -10,7 +11,7 @@ const Notification=(props)=>{
 
     useEffect(() => {
         // our fetch codes
-        fetch(`https://userdetails-d84c5-default-rtdb.firebaseio.com/staff/${teacherId}/notification.json/`)
+        fetch(`${UserdetailUrl}/staff/${teacherId}/notification.json/`)
             .then((res) => res.json())
             .then(
                 (data) => {

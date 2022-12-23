@@ -1,12 +1,12 @@
 import React, {  useEffect } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import AuthForm from '../components/Auth/AuthForm';
-
+import { StudentAuthSignIn } from '../store/APIs';
 
 
 
 const StudentPage = (props) => {
-  var url1 = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCw40p_iCCdcwHAlySc7PR6FSX9xShGWn8";
+  var url1 = StudentAuthSignIn;
  
   const routee = useRouteMatch();
   console.log(routee);

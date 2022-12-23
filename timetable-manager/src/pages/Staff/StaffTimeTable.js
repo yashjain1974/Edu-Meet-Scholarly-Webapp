@@ -19,10 +19,11 @@ import {
 
 import { appoint } from './Resources/appointments';
 import AuthContext from '../../store/auth-context';
-
+import { UserdetailUrl } from '../../store/APIs';
 console.log(appoint);
 
-const FIREBASE_DOMAIN = "https://userdetails-d84c5-default-rtdb.firebaseio.com/staff";
+
+const FIREBASE_DOMAIN = `${UserdetailUrl}/staff`;
 
 
 
