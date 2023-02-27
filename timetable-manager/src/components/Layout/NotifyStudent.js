@@ -13,7 +13,7 @@ console.log("hhi");
     useCallback(useEffect(() => {
         // our fetch codes
         fetch(`${UserdetailUrl}/student/${studentId}/notification.json/`)
-            .then((res) => res.json())
+            .then((res) => res.json()) 
             .then(
                 (data) => {
                     setIsLoaded(true);

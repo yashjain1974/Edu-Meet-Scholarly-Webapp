@@ -1,5 +1,9 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 import { useContext } from "react";
+import ScholarDashboard from "./pages/Staff/Scholarly/ScholarDashboard";
+import PublicationsList from "./pages/Staff/Scholarly/PublicationsList";
+import ScholarlySidebar from "./pages/Staff/Scholarly/ScholarlySideBar";
+import ScholarForm from "./pages/Staff/Scholarly/ScholarForm";
 import StaffTimeTable from "./pages/Staff/StaffTimeTable";
 import Layout from "./components/Layout/Layout";
 import UserProfile from "./components/Profile/UserProfile";
@@ -11,6 +15,7 @@ import AdminPage from "./pages/AdminLogin";
 import StudentSidebar from "./pages/Student/StudentSideBar";
 import ChangePassword from "./pages/Staff/ChangePassword";
 import DashBoard from "./pages/Admin/DashBoard";
+import StaffStarting from "./pages/Staff/StaffStarting";
 // import AdminHome from "./pages/Admin/AdminPage";
 import StaffHome from "./pages/Staff/StaffPage";
 import TeacherList from "./pages/Student/TeacherList";
@@ -146,8 +151,33 @@ function App() {
           {authctx.isLoggedIn &&
             <div className="cont">
 
+              <StaffStarting></StaffStarting>
+            </div>}
+        </Route>
+        <Route path="/staff/college/:qid">
+          {authctx.isLoggedIn &&
+            <div className="cont">
+
               <StaffSidebar></StaffSidebar>
               <StaffHome></StaffHome>
+            </div>}
+        </Route>
+        <Route path="/staff/scholar/:qid">
+          {authctx.isLoggedIn &&
+            <div className="cont">
+
+             <ScholarlySidebar></ScholarlySidebar>
+             <ScholarDashboard></ScholarDashboard>
+              
+            </div>}
+        </Route>
+        <Route path="/staff/publications/:qid">
+          {authctx.isLoggedIn &&
+            <div className="cont">
+<ScholarlySidebar></ScholarlySidebar>
+            <ScholarForm></ScholarForm>
+           
+              
             </div>}
         </Route>
         <Route path="/staff/timeTable/:qid" exact>

@@ -1,10 +1,12 @@
 import React from "react";
 import UserData from "../../components/AdminComp/UserData";
 import { FcManager } from 'react-icons/fc';
+import { UserdetailUrl } from "../../store/APIs";
+import { StaffAuthSignUp } from "../../store/APIs";
 const AddStaff = () => {
     return (
         <React.Fragment>
-            <UserData userCategory={<FcManager size="80px"></FcManager>} userName="Add Staff" fireUrl="https://userdetails-d84c5-default-rtdb.firebaseio.com/staff.json" logUrl="https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDmHdcNB-dQsfYWrJ3ItPyaTR125byfhjQ"> </UserData>
+            <UserData userCategory={<FcManager size="80px"></FcManager>} userName="Add Staff" fireUrl={`${UserdetailUrl}/staff.json`} logUrl={StaffAuthSignUp}> </UserData>
 
         </React.Fragment>
 

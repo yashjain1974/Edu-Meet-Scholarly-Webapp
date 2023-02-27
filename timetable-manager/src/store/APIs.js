@@ -7,3 +7,4 @@ export const AdminAuthSignUp="https://identitytoolkit.googleapis.com/v1/accounts
 export const StaffAuthSignIn="https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDmHdcNB-dQsfYWrJ3ItPyaTR125byfhjQ"
 export const StudentAuthSignIn="https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCw40p_iCCdcwHAlySc7PR6FSX9xShGWn8"
 export const StudentAuthSignUp="https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCw40p_iCCdcwHAlySc7PR6FSX9xShGWn8"
+export const StaffAuthSignUp="https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDmHdcNB-dQsfYWrJ3ItPyaTR125byfhjQ"

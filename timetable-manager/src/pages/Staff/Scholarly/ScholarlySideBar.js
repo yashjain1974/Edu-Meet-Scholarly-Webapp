@@ -10,7 +10,7 @@ import {
 } from 'cdbreact';
 import { NavLink } from 'react-router-dom';
 
-const StaffSidebar = () => {
+const ScholarlySidebar = () => {
   const p = useParams();
   console.log(p);
 
@@ -20,25 +20,25 @@ const StaffSidebar = () => {
       <CDBSidebar textColor="#fff" backgroundColor="#5c2d01">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
           <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
-            College Portal
+            Scholarly Portal
           </a>
         </CDBSidebarHeader>
         <CDBSidebarMenuItem icon="user" >{p.qid}</CDBSidebarMenuItem>
         <CDBSidebarContent className="sidebar-content" iconShape="square">
           <CDBSidebarMenu>
-            <NavLink exact to={`/staff/college/${p.qid}`} activeClassName="activeClicked">
+            <NavLink exact to={`/staff/scholar/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/staff/timeTable/${p.qid}`} activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Manage TimeTable</CDBSidebarMenuItem>
+            <NavLink exact to={`/staff/publications/${p.qid}`} activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Manage Publications</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/staff/slotBook/${p.qid}`} activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Arrange a Meeting</CDBSidebarMenuItem>
+            <NavLink exact to={`/staff/scholar/search${p.qid}`} activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Search Publications</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/staff/profile/${p.qid}`} activeClassName="activeClicked">
+            <NavLink exact to={`/staff/scholar/profile/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Change profile</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/staff/changepassword/${p.qid}`} activeClassName="activeClicked">
+            <NavLink exact to={`/staff/scholar/changepassword/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Change Password</CDBSidebarMenuItem>
             </NavLink>
 
@@ -60,4 +60,4 @@ const StaffSidebar = () => {
   );
 };
 
-export default StaffSidebar;
+export default ScholarlySidebar;
