@@ -1,177 +1,110 @@
 import React, { useState, useRef, useEffect } from "react";
 import classes from './ScholarForm.module.css';
 import PublicationsList from "./PublicationsList";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 const ScholarForm = (props) => {
-    const [isformValidity, setIsformValidity] = useState({
-        title:true,
-        category: true,
-        file: true,
-        Date:true,
-        private: true
-    });
+  let history = useHistory();
 
-    const [isError, setIsError] = useState();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [didSubmitted, setDidSubmitted] = useState(false);
-  const [isdataSet, setIsDataSet] = useState(false);
-  const [isform, setIsform] = useState(false);
 
-  const reftitle = useRef();
-  const refcategory = useRef();
-  const refFile= useRef();
-  const refDate = useRef();
-  const refPrivate = useRef();
-
-  const submitHandler = (event) => {
-    event.preventDefault();
-
-    const enteredTitleNumber = reftitle.current.value;
-    const enteredCategory = refcategory.current.value;
-    const enteredFile = refFile.current.value;
-    const enteredDate = refDate.current.value;
-    const enteredPrivate = refPrivate.current.value;
-    
-
-    const isValidEnteredTitle = !(enteredTitleNumber.trim().length === 11);
-    const isValidenteredFile = !(enteredFile.trim() === "");
-    const isValidenteredCategory = !(enteredCategory.trim() === "");
-    const isValidenteredDate = !(enteredDate.trim() === "");
-    const isValidenteredPrivate = !(enteredPrivate.trim() === "");
-    
-    setIsformValidity({
-      title: isValidEnteredTitle,
-      category: isValidenteredCategory,
-      file: isValidenteredFile,
-      Date: isValidenteredDate,
-      private: isValidenteredPrivate,
+    const [file, setFile] = useState(null)
+    const [title, setTitle] = useState("")
+    const [category, setCategory] = useState("")
+    const [priv, setPrivate] = useState(false)
+    const [description, setDescription] = useState("")
+    const [date, setDate] = useState(null)
+    const submitFormHandler = async (event) => {
+      event.preventDefault();
+      let formField = new FormData()
+      formField.append('title',title)
+      formField.append('category',category)
+      formField.append('date',date)
+      formField.append('private',priv)
       
-    });
-    const formIsValid =
-      isValidEnteredTitle &&
-      isValidenteredCategory &&
-      isValidenteredFile &&
-      isValidenteredDate &&
-      isValidenteredPrivate;
 
-    if (!formIsValid) {
-      return;
-    }
-    submitFormHandler({
-      title: enteredTitleNumber,
-      category: enteredCategory,
-      file: enteredFile,
-      date: enteredDate,
-      private: enteredPrivate,
-      
-    })
+      // if(file !== null) {
+      //   formField.append('file', file)
+      // }
+      console.log(formField)
 
+      await axios({
+        method: 'post',
+        url:'http://localhost:8000/api/publications/',
+        data: formField
+      }).then(response=>{
+        console.log(response.data);
+        // history.push('/')
+      })
   }
-
-  const submitFormHandler = async (userData) => {
-
-    try {
-      console.log(userData);
-      setIsSubmitting(true);
-      const response = await fetch(
-        `http://localhost:8000/api/publications/`,
-        {
-          method: "POST",
-          body: JSON.stringify(userData),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      if (!response.ok) {
-        throw new Error("Unable to Order...");
-      }
-      setIsSubmitting(false);
-      setDidSubmitted(true);
-
-    } catch (error) {
-      setIsSubmitting(false);
-      setIsError(error.message);
-    }
-  };
-    return (
-        <React.Fragment>
+  
+  return (
+    <React.Fragment>
 
 
-            <div className={classes.body}>
+      <div className={classes.body}>
 
-                <hr></hr>
-                <center><h1>Add your Publications here</h1></center>
+        <hr></hr>
+        
 
-                <form onSubmit={submitHandler} >
-
-                    <div class="row">
-                        <div class="col-md">
-                            <div className={classes.styledInput}>
-                                Title:-
-                                <input type="text" name="name" ref={reftitle} required />
-
-                            </div>
-                        </div>
+        
+        <h1>Add your publications here:-</h1>
+          <div class="group-section-one">
+            <label for="name" className={classes.name_label} >Title</label><br />
+            <input type="text" id="title" name="title" placeholder="Enter your title"  
+            value={title}
+              onChange={(e) => setTitle(e.target.value)} required /><br />
 
 
 
-                        {/* <input type="text" name="email" required hidden />
-                        <input type="text" name="from_email" required hidden /> */}
+            
+            <div className={classes.selection_container}>
+              <p>Which topic are you related with?</p>
+              <select className={classes.dropdown} value={category}
+              onChange={(e) => setCategory(e.target.value)}>
+                <option>Computer Science</option>
+                <option>Machine Learning</option>
+                <option>Software Engineering</option>
+                <option>Electrical Science</option>
+              </select>
+            </div>
+            <div className={classes.selection_container}>
+              <label for="number" id="number-label">Upload Your Document</label><br/>
+                <input type="file" id="file"
+              onChange={(e) => setFile(e.target.files[0])}/>
+                </div>
+            </div>
+            <div className={classes.selection_container}>
 
-
-
-
-
-                        <div class="col-md-6 ">
-                            <div className={classes.styledInput}>
-                                <div>Select Date:</div>
-                                <label for="date"></label>
-                                <input id="date" type="date" ref={refDate} name="date" />
-                            </div>
-                        </div>
-                        <div class="col-xs-6">
-                            <div className={classes.styledInput} >
-                                <div>Select Category:</div>
-                                <label for="time"></label>
-                                <select className={classes.selectTime} ref={refcategory} name="slotTime">
-                                    <option>Science</option>
-                                    <option>Maths</option>
-                                    <option>Humanity</option>
-                                    <option>Society</option>
-
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div className={classes.styledInput}>
-                                Upload Publication
-                                <input type="file"
-                                    id="file1"
-                                    name="upload" ref={refFile} />
-                            </div>
-                        </div>
-                        < div class="col ">
-                            <div className={classes.styledInput}>
-                                <div>Private?</div>
-                                <label for="private"></label>
-                                <input id="private" type="checkbox" ref={refPrivate} name="private" />
-                            </div>
-                        </div>
-                        <div class="col-xs-12">
-                            <input type="submit" className={classes.submitBtn} onClick={submitFormHandler} ></input>
-
-                        </div>
-                    </div>
-                </form>
-                <PublicationsList></PublicationsList>
-
-
-
-
-
+              <label for="Date">Select Date : </label>
+              <input type="date" id="date" name="date" value={date}
+              onChange={(e) => setDate(e.target.value)}/>
             </div>
 
-        </React.Fragment>
-    )
+
+            <div className={classes.textarea_container}>
+              <p>Details About the Document : </p>
+              <textarea placeholder="Enter your comment here..." className={classes.textarea_box} value={description}
+              onChange={(e) => setDescription(e.target.value)}>
+              </textarea>
+            </div>
+            <div className={classes.selection_container}>
+              <p>How do you want to show your document :</p>
+              <div className={classes.radio}> </div>
+               Private:    <input type="checkbox" value={priv}
+              onChange={(e) => setPrivate(e.target.value)} checked></input>
+            </div>
+            <div className={classes.button_container}>
+              <button className={classes.submit} onClick={submitFormHandler}>Upload</button>
+            </div>
+       
+       <div><h1>    </h1></div>
+
+
+
+
+      </div>
+
+    </React.Fragment>
+  )
 }
 export default ScholarForm;

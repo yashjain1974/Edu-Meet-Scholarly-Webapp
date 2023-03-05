@@ -9,6 +9,7 @@ import {
 
 } from 'cdbreact';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const StaffSidebar = () => {
   const p = useParams();
@@ -23,6 +24,9 @@ const StaffSidebar = () => {
             College Portal
           </a>
         </CDBSidebarHeader>
+        <Link exact to={`/staff/scholar/${p.qid}`} activeClassName="activeClicked" className="text-decoration-none">
+              <CDBSidebarMenuItem icon="table">Switch to Scholarly Portal</CDBSidebarMenuItem>
+            </Link>
         <CDBSidebarMenuItem icon="user" >{p.qid}</CDBSidebarMenuItem>
         <CDBSidebarContent className="sidebar-content" iconShape="square">
           <CDBSidebarMenu>

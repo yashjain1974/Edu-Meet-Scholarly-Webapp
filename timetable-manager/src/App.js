@@ -2,8 +2,9 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { useContext } from "react";
 import ScholarDashboard from "./pages/Staff/Scholarly/ScholarDashboard";
 import PublicationsList from "./pages/Staff/Scholarly/PublicationsList";
+import SearchPublications from "./pages/Staff/Scholarly/SearchPublications";
 import ScholarlySidebar from "./pages/Staff/Scholarly/ScholarlySideBar";
-import ScholarForm from "./pages/Staff/Scholarly/ScholarForm";
+import PublicationForm from "./pages/Staff/Scholarly/PublicationForm";
 import StaffTimeTable from "./pages/Staff/StaffTimeTable";
 import Layout from "./components/Layout/Layout";
 import UserProfile from "./components/Profile/UserProfile";
@@ -171,11 +172,22 @@ function App() {
               
             </div>}
         </Route>
+        <Route path="/staff/searchPublications/:qid">
+          {authctx.isLoggedIn &&
+            <div className="cont">
+
+             <ScholarlySidebar></ScholarlySidebar>
+             <SearchPublications></SearchPublications>
+            
+             
+              
+            </div>}
+        </Route>
         <Route path="/staff/publications/:qid">
           {authctx.isLoggedIn &&
             <div className="cont">
 <ScholarlySidebar></ScholarlySidebar>
-            <ScholarForm></ScholarForm>
+           <PublicationForm></PublicationForm>
            
               
             </div>}

@@ -1,6 +1,9 @@
 import React, { useState,useEffect } from "react";
+
+import PublicationsList from "./PublicationsList";
 import "./Dashboard.css";
 import { Line } from "react-chartjs-2";
+
 const ScholarDashboard = () => {
   const [data, setData] = useState([
     { id: 1, title: "Dashboard Item 1", value: 10 },
@@ -45,6 +48,8 @@ const ScholarDashboard = () => {
           ))}
         </tbody>
       </table>
+     
+     
     </div>
   );
 };

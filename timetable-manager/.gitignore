@@ -3,7 +3,7 @@
 /node_modules
 /.pnp
 .pnp.js
-/backend/scholarly/publications
+/backend/publications
 # testing
 /coverage
 

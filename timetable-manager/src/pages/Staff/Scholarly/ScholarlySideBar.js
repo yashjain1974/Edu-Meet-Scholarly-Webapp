@@ -9,6 +9,7 @@ import {
 
 } from 'cdbreact';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ScholarlySidebar = () => {
   const p = useParams();
@@ -22,7 +23,11 @@ const ScholarlySidebar = () => {
           <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
             Scholarly Portal
           </a>
+          
         </CDBSidebarHeader>
+        <Link exact to={`/staff/college/${p.qid}`} activeClassName="activeClicked" className="text-decoration-none">
+              <CDBSidebarMenuItem icon="table">Switch to College Portal</CDBSidebarMenuItem>
+            </Link>
         <CDBSidebarMenuItem icon="user" >{p.qid}</CDBSidebarMenuItem>
         <CDBSidebarContent className="sidebar-content" iconShape="square">
           <CDBSidebarMenu>
@@ -32,9 +37,10 @@ const ScholarlySidebar = () => {
             <NavLink exact to={`/staff/publications/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Manage Publications</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/staff/scholar/search${p.qid}`} activeClassName="activeClicked">
+            <NavLink exact to={`/staff/searchPublications/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Search Publications</CDBSidebarMenuItem>
             </NavLink>
+            
             <NavLink exact to={`/staff/scholar/profile/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Change profile</CDBSidebarMenuItem>
             </NavLink>
