@@ -1,8 +1,10 @@
-import React, { useState,useEffect } from "react";
-
+import React, { useState, useEffect } from "react";
 import PublicationsList from "./PublicationsList";
 import "./Dashboard.css";
+import BarChart from "./Charts/BarChart";
 import { Line } from "react-chartjs-2";
+import PieChart from "./Charts/PieChart";
+import Rough from "./Rough";
 
 const ScholarDashboard = () => {
   const [data, setData] = useState([
@@ -21,15 +23,22 @@ const ScholarDashboard = () => {
           data: 10,
           backgroundColor: [
             "rgba(255, 99, 132, 0.6)",
-        
+
           ],
         },
       ],
     });
-  },[]);
+  }, []);
 
   return (
     <div className="dashboard">
+      
+      <div className="chart">
+      <PieChart></PieChart>
+        <BarChart></BarChart>
+</div>
+
+
       <h1 className="dashboard__title">My Dashboard</h1>
       {/* <Line data={chartData} /> */}
       <table className="dashboard__table">
@@ -48,8 +57,10 @@ const ScholarDashboard = () => {
           ))}
         </tbody>
       </table>
-     
-     
+
+
+
+
     </div>
   );
 };

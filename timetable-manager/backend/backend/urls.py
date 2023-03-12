@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from scholarly import views
+from scholarly_webApp import views
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
@@ -28,6 +28,7 @@ router.register(r'publications',views.TodoView,'publications')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include(router.urls)),
+    path('api/', include('scholarly_webApp.urls')),
     path('api/publications/', views.create_publication, name='create-publication'),
    
     

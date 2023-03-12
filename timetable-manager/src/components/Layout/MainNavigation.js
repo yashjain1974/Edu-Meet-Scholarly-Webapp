@@ -40,7 +40,7 @@ const MainNavigation = (props) => {
   return (
     <header className={classes.header}>
       <Link to="/">
-        <div className={classes.logo}>SlotMeUp</div>
+        <div className={classes.logo}>Slot_Scholar</div>
       </Link>
       <nav>
         <ul>

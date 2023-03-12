@@ -26,4 +26,19 @@
   .dashboard__table th {
     background-color: #ddd;
   }
-  
+  .chart{
+    display: flex;
+    
+    max-width: 80%;
+    border: 2px solid black;
+   
+  }
+  .pie{
+    display: flex;
+    align-items: end;
+  text-align: end;
+    height: 30%;
+    width: 20%;
+    
+
+  }

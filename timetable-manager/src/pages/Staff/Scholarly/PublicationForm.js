@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import classes from './ScholarForm.module.css';
-
+import { Switch } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import Modal from '../../../components/UI/Modal';
 const PublicationForm = () => {
 
     let history = useHistory();
@@ -11,11 +14,20 @@ const PublicationForm = () => {
     const [image, setImage] = useState(null)
     const [name, setName] = useState(null)
     const [category, setCategory] = useState(null)
+    const [subject, setSubject] = useState(null)
     const [date, setDate] = useState(null)
     const [description, setDescription] = useState(null)
     const [priv, setPrivate] = useState(false)
     const [isSubmitted,setIsSubmitted]=useState(false);
+    const [isClicked,setisClicked]=useState(false);
 
+    const isClickHandler=()=>{
+      setisClicked(true);
+  }
+    const HideHandler=()=>{
+      setisClicked(false);
+  }
+  
 
     const addNewpublication = async () => {
         let formField = new FormData()
@@ -24,6 +36,7 @@ const PublicationForm = () => {
         formField.append('date',date)
         formField.append('description',description)
         formField.append('private',priv)
+        formField.append('subject',subject)
         
 
         if(image !== null) {
@@ -38,13 +51,18 @@ const PublicationForm = () => {
         }).then(response=>{
           console.log(response.data);
           setIsSubmitted(true);
+          setisClicked(true);
           // history.push('/')
+          window.location.reload(false);
         })
 
 
 
+
+
+
     }
-   
+   console.log(priv);
     return (
         <div className="container">
             <div className="container">
@@ -78,10 +96,21 @@ const PublicationForm = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div> */}
-          <div className={classes.selection_container}>
-              <p>Which topic are this publication related with?</p>
+           <div className={classes.selection_container}>
+              <p>Which Type of publication you provide?</p>
               <select className={classes.dropdown} value={category}
               onChange={(e) => setCategory(e.target.value)}>
+                <option value="Research paper">Research paper</option>
+                <option value="Book">Book</option>
+                <option value="Article">Article</option>
+                <option value="Blog">Blog</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          <div className={classes.selection_container}>
+              <p>Which topic are this publication related with?</p>
+              <select className={classes.dropdown} value={subject}
+              onChange={(e) => setSubject(e.target.value)}>
                 <option value="Computer Science">Computer Science</option>
                 <option value="Machine Learning">Machine Learning</option>
                 <option value="Software Engineering">Software Engineering</option>
@@ -89,6 +118,7 @@ const PublicationForm = () => {
                 <option value="Other">Other</option>
               </select>
             </div>
+           
           {/* <div className="form-group">
             <input
               type="text"
@@ -104,22 +134,28 @@ const PublicationForm = () => {
             DATE:
             <input
               type="date"
-              className="form-control form-control-lg"
+              className={classes.td_container}
               
               name="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
             />
           </div>
-          <div className={classes.selection_container}>
-              <p>How do you want to show your document :</p>
-          <div className={classes.radio}> </div>
-               Private:    <input type="checkbox" value="true"
-              onChange={(e) => setPrivate(e.target.value)} ></input>
+          
+          <div className={classes.radio_container}> </div>
+          <div className={classes.radio_container}>
+              
+              <Stack direction="row" spacing={1} alignItems="center">
+              <Typography>Public</Typography>    <Switch 
+              onChange={(e) => setPrivate(e.target.checked)} ></Switch>
+              <Typography>Private</Typography>
+              </Stack>
             </div>
-          <button className="btn btn-primary" onClick={addNewpublication}>Submit</button>
-          {isSubmitted && <p>Publication is added successfully...</p>}
-       
+          <button className="btn btn-primary" onClick={addNewpublication}>Submit</button> 
+        
+        {isClicked && <Modal onClose={HideHandler}>
+          <p className={classes.mod}>Publication added successfully</p>
+          </Modal>}
       </div>
     </div>
         </div>

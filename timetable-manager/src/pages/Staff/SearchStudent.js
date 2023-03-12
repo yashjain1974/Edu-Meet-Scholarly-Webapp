@@ -63,6 +63,8 @@ const SearchStudent = () => {
     const isClickHandler=()=>{
         setisClicked(true);
     }
+
+    
     const HideHandler=()=>{
         setisClicked(false);
     }

@@ -5,8 +5,10 @@ from django.utils import timezone
 class Todo(models.Model):
     pub_id=models.AutoField(primary_key=True)
     title=models.CharField(max_length=120)
-    category=models.CharField(max_length=30)
-    file=models.FileField(upload_to="scholarly/publications",max_length=254,null=True,default="")
+    category=models.CharField(max_length=30,default="other")
+    subject=models.CharField(max_length=30,default="other")
+    
+    file=models.FileField(upload_to="publications",max_length=254,null=True,default="")
     date=models.DateField(default=timezone.now())
     private=models.BooleanField(default=False)
 

@@ -41,6 +41,7 @@ const SearchPublications = () => {
                     for (let key in data) {
                         loadData.push({
                             title: data[key].title,
+                            subject:data[key].subject,
                             category: data[key].category,
                             file: data[key].file,
                             Date: data[key].date,
@@ -144,6 +145,7 @@ const SearchPublications = () => {
                                 <tr>
 
                                     <th>Title</th>
+                                    <th>Subject</th>
                                     <th>Category</th>
 
                                     <th>Date</th>
@@ -162,6 +164,7 @@ const SearchPublications = () => {
 
 
                                         <td>{item.title}</td>
+                                        <td>{item.subject}</td>
                                         <td>{item.category}</td>
                                         <td>{item.Date}</td>
                                         <td><a href ={item.file} download>Click to view </a></td>

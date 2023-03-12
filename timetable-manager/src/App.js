@@ -36,6 +36,7 @@ import TeacherTimeTable from "./pages/Student/TeacherTimetable";
 import SlotBook from "./pages/Student/SlotBook";
 import StaffDetailForm from "./pages/Staff/StaffDetailForm";
 import ChangePasswordSt from "./pages/Student/ChangePasswordSt";
+import SearchScholar from "./components/StartingPage/SearchScholar";
 
 function App() {
   const authctx = useContext(AuthContext);
@@ -64,6 +65,12 @@ function App() {
 
           </Route>
         )}
+         { 
+          <Route path="/searchScholar">
+            <SearchScholar></SearchScholar>
+
+          </Route>
+        }
 
         <Route path="/admin/AdminHome/:qid">
           <div className="cont">

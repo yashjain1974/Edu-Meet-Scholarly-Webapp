@@ -15,14 +15,16 @@
     color:var(--white);
     font-family: 'Roboto', sans-serif;
     padding: 20px;
+    background-color: #FFFFFF;
     
 }
 .p{
     margin-bottom:10px;
 }
 .td_container{
-    margin-top:45px;
+    width: 200px;
     text-align:center;
+    margin: 20px;
 }
 .body title{
     font-weight:500;
@@ -30,6 +32,11 @@
 .description{
     font-style:italic;
     font-size:18px;
+}
+.mod{
+    width:200px;
+    height: 200px;
+   
 }
 .title,.description{
     margin-bottom:10px;
@@ -60,12 +67,19 @@
     margin-bottom:10px;
     margin-top:10px;
 }
-.selection_container,.radio_container,.checkbox_container,.textarea_container,.group_section-one,
+.checkbox_container,.textarea_container,.group_section-one,
 .button_container{
     width:550px;
     padding:18px;
     font-size:18px;
+    
 }
+.selection_container{
+    width:550px;
+    padding:18px;
+
+}
+
 .textarea_box{
     width:100%;
     height:150px;
