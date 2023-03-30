@@ -7,7 +7,7 @@ const StaffPage = () => {
   var url2=AdminAuthSignUp;
   return (
     <React.Fragment>
-   <AuthForm LogsignInUrl={url1} LogsignUpUrl={url2} mode="Admin" navigate="admin/AdminHome/" />;
+   <AuthForm LogsignInUrl={url1} LogsignUpUrl={url2} mode="Admin" navigate="admin/adminHome/" />;
    
   
   </React.Fragment>

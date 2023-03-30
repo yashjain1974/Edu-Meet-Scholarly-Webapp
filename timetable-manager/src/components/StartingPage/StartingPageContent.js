@@ -5,6 +5,7 @@ import { FcGraduationCap } from 'react-icons/fc';
 import { FcSearch } from 'react-icons/fc';
 import { FcManager } from 'react-icons/fc';
 import SearchScholar from './SearchScholar';
+import jaypeeLogo from "../images/jaypee.png";
 const StartingPageContent = () => {
   return (
     <React.Fragment>
@@ -22,6 +23,9 @@ const StartingPageContent = () => {
      
     </div>
      <marquee>Welcome to Slot_Scholar Web App </marquee>
+     <div className={classes.logo} >
+     <img  src={jaypeeLogo} alt="jaypee logo"></img>
+     </div>
      </React.Fragment>
     
 

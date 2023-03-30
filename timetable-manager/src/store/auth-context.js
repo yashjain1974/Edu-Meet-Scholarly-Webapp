@@ -16,6 +16,9 @@ const AuthContext = React.createContext({
   loginId: "",
   StudentId: "",
   setStudentLoginId: (id) => { },
+  setScholarData:(data)=>{},
+  
+
 
 
 
@@ -80,6 +83,8 @@ export const AuthContextProvider = (props) => {
     localStorage.removeItem("name");
   localStorage.removeItem("email");
   localStorage.removeItem("teacherEmail");
+  localStorage.removeItem("staffName");
+  localStorage.removeItem("scholarData");
  
 
     his.replace("/");
@@ -95,6 +100,11 @@ export const AuthContextProvider = (props) => {
     logoutTimer = setTimeout(logOutHandler, remainingDuration);
 
   };
+
+  const setScholarDataHandler=(data)=>{
+    localStorage.setItem("scholarData",JSON.stringify(data));
+
+  }
   const setIdHandler = (idd) => {
     setid(idd);
     localStorage.setItem("id", idd);
@@ -138,7 +148,8 @@ export const AuthContextProvider = (props) => {
     StudentId: studentid,
     setTeacherLoginId: setTeacherLoginIdHandler,
 
-    loginId: teacherLoginid
+    loginId: teacherLoginid,
+    setScholarData:setScholarDataHandler
 
 
 

@@ -1,5 +1,6 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 import { useContext } from "react";
+
 import ScholarDashboard from "./pages/Staff/Scholarly/ScholarDashboard";
 import PublicationsList from "./pages/Staff/Scholarly/PublicationsList";
 import SearchPublications from "./pages/Staff/Scholarly/SearchPublications";
@@ -10,9 +11,11 @@ import Layout from "./components/Layout/Layout";
 import UserProfile from "./components/Profile/UserProfile";
 import StudentPage from "./pages/StudentLogin";
 import HomePage from "./pages/HomePage";
+import AdminStarting from "./pages/Admin/AdminStarting";
 import AuthContext from "./store/auth-context";
 import StaffPage from "./pages/StaffLogin";
 import AdminPage from "./pages/AdminLogin";
+import ScholarData from "./pages/Admin/AdminScholar/ScholarData";
 import StudentSidebar from "./pages/Student/StudentSideBar";
 import ChangePassword from "./pages/Staff/ChangePassword";
 import DashBoard from "./pages/Admin/DashBoard";
@@ -23,6 +26,7 @@ import TeacherList from "./pages/Student/TeacherList";
 import StudentHome from "./pages/Student/StudentPage";
 import Sidebar from "./components/UI/Sidebar";
 import AdminSidebar from "./pages/Admin/AdminSideBar";
+import AdminScholarSidebar from "./pages/Admin/AdminScholar/AdminScholarSidebar";
 // import DashBoard from "./pages/Admin/DashBoard";
 import AddStaff from "./pages/Admin/AddStaff";
 import AddStudent from "./pages/Admin/AddStudent";
@@ -72,13 +76,36 @@ function App() {
           </Route>
         }
 
-        <Route path="/admin/AdminHome/:qid">
+        <Route path="/admin/college/:qid">
           <div className="cont">
 
             <AdminSidebar></AdminSidebar>
 
             <DashBoard></DashBoard>
           </div>
+        </Route>
+        <Route path="/admin/scholar/:qid">
+          <div className="cont">
+
+            <AdminScholarSidebar></AdminScholarSidebar>
+
+            <DashBoard></DashBoard>
+          </div>
+        </Route>
+        <Route path="/admin/scholarList/:qid">
+          <div className="cont">
+
+            <AdminScholarSidebar></AdminScholarSidebar>
+
+           <ScholarData></ScholarData>
+          </div>
+        </Route>
+        <Route path="/admin/adminHome/:qid">
+          {authctx.isLoggedIn &&
+            <div className="cont">
+
+              <AdminStarting></AdminStarting>
+            </div>}
         </Route>
         <Route path="/admin/staff/:qid" exact>
           <div className="cont">

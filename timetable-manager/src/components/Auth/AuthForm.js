@@ -47,6 +47,14 @@ const AuthForm = (props) => {
           new Date().getTime() + +data.expiresIn * 1000
         );
         console.log(data.email);
+        let loginEmail=data.email;
+        let emailArr=loginEmail.split("@");
+        let emaill=emailArr[0].replace("."," ");
+        console.log(emaill)
+        localStorage.setItem("staffName", emaill);
+
+
+        
         Authctx.login(data.idToken, expirationTime.toISOString());
      
         history.replace(`${props.navigate + data.email}`);

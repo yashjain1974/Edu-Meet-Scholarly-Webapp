@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react"
+
 import { useParams } from 'react-router-dom';
 import {
   CDBSidebar,
@@ -10,32 +11,32 @@ import {
 } from 'cdbreact';
 import { NavLink } from 'react-router-dom';
 
-const AdminSidebar = () => {
+const AdminScholarSidebar = () => {
   const p = useParams();
   console.log(p);
 
 
   return (
-    <div style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}>
+    <div style={{ display: 'flex', minheight: '50vh', overflow: 'scroll initial' }}>
       <CDBSidebar textColor="#fff" backgroundColor="#5c2d01">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
           <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
             Admin Portal
           </a>
         </CDBSidebarHeader>
-
+        
         <CDBSidebarContent className="sidebar-content" iconShape="square">
           <CDBSidebarMenu>
-            <NavLink exact to={`/admin/college/${p.qid}`} activeClassName="activeClicked">
+            <NavLink exact to={`/admin/scholar/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/admin/staff/${p.qid}`} activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Add Staff</CDBSidebarMenuItem>
+            <NavLink exact to={`/admin/scholarList/${p.qid}`} activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Scholar Data</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/admin/student/${p.qid}`} activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Add Student</CDBSidebarMenuItem>
+            <NavLink exact to={`/admin/scholarMaintain/${p.qid}`} activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="table">Maintain Scholar</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/admin/profile/${p.qid}`} activeClassName="activeClicked">
+            <NavLink exact to={`/admin/scholarProfile/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Your Profile</CDBSidebarMenuItem>
             </NavLink>
 
@@ -57,4 +58,4 @@ const AdminSidebar = () => {
   );
 };
 
-export default AdminSidebar;
+export default AdminScholarSidebar;

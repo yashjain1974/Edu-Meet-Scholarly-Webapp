@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import classes from './SearchScholar.module.css';
 import LoadingSpinner from '../UI/LoadingSpinner';
+import jaypeeLogo from "../images/jaypee.png";
 const SearchScholar = () => {
     const [data, setData] = useState(null);
     const searchUser = useRef()
@@ -17,7 +18,7 @@ const SearchScholar = () => {
 
     useEffect(() => {
         console.log(searchh);
-        fetch(`http://localhost:8000/api/my_view/${searchh}/`)
+        fetch(`http://localhost:8000/api/my_view/${searchh} jiit.ac.in/`)
             .then(response => response.json())
             .then(data => {
                 setData(data);
@@ -37,7 +38,9 @@ const SearchScholar = () => {
             <button type="submit" onClick={searchHandler} className={classes.submit}>Search</button> 
             </div>
             {isLoading && <div className='loading'><LoadingSpinner></LoadingSpinner></div>}
-           
+            {!data && <div className={classes.logo} >
+     <img  src={jaypeeLogo} alt="jaypee logo"></img>
+     </div>}
             {data && (
                 <div>
                  <div>Total Citations:{data[1][0]["total_citations"]}</div>
