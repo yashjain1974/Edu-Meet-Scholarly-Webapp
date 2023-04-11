@@ -55,13 +55,15 @@ const ScholarDashboard = () => {
 
   return (
     <div className="dashboard">
+      {!myObject && <LoadingSpinner></LoadingSpinner>}
     { myObject &&
        <ScholarDetailCard myObject={myObject}></ScholarDetailCard>
       }
       <h1 className="dashboard__title">My Dashboard</h1>
       <div className="chart">
-        <PieChart></PieChart>
-        {myObject && <BarChart bardata={myObject.Cites_per_year}></BarChart>}
+      {!myObject && <div><LoadingSpinner></LoadingSpinner> <p>Extracting data</p></div>}
+      <PieChart></PieChart>
+        {myObject &&  <div>  <BarChart bardata={myObject.Cites_per_year}></BarChart></div>}
       </div>
 
 
