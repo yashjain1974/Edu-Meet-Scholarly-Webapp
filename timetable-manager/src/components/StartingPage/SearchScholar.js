@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import classes from './SearchScholar.module.css';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import jaypeeLogo from "../images/jaypee.png";
+import DataList from '../Layout/DataList';
 const SearchScholar = () => {
     const [data, setData] = useState(null);
     const searchUser = useRef()
@@ -33,10 +34,12 @@ const SearchScholar = () => {
             <div className={classes.head}><h1> Search Scholar</h1></div>
             <div className={classes.search}>
                 
-            <input type="text" ref={searchUser}  className={classes.search} placeholder="Search publication..."></input>
+            <input type="text" ref={searchUser}  className={classes.search} placeholder="Search Author..."></input>
            
             <button type="submit" onClick={searchHandler} className={classes.submit}>Search</button> 
+
             </div>
+            <DataList></DataList>
             {isLoading && <div className='loading'><LoadingSpinner></LoadingSpinner></div>}
             {!data && <div className={classes.logo} >
      <img  src={jaypeeLogo} alt="jaypee logo"></img>

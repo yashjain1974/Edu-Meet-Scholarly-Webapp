@@ -4,7 +4,8 @@ from django.utils import timezone
 # Create your models here.
 class Todo(models.Model):
     pub_id=models.AutoField(primary_key=True)
-    title=models.CharField(max_length=120)
+    pub_author=models.CharField(max_length=120,default="null")
+    title=models.CharField(max_length=120,default="null")
     category=models.CharField(max_length=30,default="other")
     subject=models.CharField(max_length=30,default="other")
     

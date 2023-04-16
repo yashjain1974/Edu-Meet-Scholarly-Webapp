@@ -28,10 +28,11 @@ const PublicationForm = () => {
       setisClicked(false);
   }
   
-
+  let author_name = localStorage.getItem("staffName");
     const addNewpublication = async () => {
         let formField = new FormData()
         formField.append('title',name)
+        formField.append('pub_author',author_name)
         formField.append('category',category)
         formField.append('date',date)
         formField.append('description',description)

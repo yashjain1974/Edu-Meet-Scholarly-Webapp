@@ -27,13 +27,13 @@ return(
     labels: k,
     datasets: [
       {
-        label: 'Citation:',
-        backgroundColor: '#f87979',
+        label: props.title,
+        backgroundColor: props.color,
         data: v,
       },
     ],
   }}
-  labels="months"
+  labels={props.label}
 />
 )
 }

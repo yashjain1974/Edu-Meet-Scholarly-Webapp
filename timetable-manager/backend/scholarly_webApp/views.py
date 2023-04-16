@@ -39,8 +39,14 @@ def my_view(request, author_name):
     # print(data)
     search_query = scholarly.search_author(author_name)
     author = scholarly.fill(next(search_query))
+    data=[]
 
-    data = [{'title': pub["bib"]['title'], 'number_citations': pub['num_citations']} for pub in author["publications"]]
+    for pub in author['publications']:
+        try:
+            pub_year = pub['bib']['pub_year']
+        except KeyError:
+            pub_year = 'N/A'
+        data.append({'title': pub['bib']['title'], 'pub_yr': pub_year, 'number_citations': pub['num_citations']})
     data2=[{'total_citations':author["citedby"],"cites_per_year":author["cites_per_year"],'scholar_id': author['scholar_id'],'url_picture': author['url_picture'],'name': author['name'],
 'affiliation': author['affiliation'],
  'interests':author['interests']}]

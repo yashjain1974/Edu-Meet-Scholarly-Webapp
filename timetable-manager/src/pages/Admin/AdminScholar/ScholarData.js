@@ -5,6 +5,7 @@ import LoadingSpinner from "../../../components/UI/LoadingSpinner";
 import CitaionCount from "./CitationCount";
 import data from './citation.json';
 import CitaionAuthor from "./CitationAuthor";
+import DataList from "../../../components/Layout/DataList";
 // Allowed extensions for input file
 const allowedExtensions = ["csv"];
 
@@ -97,9 +98,11 @@ const ScholarData = () => {
 
       </div>
       {isLoading && <LoadingSpinner></LoadingSpinner>}
-      {isClicked && <CitaionCount authh={author}></CitaionCount>}
+    
 
-      <table className="styled-table">
+      <DataList></DataList>
+
+      {/* <table className="styled-table">
         <thead>
           <tr>
             <th>Index</th>
@@ -122,7 +125,7 @@ const ScholarData = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
 
     </div>
 

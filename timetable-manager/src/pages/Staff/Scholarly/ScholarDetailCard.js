@@ -13,7 +13,7 @@ const ScholarDetailCard=(props)=>{
           <div className={classes.content}>
             <div className={classes.main_header}>
               <div className={classes.main_title}>
-              <img className="img1" src={props.myObject.url_img}></img>
+              <img className={classes.img1} src={props.myObject.url_img}></img>
                 <h1>{props.myObject.Name}</h1>
                 
               </div>

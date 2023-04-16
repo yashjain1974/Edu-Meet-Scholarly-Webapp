@@ -30,6 +30,7 @@ const SearchPublications = () => {
     const hist = useHistory();
     const match = useRouteMatch();
     console.log(match.path);
+    let author=localStorage.getItem("staffName");
     useEffect(() => {
         // our fetch codes
         fetch(`http://localhost:8000/api/publications/`)
@@ -39,6 +40,7 @@ const SearchPublications = () => {
                     setIsLoaded(true);
                     const loadData = [];
                     for (let key in data) {
+                        if(data[key].pub_author==author){
                         loadData.push({
                             title: data[key].title,
                             subject:data[key].subject,
@@ -47,6 +49,7 @@ const SearchPublications = () => {
                             Date: data[key].date,
                             private: data[key].private
                         });
+                    }
                     }
                     setItems(loadData);
                     console.log(data);

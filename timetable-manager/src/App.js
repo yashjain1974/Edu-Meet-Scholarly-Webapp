@@ -32,6 +32,7 @@ import AddStaff from "./pages/Admin/AddStaff";
 import AddStudent from "./pages/Admin/AddStudent";
 import StaffSidebar from "./pages/Staff/StaffSidebar";
 import PersonalProfile from "./pages/Student/PersonalProfile";
+import GenerateDoc from "./pages/Admin/AdminScholar/GenerateDoc";
 
 import './App.css'
 import DashBoardDes from "./components/AdminComp/DashBoardDes";
@@ -98,6 +99,14 @@ function App() {
             <AdminScholarSidebar></AdminScholarSidebar>
 
            <ScholarData></ScholarData>
+          </div>
+        </Route>
+        <Route path="/admin/scholarDocument/:qid">
+          <div className="cont">
+
+            <AdminScholarSidebar></AdminScholarSidebar>
+
+          <GenerateDoc></GenerateDoc>
           </div>
         </Route>
         <Route path="/admin/adminHome/:qid">
