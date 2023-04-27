@@ -6,6 +6,8 @@ import CitaionCount from "./CitationCount";
 import data from './citation.json';
 import CitaionAuthor from "./CitationAuthor";
 import DataList from "../../../components/Layout/DataList";
+import CreatePdf from "./CreatePdf";
+import ShowHideSection from "../../../components/Layout/ShowHideSection";
 // Allowed extensions for input file
 const allowedExtensions = ["csv"];
 
@@ -80,27 +82,64 @@ const ScholarData = () => {
     if (data.hasOwnProperty(key) && citationdata.hasOwnProperty(key)) {
       console.log(key + ' is present in both objects');
       data[key]["Citation"] = citationdata[key]["citation"];
+      data[key]["total_pub"]=citationdata[key]["total_pub"];
+      data[key]["name"]=citationdata[key]["name"];
+      console.log(data[key]["total_pub"])
     } else {
       console.log(key + ' is not present in obj2');
       data[key]["Citation"] = "Nan";
+      data[key]["total_pub"] = "Nan";
     }
   }
 
-  console.log(data)
+  
+  
+console.log(data)
 
 
+  const tableData = data.map((item,index) => {
+    return [
+     
+      item['Faculty'],
+      item['Email'],
+      item['Profile'],
+      item['InterestArea'],
+      item['Citation'],
+      item['total_pub'],
+    ];
+  });
+  tableData.sort(function(a, b) {
+    if (isNaN(a[a.length-2]) || isNaN(b[b.length-2])) {
+      // If one of the values is "Nan", move it to the end
+      return isNaN(a[a.length-2]) ? 1 : -1;
+  } else {
+      // Otherwise, sort in descending order
+      return b[b.length-2] - a[a.length-2];
+  }
+});
+for(let i = 0; i <tableData.length; i++) {
+  tableData[i].push(i+1); // adding index value to each array
+}
+
+
+  console.log(tableData)
+
+  const header=['Faculty', 'Email', 'InterestArea','Profile','Citation','Total_publications',"Ranking In Institution"]
 
   return (
     <div>
 
-      {/* <button onClick={extractCitation}>Extract Citation</button> */}
+      {/* <button onClick={extractCitation}>Extract Citation</button>
+      {isClicked && <CitaionCount authh={author}></CitaionCount>} */}
+
       <div>
 
       </div>
       {isLoading && <LoadingSpinner></LoadingSpinner>}
     
-
+      <CreatePdf tableData={tableData} head={header}></CreatePdf>
       <DataList></DataList>
+    
 
       {/* <table className="styled-table">
         <thead>
@@ -126,6 +165,7 @@ const ScholarData = () => {
           ))}
         </tbody>
       </table> */}
+    
 
     </div>
 

@@ -1,35 +1,24 @@
 import React from 'react';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import classes from './CreatePdf.module.css'
 
-function CreatePdf({ tableData }) {
+
+function CreatePdf({tableData,head}) {
 
   function generatePDF() {
-    const myObject = {
-        John: { age: 30, email: 'john@example.com' },
-        Jane: { age: 25, email: 'jane@example.com' },
-        Bob: { age: 50, email: 'bob@example.com' },
-      };
-      
-      // Extract the keys and values from the object
-      const keys = Object.keys(myObject);
-      const values = Object.values(myObject);
-      
-      // Combine the keys and values into an array of arrays
-      const tableData = values.map((value, index) => {
-        return [keys[index], value.age, value.email];
-      });
+   
     // Define the table headers
-    const headers = ['Name', 'Age', 'Email'];
+    const headers = head;
 
     // Define the table styles
     const styles = {
-      fontSize: 12,
+      fontSize: 5,
       fontStyle: 'bold',
-      cellPadding: 5,
-      overflow: 'linebreak',
-      halign: 'center',
-      valign: 'middle',
+      cellPadding: 2,
+      // overflow: 'linebreak',
+      // halign: 'center',
+      // valign: 'middle',
       fillColor: [255, 150, 136],
       textColor: [0, 0, 0],
     };
@@ -41,14 +30,14 @@ function CreatePdf({ tableData }) {
     doc.autoTable({
       head: [headers],
       body: tableData,
-      startY: 20,
+      startY: 10,
       styles: styles,
       didDrawPage: function (data) {
         // Add a header to the PDF document
         doc.setFontSize(18);
         doc.setTextColor(20);
        
-        doc.text('My Table PDF', data.settings.margin.left, 10);
+        doc.text('Scholar Data', data.settings.margin.bottom, 10);
       },
       margin: { top: 50 },
     });
@@ -59,8 +48,8 @@ function CreatePdf({ tableData }) {
 
   return (
     <div>
-      <h1>Table to PDF</h1>
-      <button onClick={generatePDF}>Generate PDF</button>
+   
+      <button className={classes.btn} onClick={generatePDF}>Generate PDF</button>
     </div>
   );
 }

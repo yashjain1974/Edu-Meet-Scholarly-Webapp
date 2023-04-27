@@ -7,11 +7,17 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css';
 import Papa from "papaparse";
+import ShowHideSection from './ShowHideSection';
+import Modal from '../UI/Modal';
+import ScholarDetail from '../../pages/Admin/AdminScholar/ScholarDetail';
+
 
 function DataList() {
     const [userlist, setuserlist] = useState([]);
     const [data, setData] = useState([]);
     const [citationdata, setCitationData] = useState([]);
+    const [showNewComponent, setShowNewComponent] = useState(false);
+    const[author,setAuthor]=useState("");
     useEffect(() => {
 
         fetch('/citation.json')
@@ -34,12 +40,22 @@ function DataList() {
 
     const columns = [
        
-        { dataField: 'Faculty', text: 'Faculty', sort: true, filter: textFilter() },
+        { dataField: 'Faculty', text: 'Faculty', sort: true, filter: textFilter(),
+        events: {
+            onClick: (e, column, columnIndex, row, rowIndex) => {
+                console.log(`Value: ${row[column.dataField]}`);
+                setAuthor(row[column.dataField]);
+              setShowNewComponent(true);
+            }
+          } },
         { dataField: 'Email', text: 'Email', sort: true, filter: textFilter() },
         { dataField: 'InterestArea', text: 'InterestArea', sort: true, filter: textFilter() },
         { dataField: 'Profile', text: 'Profile', sort: true, filter: textFilter() },
         
-        { dataField: 'Citation', text: 'Citation', sort: true }
+        { dataField: 'Citation', text: 'Citation', sort: true},
+        { dataField: 'total_pub', text: 'Total Publications', sort: true},
+        
+
     ]
 
     const pagination = paginationFactory({
@@ -67,17 +83,29 @@ function DataList() {
     console.log(data)
     console.log(columns)
     for (let key in data) {
-        if (data.hasOwnProperty(key) && citationdata.hasOwnProperty(key)) {
-          console.log(key + ' is present in both objects');
-          data[key]["Citation"] = citationdata[key]["citation"];
-        } else {
-          console.log(key + ' is not present in obj2');
-          data[key]["Citation"] = "Nan";
-        }
+      if (data.hasOwnProperty(key) && citationdata.hasOwnProperty(key)) {
+        console.log(key + ' is present in both objects');
+        data[key]["Citation"] = citationdata[key]["citation"];
+        data[key]["total_pub"]=citationdata[key]["total_pub"];
+        data[key]["name"]=citationdata[key]["name"];
+        console.log(data[key]["total_pub"])
+      } else {
+        console.log(key + ' is not present in obj2');
+        data[key]["Citation"] = "Nan";
+        data[key]["total_pub"] = "Nan";
       }
+    }
     
       console.log(data)
-    return <div>
+     
+      const toggleNewComponent = () => {
+        setShowNewComponent(!showNewComponent);
+      };
+      
+    return (
+    
+    <div>
+         {showNewComponent ? <Modal><ScholarDetail author={author}></ScholarDetail></Modal> : null}
 
         <BootstrapTable bootstrap4 keyField='id' columns={columns} data={data} pagination={pagination} filter={filterFactory()} />
         {/* <table>
@@ -100,7 +128,7 @@ function DataList() {
                     :'Loading'
             }
         </table> */}
-    </div>
+    </div>)
 }
 
 export default DataList;

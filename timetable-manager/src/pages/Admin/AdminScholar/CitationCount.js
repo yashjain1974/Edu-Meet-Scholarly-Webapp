@@ -25,8 +25,11 @@ const CitaionCount = (props) => {
       .then(data => {
 
         cite[i] = {
-          "name": props.authh[i],
-          "citation": data[1][0]["total_citations"]
+          "name": data[1][0]["name"],
+          "citation": data[1][0]["total_citations"],
+          "total_pub":data[0].length,
+          "cites_per_year":data[1][0]["cites_per_year"],
+          'url_picture':data[1][0]["url_picture"]
         }
 
         console.log(data[1][0]["total_citations"]);
