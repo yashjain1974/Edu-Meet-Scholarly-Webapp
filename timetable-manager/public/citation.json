@@ -1,7 +1,7 @@
 {
     "0": {
         "name": "Prof. Vikas Saxena",
-        "citation": 2244,
+        "citation": 2248,
         "total_pub": 101,
         "cites_per_year": {
             "2008": 7,
@@ -19,14 +19,37 @@
             "2020": 371,
             "2021": 490,
             "2022": 583,
-            "2023": 134
+            "2023": 139
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=lT3evUEAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=lT3evUEAAAAJ",
+        "counts": {
+            "1970": 1,
+            "1992": 1,
+            "2006": 1,
+            "2007": 11,
+            "2008": 2,
+            "2009": 3,
+            "2010": 10,
+            "2011": 8,
+            "2012": 4,
+            "2013": 5,
+            "2014": 6,
+            "2015": 4,
+            "2016": 3,
+            "2017": 7,
+            "2018": 4,
+            "2019": 4,
+            "2020": 9,
+            "2021": 8,
+            "2022": 6,
+            "2023": 1,
+            "N/A": 3
+        }
     },
     "2": {
         "name": "Dr. Sandeep Kumar  Singh",
-        "citation": 600,
-        "total_pub": 64,
+        "citation": 602,
+        "total_pub": 66,
         "cites_per_year": {
             "2008": 2,
             "2009": 6,
@@ -43,13 +66,32 @@
             "2020": 79,
             "2021": 101,
             "2022": 124,
-            "2023": 36
+            "2023": 38
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=9tRIm5AAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=9tRIm5AAAAAJ",
+        "counts": {
+            "2008": 2,
+            "2009": 3,
+            "2010": 5,
+            "2011": 3,
+            "2012": 3,
+            "2013": 4,
+            "2014": 6,
+            "2015": 4,
+            "2016": 5,
+            "2017": 5,
+            "2018": 4,
+            "2019": 5,
+            "2020": 6,
+            "2021": 1,
+            "2022": 6,
+            "2023": 3,
+            "N/A": 1
+        }
     },
     "3": {
         "name": "Charu Gandhi",
-        "citation": 466,
+        "citation": 468,
         "total_pub": 55,
         "cites_per_year": {
             "2010": 6,
@@ -65,9 +107,26 @@
             "2020": 40,
             "2021": 96,
             "2022": 100,
-            "2023": 31
+            "2023": 33
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=r1BC5qUAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=r1BC5qUAAAAJ",
+        "counts": {
+            "2006": 1,
+            "2009": 4,
+            "2010": 3,
+            "2012": 1,
+            "2013": 3,
+            "2014": 7,
+            "2015": 2,
+            "2016": 4,
+            "2017": 3,
+            "2018": 1,
+            "2019": 4,
+            "2020": 9,
+            "2021": 7,
+            "2022": 3,
+            "N/A": 3
+        }
     },
     "4": {
         "name": "Dr. Prakash Kumar",
@@ -96,7 +155,33 @@
             "2022": 75,
             "2023": 11
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=lWX9KlgAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=lWX9KlgAAAAJ",
+        "counts": {
+            "1988": 1,
+            "1991": 3,
+            "1992": 2,
+            "1994": 1,
+            "1999": 1,
+            "2000": 4,
+            "2001": 1,
+            "2006": 1,
+            "2007": 1,
+            "2009": 2,
+            "2010": 5,
+            "2011": 3,
+            "2012": 2,
+            "2013": 4,
+            "2014": 4,
+            "2015": 3,
+            "2016": 3,
+            "2017": 2,
+            "2018": 5,
+            "2019": 4,
+            "2020": 3,
+            "2021": 2,
+            "2022": 3,
+            "N/A": 4
+        }
     },
     "6": {
         "name": "Dr. Neetu Sardana",
@@ -114,11 +199,27 @@
             "2022": 65,
             "2023": 48
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=HJydVWwAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=HJydVWwAAAAJ",
+        "counts": {
+            "2010": 1,
+            "2011": 1,
+            "2012": 2,
+            "2014": 4,
+            "2015": 3,
+            "2016": 6,
+            "2017": 8,
+            "2018": 8,
+            "2019": 8,
+            "2020": 11,
+            "2021": 8,
+            "2022": 6,
+            "2023": 2,
+            "N/A": 5
+        }
     },
     "7": {
         "name": "Dr. Shikha Mehta",
-        "citation": 681,
+        "citation": 683,
         "total_pub": 63,
         "cites_per_year": {
             "2012": 4,
@@ -130,15 +231,33 @@
             "2018": 60,
             "2019": 100,
             "2020": 95,
-            "2021": 145,
+            "2021": 146,
             "2022": 139,
-            "2023": 39
+            "2023": 40
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=nBy-KdgAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=nBy-KdgAAAAJ",
+        "counts": {
+            "1968": 1,
+            "1995": 1,
+            "2010": 4,
+            "2012": 2,
+            "2013": 2,
+            "2014": 4,
+            "2015": 1,
+            "2016": 3,
+            "2017": 8,
+            "2018": 6,
+            "2019": 7,
+            "2020": 5,
+            "2021": 4,
+            "2022": 12,
+            "2023": 2,
+            "N/A": 1
+        }
     },
     "8": {
         "name": "Dr. Anuja Arora",
-        "citation": 1671,
+        "citation": 1673,
         "total_pub": 107,
         "cites_per_year": {
             "2012": 5,
@@ -147,18 +266,37 @@
             "2015": 23,
             "2016": 25,
             "2017": 59,
-            "2018": 71,
+            "2018": 72,
             "2019": 137,
             "2020": 273,
             "2021": 398,
             "2022": 499,
-            "2023": 126
+            "2023": 127
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=Uz_ML8cAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=Uz_ML8cAAAAJ",
+        "counts": {
+            "2001": 1,
+            "2009": 1,
+            "2010": 1,
+            "2011": 1,
+            "2012": 3,
+            "2013": 4,
+            "2014": 5,
+            "2015": 3,
+            "2016": 7,
+            "2017": 10,
+            "2018": 15,
+            "2019": 16,
+            "2020": 7,
+            "2021": 11,
+            "2022": 14,
+            "2023": 1,
+            "N/A": 7
+        }
     },
     "9": {
         "name": "Dr. Devpriya Soni",
-        "citation": 299,
+        "citation": 300,
         "total_pub": 32,
         "cites_per_year": {
             "2010": 11,
@@ -173,10 +311,29 @@
             "2019": 13,
             "2020": 30,
             "2021": 54,
-            "2022": 112,
-            "2023": 27
+            "2022": 111,
+            "2023": 29
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=D5lGxLYAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=D5lGxLYAAAAJ",
+        "counts": {
+            "1960": 1,
+            "2002": 1,
+            "2007": 1,
+            "2009": 1,
+            "2010": 2,
+            "2013": 1,
+            "2014": 2,
+            "2015": 1,
+            "2016": 3,
+            "2017": 3,
+            "2018": 3,
+            "2019": 6,
+            "2020": 1,
+            "2021": 1,
+            "2022": 2,
+            "2023": 2,
+            "N/A": 1
+        }
     },
     "10": {
         "name": "Prof. Manish K Thakur",
@@ -198,11 +355,26 @@
             "2022": 42,
             "2023": 11
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=MYxL_ZkAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=MYxL_ZkAAAAJ",
+        "counts": {
+            "2010": 4,
+            "2011": 1,
+            "2012": 1,
+            "2013": 4,
+            "2014": 3,
+            "2015": 2,
+            "2016": 2,
+            "2017": 3,
+            "2018": 6,
+            "2019": 4,
+            "2020": 2,
+            "2021": 1,
+            "2022": 7
+        }
     },
     "11": {
         "name": "Dr. Mukesh Saraswat",
-        "citation": 2163,
+        "citation": 2164,
         "total_pub": 79,
         "cites_per_year": {
             "2012": 7,
@@ -216,9 +388,25 @@
             "2020": 343,
             "2021": 451,
             "2022": 418,
-            "2023": 124
+            "2023": 125
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=UHKGhhEAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=UHKGhhEAAAAJ",
+        "counts": {
+            "2009": 1,
+            "2011": 1,
+            "2012": 2,
+            "2013": 6,
+            "2014": 6,
+            "2015": 1,
+            "2016": 4,
+            "2017": 4,
+            "2018": 5,
+            "2019": 8,
+            "2020": 10,
+            "2021": 13,
+            "2022": 13,
+            "2023": 5
+        }
     },
     "12": {
         "name": "Dr. Dharmveer Singh Rajpoot",
@@ -238,7 +426,20 @@
             "2022": 135,
             "2023": 42
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=cHCjD5IAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=cHCjD5IAAAAJ",
+        "counts": {
+            "2010": 3,
+            "2011": 3,
+            "2012": 3,
+            "2014": 1,
+            "2015": 13,
+            "2016": 9,
+            "2017": 3,
+            "2018": 2,
+            "2019": 11,
+            "2020": 2,
+            "2021": 1
+        }
     },
     "14": {
         "name": "Sangeeta Mittal",
@@ -258,7 +459,23 @@
             "2022": 137,
             "2023": 34
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=NmRm5yYAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=NmRm5yYAAAAJ",
+        "counts": {
+            "2010": 1,
+            "2011": 1,
+            "2012": 4,
+            "2013": 2,
+            "2014": 2,
+            "2015": 1,
+            "2016": 2,
+            "2017": 4,
+            "2018": 7,
+            "2019": 8,
+            "2020": 7,
+            "2021": 6,
+            "2022": 9,
+            "N/A": 1
+        }
     },
     "15": {
         "name": "Dr. Tribhuwan Kumar Tewari",
@@ -279,7 +496,21 @@
             "2022": 13,
             "2023": 8
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=v_hclFIAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=v_hclFIAAAAJ",
+        "counts": {
+            "2009": 1,
+            "2010": 5,
+            "2011": 1,
+            "2012": 1,
+            "2014": 1,
+            "2015": 1,
+            "2017": 1,
+            "2018": 2,
+            "2019": 2,
+            "2020": 2,
+            "2021": 2,
+            "2023": 2
+        }
     },
     "16": {
         "name": "Dr. Adwitiya Sinha",
@@ -299,7 +530,24 @@
             "2022": 169,
             "2023": 51
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=q2MR7TcAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=q2MR7TcAAAAJ",
+        "counts": {
+            "2007": 1,
+            "2010": 1,
+            "2011": 4,
+            "2013": 3,
+            "2014": 1,
+            "2015": 4,
+            "2016": 6,
+            "2017": 10,
+            "2018": 24,
+            "2019": 11,
+            "2020": 15,
+            "2021": 15,
+            "2022": 23,
+            "2023": 2,
+            "N/A": 8
+        }
     },
     "18": {
         "name": "Mukta Goyal",
@@ -321,11 +569,27 @@
             "2022": 58,
             "2023": 25
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=USGXgXcAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=USGXgXcAAAAJ",
+        "counts": {
+            "2009": 1,
+            "2011": 1,
+            "2012": 3,
+            "2013": 1,
+            "2015": 2,
+            "2016": 6,
+            "2017": 3,
+            "2018": 8,
+            "2019": 5,
+            "2020": 5,
+            "2021": 7,
+            "2022": 7,
+            "2023": 2,
+            "N/A": 1
+        }
     },
     "19": {
         "name": "Dr. Suma Dawn",
-        "citation": 300,
+        "citation": 301,
         "total_pub": 47,
         "cites_per_year": {
             "2010": 1,
@@ -341,13 +605,27 @@
             "2020": 27,
             "2021": 57,
             "2022": 65,
-            "2023": 23
+            "2023": 24
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=hgaPUCQAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=hgaPUCQAAAAJ",
+        "counts": {
+            "2010": 2,
+            "2011": 2,
+            "2013": 1,
+            "2014": 7,
+            "2015": 3,
+            "2016": 2,
+            "2018": 6,
+            "2019": 8,
+            "2020": 5,
+            "2021": 7,
+            "2022": 3,
+            "N/A": 1
+        }
     },
     "20": {
         "name": "Parmeet Kaur",
-        "citation": 537,
+        "citation": 541,
         "total_pub": 73,
         "cites_per_year": {
             "2012": 8,
@@ -359,11 +637,27 @@
             "2018": 39,
             "2019": 44,
             "2020": 77,
-            "2021": 115,
-            "2022": 131,
-            "2023": 44
+            "2021": 116,
+            "2022": 132,
+            "2023": 46
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=ATKNSzcAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=ATKNSzcAAAAJ",
+        "counts": {
+            "2010": 1,
+            "2011": 3,
+            "2012": 2,
+            "2013": 2,
+            "2014": 3,
+            "2015": 3,
+            "2016": 3,
+            "2017": 5,
+            "2018": 8,
+            "2019": 12,
+            "2020": 8,
+            "2021": 8,
+            "2022": 12,
+            "2023": 3
+        }
     },
     "21": {
         "name": "kavita pandey",
@@ -383,7 +677,25 @@
             "2022": 80,
             "2023": 24
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=P3qMVlAAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=P3qMVlAAAAAJ",
+        "counts": {
+            "2009": 1,
+            "2010": 1,
+            "2011": 2,
+            "2012": 1,
+            "2013": 2,
+            "2014": 1,
+            "2015": 5,
+            "2016": 4,
+            "2017": 5,
+            "2018": 6,
+            "2019": 2,
+            "2020": 5,
+            "2021": 6,
+            "2022": 12,
+            "2023": 3,
+            "N/A": 1
+        }
     },
     "22": {
         "name": "Dr. Shikha Jain",
@@ -400,11 +712,25 @@
             "2022": 37,
             "2023": 18
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=qy2r8wsAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=qy2r8wsAAAAJ",
+        "counts": {
+            "2006": 1,
+            "2007": 1,
+            "2014": 2,
+            "2015": 4,
+            "2016": 1,
+            "2017": 2,
+            "2018": 4,
+            "2019": 2,
+            "2020": 5,
+            "2021": 4,
+            "2022": 7,
+            "2023": 2
+        }
     },
     "23": {
         "name": "Amarjeet Prajapati",
-        "citation": 439,
+        "citation": 440,
         "total_pub": 33,
         "cites_per_year": {
             "2017": 31,
@@ -413,13 +739,25 @@
             "2020": 74,
             "2021": 77,
             "2022": 100,
-            "2023": 47
+            "2023": 48
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=RoeOU3UAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=RoeOU3UAAAAJ",
+        "counts": {
+            "2011": 1,
+            "2012": 1,
+            "2014": 1,
+            "2015": 3,
+            "2016": 4,
+            "2017": 4,
+            "2018": 4,
+            "2020": 4,
+            "2021": 6,
+            "2022": 5
+        }
     },
     "24": {
         "name": "Dr. Taj Alam",
-        "citation": 98,
+        "citation": 99,
         "total_pub": 17,
         "cites_per_year": {
             "2014": 4,
@@ -431,13 +769,25 @@
             "2020": 10,
             "2021": 9,
             "2022": 24,
-            "2023": 5
+            "2023": 6
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=jsbu8UUAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=jsbu8UUAAAAJ",
+        "counts": {
+            "2012": 1,
+            "2014": 2,
+            "2015": 1,
+            "2016": 3,
+            "2017": 2,
+            "2018": 3,
+            "2021": 1,
+            "2022": 2,
+            "2023": 1,
+            "N/A": 1
+        }
     },
     "25": {
         "name": "Ankit Vidyarthi",
-        "citation": 378,
+        "citation": 381,
         "total_pub": 73,
         "cites_per_year": {
             "2013": 2,
@@ -449,15 +799,29 @@
             "2019": 22,
             "2020": 39,
             "2021": 47,
-            "2022": 146,
-            "2023": 58
+            "2022": 148,
+            "2023": 59
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=h8NBQjMAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=h8NBQjMAAAAJ",
+        "counts": {
+            "2012": 1,
+            "2013": 2,
+            "2014": 10,
+            "2015": 4,
+            "2016": 2,
+            "2017": 3,
+            "2019": 4,
+            "2020": 2,
+            "2021": 9,
+            "2022": 27,
+            "2023": 7,
+            "N/A": 2
+        }
     },
     "26": {
         "name": "Payal Khurana Batra",
-        "citation": 220,
-        "total_pub": 15,
+        "citation": 221,
+        "total_pub": 17,
         "cites_per_year": {
             "2012": 4,
             "2013": 0,
@@ -469,10 +833,20 @@
             "2019": 38,
             "2020": 27,
             "2021": 45,
-            "2022": 42,
+            "2022": 43,
             "2023": 3
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=-SiS0o8AAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=-SiS0o8AAAAJ",
+        "counts": {
+            "2009": 1,
+            "2014": 4,
+            "2015": 1,
+            "2016": 4,
+            "2018": 1,
+            "2019": 1,
+            "2020": 2,
+            "2022": 3
+        }
     },
     "27": {
         "name": "Raghu Vamsi Potukuchi",
@@ -490,7 +864,22 @@
             "2022": 26,
             "2023": 14
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=ngT8wRgAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=ngT8wRgAAAAJ",
+        "counts": {
+            "2005": 1,
+            "2007": 1,
+            "2014": 10,
+            "2015": 5,
+            "2016": 5,
+            "2017": 3,
+            "2018": 1,
+            "2019": 2,
+            "2020": 2,
+            "2021": 5,
+            "2022": 4,
+            "2023": 1,
+            "N/A": 4
+        }
     },
     "28": {
         "name": "Indu Chawla",
@@ -510,7 +899,20 @@
             "2022": 46,
             "2023": 5
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=wsXMoFYAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=wsXMoFYAAAAJ",
+        "counts": {
+            "2011": 1,
+            "2013": 3,
+            "2014": 1,
+            "2015": 1,
+            "2017": 1,
+            "2018": 2,
+            "2019": 4,
+            "2020": 1,
+            "2021": 1,
+            "2022": 2,
+            "N/A": 2
+        }
     },
     "30": {
         "name": "Dr Alka Singhal",
@@ -528,7 +930,16 @@
             "2022": 15,
             "2023": 6
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=ZayqdbAAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=ZayqdbAAAAAJ",
+        "counts": {
+            "2012": 2,
+            "2016": 1,
+            "2017": 2,
+            "2018": 3,
+            "2021": 1,
+            "2022": 1,
+            "N/A": 2
+        }
     },
     "33": {
         "name": "Dr. Rashmi Kushwah",
@@ -541,11 +952,23 @@
             "2022": 27,
             "2023": 6
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=I33yPegAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=I33yPegAAAAJ",
+        "counts": {
+            "2009": 2,
+            "2013": 4,
+            "2014": 1,
+            "2017": 2,
+            "2018": 2,
+            "2019": 3,
+            "2020": 2,
+            "2021": 3,
+            "2022": 3,
+            "2023": 2
+        }
     },
     "35": {
         "name": "Dr Arti Jain",
-        "citation": 334,
+        "citation": 335,
         "total_pub": 32,
         "cites_per_year": {
             "2014": 2,
@@ -557,9 +980,21 @@
             "2020": 53,
             "2021": 69,
             "2022": 110,
-            "2023": 21
+            "2023": 22
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=W8W93c0AAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=W8W93c0AAAAJ",
+        "counts": {
+            "2011": 1,
+            "2013": 1,
+            "2014": 1,
+            "2015": 1,
+            "2018": 5,
+            "2019": 1,
+            "2020": 5,
+            "2021": 6,
+            "2022": 9,
+            "2023": 2
+        }
     },
     "36": {
         "name": "Dr. Ashish mishra",
@@ -574,11 +1009,20 @@
             "2021": 7,
             "2022": 6
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=i7NJLgMAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=i7NJLgMAAAAJ",
+        "counts": {
+            "2002": 1,
+            "2015": 2,
+            "2016": 3,
+            "2019": 1,
+            "2020": 1,
+            "2022": 1,
+            "N/A": 2
+        }
     },
     "37": {
         "name": "Niyati Aggrawal",
-        "citation": 248,
+        "citation": 249,
         "total_pub": 27,
         "cites_per_year": {
             "2012": 3,
@@ -592,9 +1036,21 @@
             "2020": 43,
             "2021": 51,
             "2022": 47,
-            "2023": 16
+            "2023": 17
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=-tuoeHAAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=-tuoeHAAAAAJ",
+        "counts": {
+            "2012": 1,
+            "2016": 2,
+            "2017": 5,
+            "2018": 5,
+            "2019": 4,
+            "2020": 1,
+            "2021": 4,
+            "2022": 2,
+            "2023": 2,
+            "N/A": 1
+        }
     },
     "39": {
         "name": "Megha Rathi",
@@ -613,7 +1069,19 @@
             "2022": 97,
             "2023": 25
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=lnPlF_IAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=lnPlF_IAAAAJ",
+        "counts": {
+            "2012": 1,
+            "2013": 2,
+            "2014": 1,
+            "2016": 2,
+            "2018": 5,
+            "2019": 9,
+            "2020": 4,
+            "2021": 5,
+            "2022": 9,
+            "N/A": 4
+        }
     },
     "43": {
         "name": "Dr. Gaurav Kumar Nigam",
@@ -630,11 +1098,24 @@
             "2022": 34,
             "2023": 10
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=dyjwbCgAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=dyjwbCgAAAAJ",
+        "counts": {
+            "2010": 2,
+            "2012": 1,
+            "2014": 1,
+            "2015": 1,
+            "2016": 1,
+            "2017": 1,
+            "2018": 1,
+            "2019": 2,
+            "2020": 2,
+            "2021": 5,
+            "2022": 1
+        }
     },
     "44": {
         "name": "Amanpreet Kaur",
-        "citation": 328,
+        "citation": 329,
         "total_pub": 28,
         "cites_per_year": {
             "2010": 1,
@@ -647,12 +1128,24 @@
             "2017": 15,
             "2018": 22,
             "2019": 36,
-            "2020": 58,
+            "2020": 59,
             "2021": 50,
             "2022": 72,
             "2023": 28
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=ywgr--sAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=ywgr--sAAAAJ",
+        "counts": {
+            "2010": 1,
+            "2013": 1,
+            "2014": 1,
+            "2016": 2,
+            "2017": 5,
+            "2018": 4,
+            "2019": 4,
+            "2020": 4,
+            "2021": 3,
+            "2022": 3
+        }
     },
     "45": {
         "name": "Pulkit Mehndiratta",
@@ -670,7 +1163,18 @@
             "2022": 63,
             "2023": 22
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=LoUdggcAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=LoUdggcAAAAJ",
+        "counts": {
+            "2010": 1,
+            "2013": 5,
+            "2014": 4,
+            "2015": 1,
+            "2017": 4,
+            "2018": 3,
+            "2019": 5,
+            "2022": 1,
+            "N/A": 3
+        }
     },
     "46": {
         "name": "Himanshu Agarwal",
@@ -691,11 +1195,24 @@
             "2022": 15,
             "2023": 4
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=k0g5HaAAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=k0g5HaAAAAAJ",
+        "counts": {
+            "2010": 1,
+            "2012": 1,
+            "2013": 2,
+            "2015": 3,
+            "2016": 1,
+            "2017": 2,
+            "2019": 4,
+            "2020": 1,
+            "2021": 1,
+            "2022": 1,
+            "2023": 2
+        }
     },
     "48": {
         "name": "Dr. Raju Pal",
-        "citation": 782,
+        "citation": 784,
         "total_pub": 51,
         "cites_per_year": {
             "2013": 3,
@@ -708,9 +1225,22 @@
             "2020": 101,
             "2021": 202,
             "2022": 225,
-            "2023": 87
+            "2023": 89
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=NzqNjOMAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=NzqNjOMAAAAJ",
+        "counts": {
+            "2012": 2,
+            "2013": 5,
+            "2014": 1,
+            "2016": 3,
+            "2017": 4,
+            "2018": 5,
+            "2019": 7,
+            "2020": 3,
+            "2021": 8,
+            "2022": 11,
+            "2023": 2
+        }
     },
     "49": {
         "name": "Arpita Jadhav Bhatt",
@@ -730,7 +1260,20 @@
             "2022": 18,
             "2023": 2
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=KITRdYwAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=KITRdYwAAAAJ",
+        "counts": {
+            "2010": 1,
+            "2012": 1,
+            "2014": 1,
+            "2016": 1,
+            "2017": 2,
+            "2018": 2,
+            "2019": 2,
+            "2020": 1,
+            "2021": 2,
+            "2022": 4,
+            "N/A": 4
+        }
     },
     "50": {
         "name": "Shardha Porwal",
@@ -748,31 +1291,55 @@
             "2022": 16,
             "2023": 4
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=W0IihqMAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=W0IihqMAAAAJ",
+        "counts": {
+            "2013": 1,
+            "2014": 1,
+            "2016": 1,
+            "2017": 1,
+            "2018": 1,
+            "2019": 2,
+            "2020": 3,
+            "2021": 1,
+            "2022": 2,
+            "N/A": 1
+        }
     },
     "52": {
         "name": "Aditi Sharma",
-        "citation": 14,
+        "citation": 16,
         "total_pub": 9,
         "cites_per_year": {
             "2020": 3,
             "2021": 3,
             "2022": 5,
-            "2023": 2
+            "2023": 4
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=l5OldpQAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=l5OldpQAAAAJ",
+        "counts": {
+            "2013": 1,
+            "2017": 1,
+            "2019": 1,
+            "2021": 3,
+            "2022": 2,
+            "2023": 1
+        }
     },
     "53": {
         "name": "Ankita Sharma",
-        "citation": 115,
+        "citation": 117,
         "total_pub": 2,
         "cites_per_year": {
             "2020": 14,
             "2021": 29,
             "2022": 56,
-            "2023": 15
+            "2023": 17
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=KALTwvkAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=KALTwvkAAAAJ",
+        "counts": {
+            "2020": 1,
+            "2022": 1
+        }
     },
     "54": {
         "name": "somya jain",
@@ -789,7 +1356,16 @@
             "2022": 28,
             "2023": 11
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=E_EI_c4AAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=E_EI_c4AAAAJ",
+        "counts": {
+            "2013": 2,
+            "2017": 2,
+            "2018": 5,
+            "2019": 3,
+            "2020": 2,
+            "2022": 3,
+            "N/A": 2
+        }
     },
     "55": {
         "name": "Himani Bansal",
@@ -808,7 +1384,21 @@
             "2022": 28,
             "2023": 10
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=r2eb30AAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=r2eb30AAAAAJ",
+        "counts": {
+            "2012": 1,
+            "2013": 4,
+            "2014": 3,
+            "2015": 2,
+            "2016": 6,
+            "2017": 1,
+            "2018": 4,
+            "2019": 2,
+            "2020": 2,
+            "2021": 5,
+            "2022": 2,
+            "2023": 2
+        }
     },
     "56": {
         "name": "Akanksha Mehndiratta",
@@ -826,11 +1416,21 @@
             "2021": 1,
             "2022": 1
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=tNZVmx8AAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=tNZVmx8AAAAJ",
+        "counts": {
+            "2012": 1,
+            "2013": 1,
+            "2016": 1,
+            "2018": 1,
+            "2019": 3,
+            "2020": 1,
+            "2021": 1,
+            "2023": 1
+        }
     },
     "57": {
         "name": "Parul Agarwal",
-        "citation": 341,
+        "citation": 343,
         "total_pub": 24,
         "cites_per_year": {
             "2014": 1,
@@ -840,11 +1440,21 @@
             "2018": 17,
             "2019": 29,
             "2020": 36,
-            "2021": 89,
+            "2021": 90,
             "2022": 112,
-            "2023": 36
+            "2023": 37
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=q1OCvewAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=q1OCvewAAAAJ",
+        "counts": {
+            "2014": 1,
+            "2015": 1,
+            "2016": 1,
+            "2018": 3,
+            "2019": 5,
+            "2021": 5,
+            "2022": 7,
+            "N/A": 1
+        }
     },
     "58": {
         "name": "Bansidhar Joshi",
@@ -864,7 +1474,18 @@
             "2022": 25,
             "2023": 3
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=g_WWA58AAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=g_WWA58AAAAJ",
+        "counts": {
+            "2011": 1,
+            "2012": 1,
+            "2016": 3,
+            "2017": 1,
+            "2018": 2,
+            "2019": 1,
+            "2020": 1,
+            "2022": 3,
+            "N/A": 2
+        }
     },
     "60": {
         "name": "Ankita Verma",
@@ -879,14 +1500,28 @@
             "2022": 12,
             "2023": 3
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=oLh8CBsAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=oLh8CBsAAAAJ",
+        "counts": {
+            "2015": 1,
+            "2017": 2,
+            "2018": 1,
+            "2019": 3,
+            "2020": 3,
+            "2021": 3,
+            "2022": 2,
+            "2023": 2
+        }
     },
     "63": {
         "name": "sherry garg",
         "citation": 1,
         "total_pub": 4,
         "cites_per_year": {},
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=kgbKqwUAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=kgbKqwUAAAAJ",
+        "counts": {
+            "2022": 3,
+            "2023": 1
+        }
     },
     "65": {
         "name": "kashav ajmera",
@@ -902,7 +1537,13 @@
             "2022": 9,
             "2023": 6
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=bJm4wTQAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=bJm4wTQAAAAJ",
+        "counts": {
+            "2015": 1,
+            "2018": 1,
+            "2021": 1,
+            "2023": 2
+        }
     },
     "66": {
         "name": "Prantik Biswas",
@@ -919,7 +1560,17 @@
             "2022": 27,
             "2023": 7
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=1fUCvWoAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=1fUCvWoAAAAJ",
+        "counts": {
+            "2015": 8,
+            "2016": 5,
+            "2017": 1,
+            "2018": 4,
+            "2019": 3,
+            "2020": 1,
+            "2021": 4,
+            "2022": 1
+        }
     },
     "73": {
         "name": "Kirti Aggarwal",
@@ -937,7 +1588,13 @@
             "2022": 13,
             "2023": 5
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=9UrL68QAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=9UrL68QAAAAJ",
+        "counts": {
+            "2013": 1,
+            "2015": 2,
+            "2022": 5,
+            "2023": 1
+        }
     },
     "74": {
         "name": "Shariq Murtuza",
@@ -951,11 +1608,17 @@
             "2021": 5,
             "2022": 10
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=z-lpll4AAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=z-lpll4AAAAJ",
+        "counts": {
+            "2015": 1,
+            "2018": 1,
+            "2020": 1,
+            "2022": 1
+        }
     },
     "76": {
         "name": "Meenal Jain",
-        "citation": 81,
+        "citation": 82,
         "total_pub": 11,
         "cites_per_year": {
             "1985": 1,
@@ -996,14 +1659,23 @@
             "2020": 4,
             "2021": 10,
             "2022": 28,
-            "2023": 13
+            "2023": 14
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=SB1PiC0AAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=SB1PiC0AAAAJ",
+        "counts": {
+            "1978": 1,
+            "1984": 2,
+            "2019": 2,
+            "2020": 1,
+            "2021": 1,
+            "2022": 2,
+            "N/A": 2
+        }
     },
     "77": {
         "name": "Manju",
-        "citation": 259,
-        "total_pub": 26,
+        "citation": 260,
+        "total_pub": 27,
         "cites_per_year": {
             "2010": 1,
             "2011": 2,
@@ -1017,10 +1689,23 @@
             "2019": 22,
             "2020": 41,
             "2021": 35,
-            "2022": 49,
+            "2022": 50,
             "2023": 13
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=AQA1mf8AAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=AQA1mf8AAAAJ",
+        "counts": {
+            "2009": 1,
+            "2011": 1,
+            "2013": 1,
+            "2014": 4,
+            "2016": 3,
+            "2017": 1,
+            "2018": 4,
+            "2020": 4,
+            "2021": 4,
+            "2022": 2,
+            "2023": 2
+        }
     },
     "82": {
         "name": "Dr. Bhawna Saxena",
@@ -1032,7 +1717,13 @@
             "2022": 12,
             "2023": 4
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=Z_TtRgMAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=Z_TtRgMAAAAJ",
+        "counts": {
+            "2019": 1,
+            "2020": 3,
+            "2022": 3,
+            "2023": 2
+        }
     },
     "84": {
         "name": "Dr. Anita Sahoo",
@@ -1052,7 +1743,23 @@
             "2022": 39,
             "2023": 13
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=maZrlYcAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=maZrlYcAAAAJ",
+        "counts": {
+            "2009": 2,
+            "2010": 1,
+            "2013": 4,
+            "2014": 1,
+            "2015": 4,
+            "2016": 2,
+            "2017": 1,
+            "2018": 1,
+            "2019": 1,
+            "2020": 1,
+            "2021": 5,
+            "2022": 8,
+            "2023": 3,
+            "N/A": 2
+        }
     },
     "87": {
         "name": "Dr. Amit Mishra",
@@ -1069,15 +1776,22 @@
             "2018": 34,
             "2019": 43,
             "2020": 41,
-            "2021": 62,
+            "2021": 61,
             "2022": 64,
-            "2023": 11
+            "2023": 12
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=x4dAEV8AAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=x4dAEV8AAAAJ",
+        "counts": {
+            "2010": 1,
+            "2011": 1,
+            "2014": 1,
+            "2015": 1,
+            "2016": 2
+        }
     },
     "88": {
         "name": "Vartika Puri",
-        "citation": 45,
+        "citation": 46,
         "total_pub": 10,
         "cites_per_year": {
             "2017": 1,
@@ -1085,10 +1799,18 @@
             "2019": 2,
             "2020": 8,
             "2021": 7,
-            "2022": 16,
+            "2022": 17,
             "2023": 10
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=Xp7crhYAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=Xp7crhYAAAAJ",
+        "counts": {
+            "2014": 1,
+            "2019": 1,
+            "2020": 2,
+            "2021": 3,
+            "2022": 1,
+            "N/A": 2
+        }
     },
     "89": {
         "name": "Nitin Shukla",
@@ -1100,7 +1822,14 @@
             "2022": 6,
             "2023": 5
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=14x0E7wAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=14x0E7wAAAAJ",
+        "counts": {
+            "2014": 1,
+            "2018": 1,
+            "2019": 1,
+            "2020": 3,
+            "2021": 1
+        }
     },
     "90": {
         "name": "Sulabh Tyagi",
@@ -1115,7 +1844,14 @@
             "2022": 13,
             "2023": 5
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=KBmTZoUAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=KBmTZoUAAAAJ",
+        "counts": {
+            "2017": 2,
+            "2018": 3,
+            "2021": 1,
+            "2022": 3,
+            "N/A": 3
+        }
     },
     "92": {
         "name": "VIVEK kumar singh",
@@ -1129,7 +1865,13 @@
             "2022": 6,
             "2023": 3
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=3NOBikYAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=3NOBikYAAAAJ",
+        "counts": {
+            "2017": 2,
+            "2018": 1,
+            "2019": 3,
+            "2020": 1
+        }
     },
     "93": {
         "name": "Ashish Kumar",
@@ -1147,7 +1889,15 @@
             "2022": 8,
             "2023": 1
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=3x3E0lEAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=3x3E0lEAAAAJ",
+        "counts": {
+            "2013": 4,
+            "2016": 1,
+            "2017": 1,
+            "2021": 1,
+            "2023": 1,
+            "N/A": 1
+        }
     },
     "94": {
         "name": "shruti jaiswal",
@@ -1168,7 +1918,16 @@
             "2022": 20,
             "2023": 2
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=D_xBJQgAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=D_xBJQgAAAAJ",
+        "counts": {
+            "2009": 2,
+            "2013": 2,
+            "2017": 4,
+            "2018": 1,
+            "2019": 1,
+            "2021": 1,
+            "2022": 1
+        }
     },
     "95": {
         "name": "Shailesh Kumar",
@@ -1185,7 +1944,13 @@
             "2022": 2,
             "2023": 2
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=RNmcR44AAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=RNmcR44AAAAJ",
+        "counts": {
+            "2013": 1,
+            "2017": 2,
+            "2018": 3,
+            "2022": 1
+        }
     },
     "96": {
         "name": "Deepti Singh",
@@ -1203,6 +1968,14 @@
             "2022": 34,
             "2023": 5
         },
-        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=uuQ_d1UAAAAJ"
+        "url_picture": "https://scholar.google.com/citations?view_op=medium_photo&user=uuQ_d1UAAAAJ",
+        "counts": {
+            "2014": 3,
+            "2019": 2,
+            "2020": 1,
+            "2021": 1,
+            "2022": 2,
+            "2023": 1
+        }
     }
 }

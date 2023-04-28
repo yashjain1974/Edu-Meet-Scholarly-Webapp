@@ -43,6 +43,7 @@ const ScholarDashboard = () => {
         }
         const tableData = data[0].map((item, index) => {
           return [
+            index+1,
 
             item['title'],
             item['pub_yr'],
@@ -59,22 +60,8 @@ const ScholarDashboard = () => {
       });
   }, []);
   console.log(data);
-  const [chartData, setChartData] = useState({});
-  useEffect(() => {
-    setChartData({
-      labels: 1,
-      datasets: [
-        {
-          label: "Value",
-          data: 10,
-          backgroundColor: [
-            "rgba(255, 99, 132, 0.6)",
-
-          ],
-        },
-      ],
-    });
-  }, []);
+  
+ 
 
   const counts = pub_Yr.reduce((acc, curr) => {
     acc[curr] = (acc[curr] || 0) + 1;
@@ -86,7 +73,7 @@ const ScholarDashboard = () => {
 
 
 
-  const header = ['title', 'pub_yr', 'number_citations']
+  const header = ['S.no','title', 'pub_yr', 'number_citations']
   console.log(tabData)
   useEffect(() => {
 
@@ -117,12 +104,14 @@ if (filteredData) {
   return (
     <div className={classes.dashboard}>
       <h1 className={classes.dashboard__title}>My Dashboard</h1>
+      {myObject &&<div className={classes.dashboard__title}>Your Ranking in Jaypee according to number of citation is: {rnk}</div>}
       {!myObject && <LoadingSpinner></LoadingSpinner>}
       {myObject &&
         <div className={classes.chart}>
 
           <ScholarDetailCard myObject={myObject} rank={rnk}></ScholarDetailCard>
           <BarChart bardata={myObject.Cites_per_year} title="Citation" label="month" color="blue"></BarChart>
+          
 
 
         </div>
@@ -148,7 +137,7 @@ if (filteredData) {
 
 
       {data && <CreatePdf tableData={tabData} head={header}></CreatePdf>}
-      {myObject &&<div>Your Ranking in Jaypee according to number of citation: {rnk}</div>}
+      
 
       {/* <Line data={chartData} /> */}
       {!data && <LoadingSpinner></LoadingSpinner>}

@@ -7,10 +7,12 @@ import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css';
 import Papa from "papaparse";
+import { CloseButton } from '@chakra-ui/react'
 import ShowHideSection from './ShowHideSection';
 import Modal from '../UI/Modal';
-import ScholarDetail from '../../pages/Admin/AdminScholar/ScholarDetail';
+import DetailCard from '../UI/DetailCard';
 
+import ScholarCard from '../../pages/Admin/AdminScholar/ScholarCard';
 
 function DataList() {
     const [userlist, setuserlist] = useState([]);
@@ -18,6 +20,7 @@ function DataList() {
     const [citationdata, setCitationData] = useState([]);
     const [showNewComponent, setShowNewComponent] = useState(false);
     const[author,setAuthor]=useState("");
+    const [isVisible,setIsVisible]=useState(false);
     useEffect(() => {
 
         fetch('/citation.json')
@@ -40,12 +43,13 @@ function DataList() {
 
     const columns = [
        
-        { dataField: 'Faculty', text: 'Faculty', sort: true, filter: textFilter(),
+        { dataField: 'name', text: 'Faculty', sort: true, filter: textFilter(),
         events: {
             onClick: (e, column, columnIndex, row, rowIndex) => {
                 console.log(`Value: ${row[column.dataField]}`);
                 setAuthor(row[column.dataField]);
               setShowNewComponent(true);
+              setIsVisible(true);
             }
           } },
         { dataField: 'Email', text: 'Email', sort: true, filter: textFilter() },
@@ -91,6 +95,7 @@ function DataList() {
         console.log(data[key]["total_pub"])
       } else {
         console.log(key + ' is not present in obj2');
+        data[key]["name"]=data[key]["Faculty"];
         data[key]["Citation"] = "Nan";
         data[key]["total_pub"] = "Nan";
       }
@@ -102,10 +107,40 @@ function DataList() {
         setShowNewComponent(!showNewComponent);
       };
       
+      const HideCartHandler = () => {
+        setIsVisible(false);
+     };
+     const getDetailsByName = (name) => {
+      const person = Object.values(citationdata).find((p) => p.name.toLowerCase() === name.toLowerCase());
+      if (person) {
+        return person;
+      } else {
+        return null;
+      }
+    }
+  
+    let obj=getDetailsByName(author);
+    console.log(obj);
+
+    const filteredData = Object.values(citationdata).find(obj => obj.name === author);
+let rnk;
+if (filteredData) {
+  const citationRank = Object.values(citationdata)
+    .sort((a, b) => b.citation - a.citation)
+    .findIndex(obj => obj.name === author) + 1;
+  console.log(`${author} has a citation ranking of ${citationRank}`);
+  rnk=citationRank;
+
+} else {
+  console.log(`${author} not found in the data`);
+}
     return (
     
     <div>
-         {showNewComponent ? <Modal><ScholarDetail author={author}></ScholarDetail></Modal> : null}
+      
+
+      {!obj && showNewComponent && isVisible && <Modal onClose={HideCartHandler}><DetailCard>Unable to fetch details</DetailCard> <CloseButton onClick={HideCartHandler} size='lg'></CloseButton></Modal> }
+         {obj && showNewComponent && isVisible ? <Modal><ScholarCard author={obj} onClose={HideCartHandler} jsonData={data} rank={rnk}></ScholarCard></Modal> : null}
 
         <BootstrapTable bootstrap4 keyField='id' columns={columns} data={data} pagination={pagination} filter={filterFactory()} />
         {/* <table>

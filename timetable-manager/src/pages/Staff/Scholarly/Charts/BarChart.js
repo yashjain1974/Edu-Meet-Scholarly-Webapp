@@ -22,7 +22,7 @@ return(
     <CChart
   type="bar"
   width={500}
-  height={200}
+  height={250}
   data={{
     labels: k,
     datasets: [

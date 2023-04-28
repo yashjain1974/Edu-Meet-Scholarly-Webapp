@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '../../../components/UI/Modal';
 const PublicationForm = () => {
 
-    let history = useHistory();
+    
 
 
     const [image, setImage] = useState(null)
@@ -21,9 +21,7 @@ const PublicationForm = () => {
     const [isSubmitted,setIsSubmitted]=useState(false);
     const [isClicked,setisClicked]=useState(false);
 
-    const isClickHandler=()=>{
-      setisClicked(true);
-  }
+   
     const HideHandler=()=>{
       setisClicked(false);
   }
