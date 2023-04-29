@@ -3,7 +3,6 @@ import Papa from "papaparse";
 import './table.css'
 import LoadingSpinner from "../../../components/UI/LoadingSpinner";
 import CitaionCount from "./CitationCount";
-import data from './citation.json';
 import CitaionAuthor from "./CitationAuthor";
 import DataList from "../../../components/Layout/DataList";
 import CreatePdf from "./CreatePdf";

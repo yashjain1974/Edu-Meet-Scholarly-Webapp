@@ -41,12 +41,12 @@ const ScholarlySidebar = () => {
               <CDBSidebarMenuItem icon="table">Search Publications</CDBSidebarMenuItem>
             </NavLink>
             
-            <NavLink exact to={`/staff/scholar/profile/${p.qid}`} activeClassName="activeClicked">
+            {/* <NavLink exact to={`/staff/scholar/profile/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Change profile</CDBSidebarMenuItem>
             </NavLink>
             <NavLink exact to={`/staff/scholar/changepassword/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Change Password</CDBSidebarMenuItem>
-            </NavLink>
+            </NavLink> */}
 
 
           </CDBSidebarMenu>

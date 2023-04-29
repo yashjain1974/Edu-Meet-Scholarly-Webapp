@@ -33,15 +33,11 @@ const AdminScholarSidebar = () => {
             <NavLink exact to={`/admin/scholarList/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Scholar Data</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/admin/scholarMaintain/${p.qid}`} activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Maintain Scholar</CDBSidebarMenuItem>
-            </NavLink>
+
             <NavLink exact to={`/admin/scholarDocument/${p.qid}`} activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Generate Document</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to={`/admin/scholarProfile/${p.qid}`} activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="user">Your Profile</CDBSidebarMenuItem>
-            </NavLink>
+            
 
 
           </CDBSidebarMenu>

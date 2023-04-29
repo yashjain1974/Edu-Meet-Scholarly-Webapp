@@ -14,7 +14,7 @@ const colors = {
 const theme = extendTheme({ colors })
 
 function ScholarCard(props) {
-  console.log(props.author["cites_per_year"])
+  // console.log(props.author["cites_per_year"])
   let arr=props.author["cites_per_year"]
   return (
     <ChakraProvider theme={theme}>

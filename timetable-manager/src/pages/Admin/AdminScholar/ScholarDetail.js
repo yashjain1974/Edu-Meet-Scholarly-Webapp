@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react";
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@material-ui/core';
+import ScholarCard from "./ScholarCard";
 const ScholarDetail=(props)=>{
     const [citationdata, setCitationData] = useState([]);
     useEffect(() => {
@@ -28,13 +29,14 @@ const ScholarDetail=(props)=>{
     setTableData(newData);
   }, []);
   console.log(tableData);
-  const personDetails = getDetailsByName(props.author);
+  const personDetails = getDetailsByName("Dr. Sandeep Kumar  Singh");
   if(personDetails){
     console.log(personDetails["citation"]);
   }
   
   return (
     <React.Fragment>
+      {personDetails&&<ScholarCard author={personDetails}></ScholarCard>}
       {personDetails&& personDetails["citation"]}
 
     </React.Fragment>
