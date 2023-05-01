@@ -10,6 +10,8 @@ import Rough from "./Rough";
 import LoadingSpinner from "../../../components/UI/LoadingSpinner";
 import AuthContext from "../../../store/auth-context";
 import ScholarDetailCard from "./ScholarDetailCard";
+import { FaExternalLinkAlt } from 'react-icons/fa';
+import { VscReferences } from 'react-icons/vsc';
 const ScholarDashboard = () => {
   const ctx = useContext(AuthContext);
   let name = localStorage.getItem("staffName");
@@ -151,6 +153,8 @@ if (filteredData) {
               <th>Title</th>
               <th>Year</th>
               <th>Citation Count</th>
+              <th>Pub_URL</th>
+              <th>Cited_URL</th>
 
 
             </tr>
@@ -163,6 +167,9 @@ if (filteredData) {
                 <td>{row.title}</td>
                 <td>{row.pub_yr}</td>
                 <td>{row.number_citations}</td>
+                <td><a href={`https://scholar.google.com/citations?view_op=view_citation&hl=en&user=${myObject.Scholar_Id}&citation_for_view=${row.pub_id}`} target="_blank"><FaExternalLinkAlt size="25px"></FaExternalLinkAlt></a></td>
+                {row.citedby_url!='N/A' && <td><a href={row.citedby_url} target="_blank"><VscReferences size="25px"></VscReferences></a></td>}
+                {row.citedby_url=='N/A' && <td>N/A</td>}
                 {/* <td>{data[0].email}</td>
                             <td>{data[0].citedby}</td> */}
 

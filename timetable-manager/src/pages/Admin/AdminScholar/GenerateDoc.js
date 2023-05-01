@@ -212,6 +212,7 @@ const [result, setResult] = useState(null);
         
          <BarChart bardata={result.cites_per_year} title="citation" label="year" color="blue"></BarChart>
       </CitesPerYearContainer>
+      <hr></hr>
       <Name>Publication per year</Name>
       <CountsContainer>
         {/* {Object.entries(profile.counts).map(([year, count]) => (

@@ -6,6 +6,7 @@ import { FcSearch } from 'react-icons/fc';
 import { FcManager } from 'react-icons/fc';
 import SearchScholar from './SearchScholar';
 import jaypeeLogo from "../images/jaypee.png";
+
 const StartingPageContent = () => {
   return (
     <React.Fragment>

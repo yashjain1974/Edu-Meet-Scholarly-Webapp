@@ -44,9 +44,23 @@ def my_view(request, author_name):
     for pub in author['publications']:
         try:
             pub_year = pub['bib']['pub_year']
+        
         except KeyError:
             pub_year = 'N/A'
-        data.append({'title': pub['bib']['title'], 'pub_yr': pub_year, 'number_citations': pub['num_citations']})
+            cited_url='N/A'
+        try:
+            
+            cited_url= pub["citedby_url"]
+        except KeyError:
+            
+            cited_url='N/A'
+        try:
+            
+            pub_id= pub["author_pub_id"]
+        except KeyError:
+            
+            pub_id='N/A'
+        data.append({'title': pub['bib']['title'], 'pub_yr': pub_year, 'number_citations': pub['num_citations'],'citedby_url':cited_url,'pub_id':pub_id})
     data2=[{'name':author["name"],'total_citations':author["citedby"],"cites_per_year":author["cites_per_year"],'scholar_id': author['scholar_id'],'url_picture': author['url_picture'],
 'affiliation': author['affiliation'],
  'interests':author['interests']}]

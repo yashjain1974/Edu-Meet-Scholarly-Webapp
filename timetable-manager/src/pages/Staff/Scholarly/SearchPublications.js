@@ -85,11 +85,6 @@ const SearchPublications = () => {
             setdataArray([...freshArray]);
         }
     }
-    const checked=()=>{
-
-        
-
-    }
 
 
     useEffect(() => {
