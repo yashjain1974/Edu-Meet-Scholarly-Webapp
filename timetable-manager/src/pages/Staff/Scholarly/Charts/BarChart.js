@@ -16,7 +16,7 @@ values.forEach(value=> {
 });
 console.log(k);
 console.log(v);
-
+console.log(k)
 return(
     
     <CChart

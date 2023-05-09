@@ -156,15 +156,15 @@ const SearchScholar = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {data[0].map(data => (
+                            {data && data[0].map((row, index) => (
                                 <tr>
-                                    <td>{1}</td>
+                                    <td>{index+1}</td>
 
-                                    <td>{data.title}</td>
-                                    <td>{data.number_citations}</td>
-                                    <td><a href={`https://scholar.google.com/citations?view_op=view_citation&hl=en&user=&citation_for_view=${data.pub_id}`} target="_blank"><FaExternalLinkAlt size="25px"></FaExternalLinkAlt></a></td>
-                {data.citedby_url!='N/A' && <td><a href={data.citedby_url} target="_blank"><VscReferences size="25px"></VscReferences></a></td>}
-                {data.citedby_url=='N/A' && <td>N/A</td>}
+                                    <td>{row.title}</td>
+                                    <td>{row.number_citations}</td>
+                                    <td><a href={`https://scholar.google.com/citations?view_op=view_citation&hl=en&user=&citation_for_view=${row.pub_id}`} target="_blank"><FaExternalLinkAlt size="25px"></FaExternalLinkAlt></a></td>
+                {row.citedby_url!='N/A' && <td><a href={row.citedby_url} target="_blank"><VscReferences size="25px"></VscReferences></a></td>}
+                {row.citedby_url=='N/A' && <td>N/A</td>}
                                     {/* <td>{data[0].email}</td>
                             <td>{data[0].citedby}</td> */}
 

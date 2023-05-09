@@ -15,7 +15,7 @@ const theme = extendTheme({ colors })
 
 function ScholarCard(props) {
   // console.log(props.author["cites_per_year"])
-  let arr=props.author["cites_per_year"]
+  let arr=props.author["counts"]
   return (
     <ChakraProvider theme={theme}>
       <div>
@@ -56,7 +56,7 @@ function ScholarCard(props) {
       </Text>
 
       <Text color='blue.600' fontSize='xl' py='2'>Publication Per year</Text>
-     <BarChart bardata={props.author["counts"]} title="Counts" label="month" color="brown"></BarChart>
+     <BarChart bardata={props.author["counts"]} title="Counts" label="year" color="brown"></BarChart>
     </TabPanel>
     <TabPanel>
       <Text color='brown.600' fontSize='2xl' py='2'>Publications Per year</Text>

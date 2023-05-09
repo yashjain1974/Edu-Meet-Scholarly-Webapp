@@ -177,7 +177,7 @@ const TeacherList = (props) => {
 
                                     <Route path={`${match.path}/detail/${item.id}`}>
                                         <div className={classes.timeTable}>
-                                            <TeacherDetail onClose={HideCartHandler} id={item.id}></TeacherDetail>
+                                             <TeacherDetail onClose={HideCartHandler} id={item.id}></TeacherDetail>
                                         </div>
                                     </Route>
 
