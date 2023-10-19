@@ -25,6 +25,8 @@ Vs code:- For running the code
 
 # Steps To run:-
 
+#Front End
+
 1) Extract the zip file
 2) Open it in VS code editor
 
@@ -45,8 +47,15 @@ b) Inside the directory, run on the terminal below command  , ( if you are first
 // when all dependencies are installed then run:-
 >> npm start
 
-//Your webpage will run on localhost::
-   http://localhost:3000/
+
+//Your webpage will run on localhost:: http://localhost:3000/
+
+#Backend:-
+
+1) Run Below commands in the Terminal:-
+   >>cd backend
+   >>python manage.py runserver
+  
 
 
 
