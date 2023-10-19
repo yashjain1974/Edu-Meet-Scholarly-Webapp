@@ -25,7 +25,7 @@ const ScholarDetailCard=(props)=>{
           
          
           <p>Affiliation:{props.myObject.Affiliation}</p>
-          <p>Interests:{props.myObject.interests}</p>
+          {/* <p>Interests:{props.myObject.interests}</p> */}
           <p>Total Citations:{props.myObject.Total_Citations}</p>
           <p>Institute Rank:{props.rank}</p>
        

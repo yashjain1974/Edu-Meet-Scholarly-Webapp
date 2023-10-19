@@ -23,7 +23,7 @@ const StartingPageContent = () => {
       </button>
      
     </div>
-     <marquee>Welcome to Slot_Scholar Web App </marquee>
+     <marquee>Welcome to Edu-Meet Web App </marquee>
      <div className={classes.logo} >
      <img  src={jaypeeLogo} alt="jaypee logo"></img>
      </div>
