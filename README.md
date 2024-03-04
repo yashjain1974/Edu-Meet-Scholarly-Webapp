@@ -1,4 +1,4 @@
-# Minor-1-project
+# Edu-Meet Scholarly WebApp
 This is my minor Project
 # Description
 
